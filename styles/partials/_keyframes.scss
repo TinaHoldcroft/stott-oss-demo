@@ -1,0 +1,27 @@
+@keyframes navOverlayOpen {
+    0% { 
+        top: -2.6rem;
+        right: 0.5rem;
+        height: 2.65vmax;
+        width: 2.65vmax;
+        border-radius: 50%;
+    }
+    100% { 
+        top: -50vmax;
+        right: -50vmax;
+        height: 200vmax;
+        width: 200vmax;
+        border-radius: 50%;
+    }
+}
+@keyframes navContentOpen {
+    0% { 
+        opacity: 0;
+    }
+    40% { 
+        opacity: 0;
+            }
+    100% { 
+        opacity: 1;
+    }
+}

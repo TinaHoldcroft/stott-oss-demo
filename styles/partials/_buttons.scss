@@ -1,0 +1,69 @@
+
+.btn-wrapper-white {
+    border: 1px solid $white;
+    background-color: rgba(255, 255, 255, 0.342);
+    button {
+        background-color: $white;
+        border: 1px solid $white;
+        &:focus {
+            outline: 1px solid $white;
+            background-color: rgba(255, 255, 255, 0.342);
+        }
+    }
+}
+.btn-wrapper-yellow{
+    border: 1px solid $yellow;
+    background-color: lighten($yellow, 30%);
+    button {
+        background-color: $yellow;
+        border: 1px solid $yellow;
+        &:focus {
+            outline: 1px solid $yellow;
+            background-color: lighten($yellow, 30%);
+        }
+    }
+}
+.btn-wrapper {
+    width: 6.2rem;
+    height: 2.2rem;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    transition: all 0.15s ease-in-out;
+    &:hover,
+    &:focus {
+        transition: all 0.5s;
+        transform: translate3d(-0.2rem, 0.2rem, 0);
+        button {
+            transition: all 0.5s;
+            transform: translate3d(0.35rem, -0.35rem, 0);
+            outline: none;
+        }
+    }
+  }
+.btn {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    transition: all 0.15s ease-in-out;
+    border-radius: 0;
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+    font
+    &:focus {
+        outline-offset: 4px;
+    }
+}
+.close { //modal btn
+    text-decoration: none;
+    position: absolute;
+    font-size: 2em;
+    top: 1vmax;
+    right: 2vmax;
+    color: #242424;
+}

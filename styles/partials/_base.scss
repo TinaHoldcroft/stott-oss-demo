@@ -1,0 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    overflow-y: auto;
+    overflow-x: hidden;
+    //touch-action: pan-y;
+    //-ms-touch-action: pan-y;
+}
+html, body {
+    scroll-behavior: smooth;
+}

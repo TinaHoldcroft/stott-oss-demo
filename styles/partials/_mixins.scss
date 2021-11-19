@@ -1,0 +1,61 @@
+@mixin flex( //@include flex(column nowrap, flex-start, stretch, auto, flex-start, 0);
+    $flow: column nowrap, //row | row-reverse | column | column-reverse ... nowrap | wrap | wrap-reverse
+    $justify-content: flex-start, //flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
+    $align-items: stretch,
+    $align-self: auto,
+    $align-content: flex-start,
+    $gap: 1rem
+){
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: $flow;
+    justify-content: $justify-content;
+    align-items: $align-items; 
+    align-self: $align-self;
+    align-content: $align-content;
+    gap: $gap;
+}
+@mixin hover-underline(
+    $weight: 2px,
+    $background: $yellow
+){
+    position: relative;
+    display: inline-block;
+    &::after {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: $weight;
+        bottom: $weight * -2;
+        transform: scale(0, 1);
+        transition: transform .4s;
+    }
+    &:hover::after, &:focus::after, &:active::after  { transform: scale(1, 1); }
+    &:after, &:after { background: $background; }
+}
+@mixin hover-highlight(
+    $color: $yellow,
+){
+    position: relative;
+    font-size: 1rem;
+    &:hover::before, &:focus::before, &:active::before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    &::before {
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        inset: 0 0 0 0;
+        background: $color;
+        z-index: -1;
+        transition: transform .3s ease-in-out;
+    }
+}
