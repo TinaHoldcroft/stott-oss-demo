@@ -1,6 +1,8 @@
 import Head from 'next/head'
+import MasterForm from './form/MasterForm'
 
 export default function Home() {
+    
     return (
         <>
             <Head>
@@ -8,7 +10,9 @@ export default function Home() {
             </Head>
 
             <div className="content-index">
-                <div className="one">[STØTT SKJEMA]</div>
+                <div className="one">
+                    <MasterForm/>
+                </div>
                 <div className="two">[KORT]</div>
                 <div className="three">[AVSNITT]</div>
                 <div className="four">[AKSJON]</div>

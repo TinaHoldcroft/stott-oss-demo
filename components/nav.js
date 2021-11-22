@@ -58,10 +58,10 @@ const Nav = () => {
                     <div className="search"></div>
                     <button className={isActive ? "btn-dropdown" : "btn-dropdown is-menu-open" } accessKey="m" title={isActive ? "Open menu" : "Close menu"} type="button" value={isActive ? "Open menu" : "Close menu"} onClick={handleToggle}>
                         <div className="bars">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <div className="other-bar"></div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <div className="other-bar"></div>
                         </div>
                     </button>
                 </div>

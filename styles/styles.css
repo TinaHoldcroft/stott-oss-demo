@@ -355,7 +355,7 @@ nav .--open {
   max-width: 600px;
   margin: 0 0 0 2rem;
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
   .nav-highlights {
     display: none;
   }
@@ -482,6 +482,151 @@ main {
 footer {
   height: 15vmax;
   background-color: #E4E4E4;
+}
+
+.breadcrum {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-self: auto;
+  align-content: flex-start;
+  gap: 0;
+}
+.breadcrum button {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  gap: 0;
+  border-radius: 50%;
+  border: #ccc 2px solid;
+  background-color: #ffffff;
+  width: 3rem;
+  height: 3rem;
+  transition: 0.3s;
+}
+.breadcrum .line {
+  height: 2px;
+  width: 3rem;
+  margin-top: 1.5rem;
+  background-color: #ccc;
+  transition: 0.3s;
+}
+.breadcrum i {
+  font-size: 1.2em;
+}
+
+.breadcrum1 .page1 {
+  border-color: #FFD500;
+  background-color: #FFD500;
+}
+
+.breadcrum2 .page1, .breadcrum2 .page2 {
+  border-color: #FFD500;
+}
+.breadcrum2 .line1, .breadcrum2 .page2 {
+  background-color: #FFD500;
+}
+
+.breadcrum3 .page1, .breadcrum3 .page2, .breadcrum3 .page3 {
+  border-color: #FFD500;
+}
+.breadcrum3 .line1, .breadcrum3 .line2, .breadcrum3 .page3 {
+  background-color: #FFD500;
+}
+
+.breadcrum4 button, .breadcrum4 .page4 {
+  border-color: #FFD500;
+}
+.breadcrum4 .line, .breadcrum4 .page4 {
+  background-color: #FFD500;
+}
+
+.fieldset-btn-group {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-self: auto;
+  align-content: flex-start;
+  gap: 3rem;
+}
+.fieldset-btn-group div {
+  min-width: 45%;
+}
+.fieldset-btn-group .checkBtn {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  gap: 0;
+  background-color: #ffffff;
+  width: 100%;
+  height: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.fieldset-btn-group .checkBtn:focus, .fieldset-btn-group .checkBtn:hover {
+  background-color: #FFD500;
+}
+
+input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+input[type=radio]:checked ~ label {
+  background-color: #FFD500;
+}
+
+.formTxt {
+  height: 50vh;
+  margin: 3rem;
+  background-color: #ffffff;
+  box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38);
+}
+
+.btn-group {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: stretch;
+  align-self: auto;
+  align-content: flex-start;
+  gap: 3rem;
+}
+.btn-group button {
+  max-width: 50%;
+  background-color: #FFD500;
+  border: solid 2px #FFD500;
+  height: 3rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
