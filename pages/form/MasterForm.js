@@ -7,11 +7,11 @@ class MasterForm extends React.Component {
         super(props)
         this.state = {
             currentStep: 1,
-            navn:  '',
-            username: '',
+            fullname: '',
             password: '', 
             frekvens: 'månedlig', //default value
             beløp: '300', //default value
+            fradrag: 'nei', //default value
         }
     }
   
@@ -126,18 +126,19 @@ class MasterForm extends React.Component {
   }
   complete() {
     let currentStep = this.state.currentStep;
-    const { navn, username, password, frekvens, beløp } = this.state
+    const { fullname, password, frekvens, beløp, fradrag } = this.state
     if(currentStep === 4){
       return (
         <>
           <p>Frekvens: {frekvens}</p>
           <p>Beløp: {beløp}</p>
-          <p>Navn: {navn}</p>
+          <p>Navn: {fullname}</p>
           <p>Mail: </p>
           <p>Adresse: </p>
+          <p>Fradrag: {fradrag}</p>
 
             
-            {username}
+            {fullname}
             {password}            
         </>
       )
@@ -207,19 +208,19 @@ class MasterForm extends React.Component {
           <Step1 
             currentStep={this.state.currentStep} 
             handleChange={this.handleChange}
-            navn={this.state.navn}
             frekvens={this.state.frekvens}
             beløp={this.state.beløp}
           />
           <Step2 
             currentStep={this.state.currentStep} 
             handleChange={this.handleChange}
-            username={this.state.username}
+            fradrag={this.state.fradrag}
           />
           <Step3 
             currentStep={this.state.currentStep} 
             handleChange={this.handleChange}
             password={this.state.password}
+            fullname={this.state.fullname}
           />
           <Step4
               currentStep={this.state.currentStep} 
@@ -246,31 +247,31 @@ class MasterForm extends React.Component {
               <fieldset className="fieldset-btn-group">
                   <legend>Velg Frekvens</legend>
                   <div>
-                      <input onChange={props.handleChange} type="radio" id="enGang" name="frekvens" value={props.frekvens}/>
+                      <input onChange={props.handleChange} type="radio" id="enGang" name="frekvens" value='en gang' checked={props.frekvens === 'enGang'}/>
                       <label id="enGangLabel" className="checkBtn float-left" htmlFor="enGang">en gang</label>
                   </div>
                   <div>
-                      <input onChange={props.handleChange} type="radio" id="månedlig" name="frekvens" value="månedlig"/>
+                      <input onChange={props.handleChange} type="radio" id="månedlig" name="frekvens" value="månedlig" checked={props.frekvens === 'månedlig'}/>
                       <label className="checkBtn  float-right" htmlFor="månedlig">månedlig</label>
                   </div>
               </fieldset>
 
               <fieldset className="fieldset-btn-group">
-                <legend>Velg beløp</legend>
+                  <legend>Velg beløp</legend>
                   <div>
-                      <input onChange={props.handleChange} type="radio" id="300" name="beløp" value="300"/>
+                      <input onChange={props.handleChange} type="radio" id="300" name="beløp" value="300" checked={props.beløp === '300'}/>
                       <label className="checkBtn float-left" htmlFor="300">300</label>
                   </div>
                   <div>
-                      <input onChange={props.handleChange} type="radio" id="500" name="beløp" value="500"/>
+                      <input onChange={props.handleChange} type="radio" id="500" name="beløp" value="500" checked={props.beløp === '500'}/>
                       <label  className="checkBtn float-right" htmlFor="500">500</label>
                   </div>
                   <div>
-                      <input onChange={props.handleChange} type="radio" id="750" name="beløp" value="750"/>
+                      <input onChange={props.handleChange} type="radio" id="750" name="beløp" value="750" checked={props.beløp === '750'}/>
                       <label className="checkBtn float-left" htmlFor="750">750</label>
                   </div>
                   <div>
-                      <input onChange={props.handleChange} type="radio" id="1000" name="beløp" value="1000"/>
+                      <input onChange={props.handleChange} type="radio" id="1000" name="beløp" value="1000" value="1000" checked={props.beløp === '1000'}/>
                       <label className="checkBtn  float-right" htmlFor="1000">1000</label>
                   </div>
                   <div className="custom-wrapper">
@@ -288,17 +289,22 @@ class MasterForm extends React.Component {
     } 
     return(
       <div className="form-group">
-        <label htmlFor="username">Username</label>
-        <input
-          className="form-control"
-          id="username"
-          name="username"
-          type="text"
-          placeholder="Enter username"
-          value={props.username}
-          onChange={props.handleChange}
-          />
-          
+          <fieldset className="fieldset-btn-group">
+              <legend>Velg beløp</legend>
+              <p>Jeg ønsker å rapportere gavebeløpet på mitt fødselsnummer (gaven må være på minst 500kr)</p>
+              <div>
+                  <input onChange={props.handleChange} type="radio" id="ja" name="fradrag" value='ja' checked={props.fradrag === 'ja'}/>
+                      <label id="jaLabel" className="checkBtn float-left" htmlFor="ja">ja</label>
+                  </div>
+                  <div>
+                      <input onChange={props.handleChange} type="radio" id="nei" name="fradrag" value="nei" checked={props.fradrag === 'nei'}/>
+                      <label className="checkBtn  float-right" htmlFor="nei">nei</label>
+                  </div>
+                  <div className="custom-wrapper">
+                      <label htmlFor="fødselsnummer">fødselsnummer</label>
+                      <input id="fødselsnummer" name="fødselsnummer" type="number" placeholder={props.fødselsnummer} onChange={props.handleChange}/>
+                  </div>
+              </fieldset>
       </div>
     );
   }
@@ -310,6 +316,16 @@ class MasterForm extends React.Component {
     return(
       <>
       <div className="form-group">
+      <label htmlFor="fullname">fullname</label>
+        <input
+          className="form-control"
+          id="fullname"
+          name="fullname"
+          type="text"
+          placeholder="Enter fullname"
+          value={props.fullname}
+          onChange={props.handleChange}
+          />
         <label htmlFor="password">Password</label>
         <input
           className="form-control"

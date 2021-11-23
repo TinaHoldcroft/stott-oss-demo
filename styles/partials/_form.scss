@@ -1,5 +1,6 @@
 
 .formTxt {
+    @include flex(column nowrap, flex-start, stretch, auto, flex-start, 1em);
     position: absolute;
     width: 70rem;
     height: 35rem;
@@ -8,11 +9,10 @@
     left: 50vw;
     margin-left: -35rem;
     z-index: 0;
-    padding: 10vmin 40vw 10vmin 10vmin;
+    padding: 15vmin 40vw 10vmin 10vmin;
     background-color: $white;
     background-color: $yellow;
-    //box-shadow: 9px 2px 16px rgba(136, 165, 191, 0.4), -4px -2px 16px $white;
-    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38), -2px -2px 8px hsl(0deg 0% 0% / 0.1);
 }
 .masterform {
     position: absolute;
@@ -24,7 +24,7 @@
     margin-left: -3rem;
     z-index: 0;
     background-color: $white;
-    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38), -2px -2px 8px hsl(0deg 0% 0% / 0.1);
     padding: 8vmin 10vmin 10vmin 10vmin;
     label {
         margin: 0.5rem 0;
@@ -47,6 +47,7 @@ input[type=radio] {
     text-transform: uppercase;
     background-color: $yellow;
     border: 2px solid $yellow;
+    font-weight: 600;
     &:focus, &:hover {
         background-color: lighten($yellow, 30%);
         box-shadow: 2.0px 4.0px 4.0px hsl(0deg 0% 0% / 0.38);
@@ -64,7 +65,6 @@ input[type=radio] {
     letter-spacing: 0.1em;
     font-weight: 600;
     margin: 0 0 1rem 0;
-
     &:focus, &:hover {
         background-color: $yellow;
         box-shadow: 2.0px 4.0px 4.0px hsl(0deg 0% 0% / 0.38);
@@ -106,5 +106,20 @@ legend {
     font-weight: 600;
 }
 .btn-group {
-    margin: 1.5rem 0;
+    position: absolute;
+    bottom: 5rem;
+    width: 70%;
+}
+#fødselsnummer {
+    -moz-appearance: textfield;
+}
+#fødselsnummer::-webkit-outer-spin-button,
+#fødselsnummer::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.fieldset-btn-group {
+    p {
+        margin: 1em 0;
+    }
 }

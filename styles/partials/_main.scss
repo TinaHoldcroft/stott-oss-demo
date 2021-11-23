@@ -9,9 +9,9 @@ main {
     @include flex(column nowrap, center, stretch, auto, flex-start, 3rem);
     width: 100%;
     max-width: 1280px;
-    background-color: lightblue;
+    //background-color: lightblue;
     .one { 
-        background-color: lightcoral;
+        //background-color: lightcoral;
         min-height: 100vh;
         //transform: scale(0.75);
     }
