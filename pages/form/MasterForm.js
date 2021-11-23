@@ -12,6 +12,7 @@ class MasterForm extends React.Component {
             frekvens: 'månedlig', //default value
             beløp: '300', //default value
             fradrag: 'nei', //default value
+            fødselsnummer : '',
         }
     }
   
@@ -126,7 +127,7 @@ class MasterForm extends React.Component {
   }
   complete() {
     let currentStep = this.state.currentStep;
-    const { fullname, password, frekvens, beløp, fradrag } = this.state
+    const { fullname, password, frekvens, beløp, fradrag, fødselsnummer } = this.state
     if(currentStep === 4){
       return (
         <>
@@ -136,6 +137,7 @@ class MasterForm extends React.Component {
           <p>Mail: </p>
           <p>Adresse: </p>
           <p>Fradrag: {fradrag}</p>
+          <p>fødselsnummer: {fødselsnummer}</p>
 
             
             {fullname}
@@ -215,6 +217,7 @@ class MasterForm extends React.Component {
             currentStep={this.state.currentStep} 
             handleChange={this.handleChange}
             fradrag={this.state.fradrag}
+            fødselsnummer={this.state.fødselsnummer}
           />
           <Step3 
             currentStep={this.state.currentStep} 
@@ -301,7 +304,7 @@ class MasterForm extends React.Component {
                       <label className="checkBtn  float-right" htmlFor="nei">nei</label>
                   </div>
                   <div className="custom-wrapper">
-                      <label htmlFor="fødselsnummer">fødselsnummer</label>
+                      <label htmlFor="fødselsnummer">Fødselsnummer</label>
                       <input id="fødselsnummer" name="fødselsnummer" type="number" placeholder={props.fødselsnummer} onChange={props.handleChange}/>
                   </div>
               </fieldset>
