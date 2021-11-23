@@ -274,7 +274,7 @@ class MasterForm extends React.Component {
                       <label className="checkBtn float-left" htmlFor="750">750</label>
                   </div>
                   <div>
-                      <input onChange={props.handleChange} type="radio" id="1000" name="beløp" value="1000" value="1000" checked={props.beløp === '1000'}/>
+                      <input onChange={props.handleChange} type="radio" id="1000" name="beløp" value="1000" checked={props.beløp === '1000'}/>
                       <label className="checkBtn  float-right" htmlFor="1000">1000</label>
                   </div>
                   <div className="custom-wrapper">
