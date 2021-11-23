@@ -12,7 +12,8 @@ main {
     background-color: lightblue;
     .one { 
         background-color: lightcoral;
-        min-height: 80vh; 
+        min-height: 100vh;
+        //transform: scale(0.75);
     }
     .two { background-color: lightcyan; }
     .three { background-color: lightgray; }

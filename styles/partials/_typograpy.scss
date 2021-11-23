@@ -1,4 +1,5 @@
-@import url("https://use.typekit.net/sah2het.css");
+@import url("https://use.typekit.net/xzn5byu.css");
+//font-family: open-sans, sans-serif;
 
 body {
     font-family: open-sans, sans-serif;
@@ -10,10 +11,21 @@ body {
 a {
     text-decoration: none;
     color: #000;
+    font-weight: 400;
+    font-size: 0.9em;
 }
 a:focus, a:active {
     outline: none;
 }
 button, a {
     font-family: open-sans, sans-serif;
+}
+h1 {
+    font-weight: 500;
+    font-size: clamp(1.5em, 2.5vw, 3rem);
+    line-height: 1em;
+}
+p {
+    font-size: 0.95em;
+    font-weight: 400;
 }

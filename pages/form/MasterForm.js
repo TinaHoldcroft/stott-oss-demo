@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from "next/link";
 
 class MasterForm extends React.Component {
   
@@ -52,7 +53,7 @@ class MasterForm extends React.Component {
     }
     GoToOneButton() {
       return (
-        <button className="page1" type="button" onClick={this._GoToOne}>
+        <button className="page1" type="button" onClick={this._GoToOne} value="gå direkte til valg av frekvens og beløp">
             <i className="fas fa-hand-holding-usd"></i>
         </button>
       )
@@ -99,11 +100,7 @@ class MasterForm extends React.Component {
     if(currentStep === 4) { return null }
     if(currentStep !== 1) {
       return (
-        <button 
-          className="btn btn-secondary" 
-          type="button" onClick={this._prev}>
-        Tilbake
-        </button>
+        <button className="flat-btn float-left" type="button" onClick={this._prev}>Tilbake</button>
       )
     }
     return null
@@ -113,11 +110,7 @@ class MasterForm extends React.Component {
     let currentStep = this.state.currentStep;
     if(currentStep < 3){
       return (
-        <button 
-          className="btn btn-primary float-right" 
-          type="button" onClick={this._next}>
-          Neste
-        </button>        
+        <button className="flat-btn float-right" type="button" onClick={this._next}>Neste</button>        
       )
     }
     return null;
@@ -126,7 +119,7 @@ class MasterForm extends React.Component {
     let currentStep = this.state.currentStep;
     if(currentStep === 3){
       return (
-        <button className="btn btn-success btn-block">Send inn</button>      
+        <button className="flat-btn float-right">Send inn</button>      
       )
     }
     return null;
@@ -156,9 +149,13 @@ class MasterForm extends React.Component {
     if(currentStep === 1){
         return (
             <>
-              <h1>Heading for page 1</h1>
-              <p>Here is some text for page 1</p>
-              <button>Button</button>
+              <h1>Støtt Blindeforbundet</h1>
+              <p>Gi et menneske som har mistet synet, hjelp til å reise seg etter livskrisen – og få opplæring i å leve et selvstendig liv igjen.</p>
+              <p>300 kr fra deg vil hjelpe et menneske som mister synet i ditt nærmiljø</p>
+              <Link href="/" target="_blank">
+                <a>Lær mer her →</a>
+              </Link>
+
             </>
         )
     }
@@ -194,6 +191,8 @@ class MasterForm extends React.Component {
           {this.TextPanel()}
         </div>
         
+
+        <div className="masterform">
         <div className={'breadcrum breadcrum' + this.state.currentStep}>
           {this.GoToOneButton()}
           <div className="line line1"></div>
@@ -234,54 +233,53 @@ class MasterForm extends React.Component {
 
           {this.complete()}
         </form>
+        </div>
         </>
       );
     }
   }
   
   function Step1(props) {
-    if (props.currentStep !== 1) {
-        return null
-    } 
-    return(
-      <div className="form-group">
-          <fieldset className="fieldset-btn-group">
-              <legend>Velg Frekvens</legend>
-              <div>
-                  <input onChange={props.handleChange} type="radio" id="enGang" name="frekvens" value={props.frekvens}/>
-                  <label id="enGangLabel" className="checkBtn" htmlFor="enGang">en gang</label>
-              </div>
-              <div>
-                  <input onChange={props.handleChange} type="radio" id="månedlig" name="frekvens" value="månedlig"/>
-                  <label className="checkBtn" htmlFor="månedlig">månedlig</label>
-              </div>
-          </fieldset>
+      if (props.currentStep !== 1) { return null } 
+      return(
+          <div className="form-group">
+              <fieldset className="fieldset-btn-group">
+                  <legend>Velg Frekvens</legend>
+                  <div>
+                      <input onChange={props.handleChange} type="radio" id="enGang" name="frekvens" value={props.frekvens}/>
+                      <label id="enGangLabel" className="checkBtn float-left" htmlFor="enGang">en gang</label>
+                  </div>
+                  <div>
+                      <input onChange={props.handleChange} type="radio" id="månedlig" name="frekvens" value="månedlig"/>
+                      <label className="checkBtn  float-right" htmlFor="månedlig">månedlig</label>
+                  </div>
+              </fieldset>
 
-          <fieldset className="fieldset-btn-group">
-            <legend>Velg beløp</legend>
-              <div>
-                  <input onChange={props.handleChange} type="radio" id="300" name="beløp" value="300"/>
-                  <label className="checkBtn" htmlFor="300">300</label>
-              </div>
-              <div>
-                  <input onChange={props.handleChange} type="radio" id="500" name="beløp" value="500"/>
-                  <label  className="checkBtn" htmlFor="500">500</label>
-              </div>
-              <div>
-                  <input onChange={props.handleChange} type="radio" id="750" name="beløp" value="750"/>
-                  <label className="checkBtn" htmlFor="750">750</label>
-              </div>
-              <div>
-                  <input onChange={props.handleChange} type="radio" id="1000" name="beløp" value="1000"/>
-                  <label className="checkBtn" htmlFor="1000">1000</label>
-              </div>
-              <div>
-                  <label htmlFor="custom">Eller skriv in ønsket beløp</label>
-                  <input id="custom" name="beløp" type="number" placeholder={props.beløp} value={props.beløp} onChange={props.handleChange}/>
-              </div>
-        </fieldset>
-      </div>
-    );
+              <fieldset className="fieldset-btn-group">
+                <legend>Velg beløp</legend>
+                  <div>
+                      <input onChange={props.handleChange} type="radio" id="300" name="beløp" value="300"/>
+                      <label className="checkBtn float-left" htmlFor="300">300</label>
+                  </div>
+                  <div>
+                      <input onChange={props.handleChange} type="radio" id="500" name="beløp" value="500"/>
+                      <label  className="checkBtn float-right" htmlFor="500">500</label>
+                  </div>
+                  <div>
+                      <input onChange={props.handleChange} type="radio" id="750" name="beløp" value="750"/>
+                      <label className="checkBtn float-left" htmlFor="750">750</label>
+                  </div>
+                  <div>
+                      <input onChange={props.handleChange} type="radio" id="1000" name="beløp" value="1000"/>
+                      <label className="checkBtn  float-right" htmlFor="1000">1000</label>
+                  </div>
+                  <div className="custom-wrapper">
+                      <label htmlFor="custom">Eller skriv inn ønsket beløp</label>
+                      <input id="custom" name="beløp" type="number" placeholder={props.beløp} onChange={props.handleChange}/>
+                  </div>
+            </fieldset>
+          </div>
+      );
   }
   
   function Step2(props) {
