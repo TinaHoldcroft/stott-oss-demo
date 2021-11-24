@@ -50,6 +50,39 @@ html, body {
   float: left;
 }
 
+.arrow-link a {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  font-weight: 500;
+}
+.arrow-link a span {
+  line-height: 1.5em;
+  border-bottom: solid 1px transparent;
+  color: #242424;
+  padding: 0 0 0.1rem 0;
+}
+.arrow-link a i {
+  margin: 0 0 0 0.5rem;
+  color: #242424;
+  transition: margin 0.3s ease-in-out;
+}
+.arrow-link a:hover, .arrow-link a:focus, .arrow-link a:active {
+  outline: none;
+}
+.arrow-link a:hover i, .arrow-link a:focus i, .arrow-link a:active i {
+  transition: margin 0.3s ease-in-out;
+  margin: 0 1rem 0 1rem;
+  outline: none;
+}
+.arrow-link a:hover span, .arrow-link a:focus span, .arrow-link a:active span {
+  border-bottom: solid 1px #242424;
+  transition: border 0.35s ease-in-out;
+}
+.arrow-link a:active {
+  opacity: 0.5;
+}
+
 body {
   font-family: open-sans, sans-serif;
   font-weight: 400;
@@ -229,7 +262,7 @@ p {
   display: -webkit-flex;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: stretch;
   align-self: auto;
   align-content: flex-start;
@@ -254,6 +287,17 @@ p {
   width: 3rem;
   height: 3rem;
   transition: 0.4s;
+  /* &::after { //line
+       content:"";
+       display: block;
+       position: relative;
+       width: 100%;
+       height: 2px;
+       background-color: $medium-grey;
+       //transform: rotate(90deg);
+       left: 2.5rem;
+       animation - fade in
+   }*/
 }
 .breadcrum button:focus, .breadcrum button:hover {
   outline: none;
@@ -263,10 +307,11 @@ p {
 }
 .breadcrum .line {
   height: 2px;
-  width: 4rem;
+  width: 1rem;
   margin-top: 1.5rem;
   background-color: #ebebeb;
   transition: 0.3s;
+  flex-grow: 4;
 }
 .breadcrum i {
   font-size: 1.2em;
@@ -344,6 +389,11 @@ p {
 .logo-txt span:nth-child(2) {
   font-size: 0.815em;
   font-weight: 400;
+}
+@media only screen and (max-width: 600px) {
+  .logo-txt {
+    display: none;
+  }
 }
 
 #logo {
@@ -497,20 +547,18 @@ nav .--open {
   font-size: 1em;
   transform: scale(0.9);
 }
-
 .search::before {
+  content: "";
+  display: block;
   width: 0.8em;
   height: 0.8em;
-  border-radius: 1em;
+  border-radius: 50%;
   border: 0.15em solid #383838;
-  content: "";
-  display: block;
   margin-left: -1em;
 }
-
-.search:after {
-  display: block;
+.search::after {
   content: "";
+  display: block;
   width: 0.15em;
   height: 0.6em;
   background-color: #383838;
@@ -592,7 +640,7 @@ footer {
   display: -webkit-flex;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: stretch;
   align-self: auto;
   align-content: flex-start;
@@ -601,14 +649,19 @@ footer {
   width: 70rem;
   height: 35rem;
   top: 50vh;
-  margin-top: -17.5rem;
+  margin-top: -16.5rem;
   left: 50vw;
   margin-left: -35rem;
   z-index: 0;
-  padding: 15vmin 40vw 10vmin 10vmin;
+  padding: 0 40rem 0 6rem;
   background-color: #ffffff;
   background-color: #FFD500;
   box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38), -2px -2px 8px rgba(0, 0, 0, 0.1);
+}
+@media only screen and (max-width: 1160px) {
+  .formTxt {
+    display: none;
+  }
 }
 
 .masterform {
@@ -616,13 +669,34 @@ footer {
   width: 34rem;
   height: 40rem;
   top: 50vh;
-  margin-top: -20rem;
+  margin-top: -19rem;
   left: 50vw;
   margin-left: -3rem;
   z-index: 0;
   background-color: #ffffff;
   box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38), -2px -2px 8px rgba(0, 0, 0, 0.1);
   padding: 8vmin 10vmin 10vmin 10vmin;
+}
+@media only screen and (max-width: 1160px) {
+  .masterform {
+    margin-left: -17rem;
+  }
+}
+@media only screen and (max-width: 565px) {
+  .masterform {
+    padding: 2rem;
+    margin: 0;
+    top: 6rem;
+    left: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+}
+.masterform label, .masterform legend {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+  font-weight: 600;
 }
 .masterform label {
   margin: 0.5rem 0;
@@ -681,7 +755,7 @@ input[type=radio]:checked ~ label, input[type=radio]:focus ~ label {
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.38);
 }
 
-.custom-wrapper input {
+.txt-input-wrapper input {
   background-color: #ebebeb;
   border: none;
   height: 3rem;
@@ -690,19 +764,13 @@ input[type=radio]:checked ~ label, input[type=radio]:focus ~ label {
   padding: 0 0.8rem;
   border: 2px solid transparent;
 }
-.custom-wrapper input::placeholder {
+.txt-input-wrapper input::placeholder {
   font-style: italic;
   opacity: 0.3;
 }
-.custom-wrapper input:focus, .custom-wrapper input:active {
+.txt-input-wrapper input:focus, .txt-input-wrapper input:active {
   outline: none;
   border: 2px solid #FFD500;
-}
-.custom-wrapper label {
-  text-transform: uppercase;
-  font-size: 0.7em;
-  letter-spacing: 0.1em;
-  font-weight: 600;
 }
 
 fieldset {
@@ -710,31 +778,49 @@ fieldset {
   margin: 2rem 0 0 0;
 }
 
-legend {
-  text-transform: uppercase;
-  font-size: 0.7em;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-}
-
 .btn-group {
   position: absolute;
-  bottom: 5rem;
+  bottom: 4rem;
   width: 70%;
 }
 
 #fødselsnummer {
   -moz-appearance: textfield;
 }
-
-#fødselsnummer::-webkit-outer-spin-button,
-#fødselsnummer::-webkit-inner-spin-button {
+#fødselsnummer::-webkit-outer-spin-button, #fødselsnummer::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
 .fieldset-btn-group p {
   margin: 1em 0;
+}
+
+.checkmark {
+  stroke-width: 2px;
+  stroke: #FFD500;
+  fill: none;
+}
+.checkmark path {
+  stroke-dasharray: 17px, 17px;
+  stroke-dashoffset: 0px;
+  animation: checkmark 0.25s ease-in-out 0.7s backwards;
+}
+.checkmark circle {
+  stroke-dasharray: 76px, 76px;
+  stroke-dashoffset: 0px;
+  animation: checkmark-circle 0.6s ease-in-out forwards;
+}
+
+@keyframes checkmark {
+  0% {
+    stroke-dashoffset: 17px;
+  }
+}
+@keyframes checkmark-circle {
+  0% {
+    stroke-dashoffset: 76px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

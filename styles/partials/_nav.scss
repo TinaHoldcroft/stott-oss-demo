@@ -22,6 +22,7 @@
         font-size: 0.815em;
         font-weight: 400;
     }
+    @media only screen and (max-width: 600px) { display: none; }
 }
 #logo {
     height: 2rem;
@@ -102,26 +103,25 @@ nav {
 }
 .search {
     font-size: 1em;
-   
     transform: scale(0.9);
-  }
-    .search::before {
-  width: 0.8em;
-  height: 0.8em;
-  border-radius: 1em;
-  border: 0.15em solid $medium-grey;
-  content:"";
-  display: block;
-  margin-left: -1em;
-}
-.search:after {
-  display: block;
-  content: "";
-  width: .15em;
-  height: 0.6em;
-  background-color: $medium-grey;
-  transform:rotate(-45deg);
-  margin-top: -.32em;
+    &::before { //circle
+        content:"";
+        display: block;
+        width: 0.8em;
+        height: 0.8em;
+        border-radius: 50%;
+        border: 0.15em solid $medium-grey;
+        margin-left: -1em;
+    }
+    &::after { //line
+        content:"";
+        display: block;
+        width: .15em;
+        height: 0.6em;
+        background-color: $medium-grey;
+        transform: rotate(-45deg);
+        margin-top: -.32em;
+    }
 }
 .nav-btn-wrapper {
     @include flex(row nowrap, flex-start, center, auto, flex-start, 0);

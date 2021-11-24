@@ -1,31 +1,49 @@
 
 .formTxt {
-    @include flex(column nowrap, flex-start, stretch, auto, flex-start, 1em);
+    @include flex(column nowrap, center, stretch, auto, flex-start, 1em);
     position: absolute;
     width: 70rem;
     height: 35rem;
     top: 50vh;
-    margin-top: -17.5rem;
+    margin-top: -16.5rem;
     left: 50vw;
     margin-left: -35rem;
     z-index: 0;
-    padding: 15vmin 40vw 10vmin 10vmin;
+    padding: 0 40rem 0 6rem;
     background-color: $white;
     background-color: $yellow;
     box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38), -2px -2px 8px hsl(0deg 0% 0% / 0.1);
+    @media only screen and (max-width: 1160px) { display: none; }
 }
 .masterform {
     position: absolute;
     width: 34rem;
     height: 40rem;
     top: 50vh;
-    margin-top: -20rem;
+    margin-top: -19rem;
     left: 50vw;
     margin-left: -3rem;
     z-index: 0;
     background-color: $white;
     box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38), -2px -2px 8px hsl(0deg 0% 0% / 0.1);
     padding: 8vmin 10vmin 10vmin 10vmin;
+    @media only screen and (max-width: 1160px) { 
+        margin-left: -17rem;
+    }
+    @media only screen and (max-width: 565px) { 
+        //display: none;
+        padding: 2rem; margin: 0;
+        top: 6rem;
+        left: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+    label, legend {
+        text-transform: uppercase;
+        font-size: 0.7em;
+        letter-spacing: 0.1em;
+        font-weight: 600;        
+    }
     label {
         margin: 0.5rem 0;
     }
@@ -70,7 +88,7 @@ input[type=radio] {
         box-shadow: 2.0px 4.0px 4.0px hsl(0deg 0% 0% / 0.38);
     }
 }
-.custom-wrapper {
+.txt-input-wrapper {
     input {
         background-color: $light-grey;
         border: none;
@@ -88,38 +106,43 @@ input[type=radio] {
             border: 2px solid $yellow;
         }
     }
-    label {
-        text-transform: uppercase;
-        font-size: 0.7em;
-        letter-spacing: 0.1em;
-        font-weight: 600;
-    }
 }
 fieldset {
     border: none;
     margin: 2rem 0 0 0;
 }
-legend {
-    text-transform: uppercase;
-    font-size: 0.7em;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-}
 .btn-group {
     position: absolute;
-    bottom: 5rem;
+    bottom: 4rem;
     width: 70%;
 }
 #fødselsnummer {
     -moz-appearance: textfield;
-}
-#fødselsnummer::-webkit-outer-spin-button,
-#fødselsnummer::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 }
 .fieldset-btn-group {
     p {
         margin: 1em 0;
     }
 }
+.checkmark{
+    stroke-width: 2px;
+    stroke: $yellow;
+    fill: none;
+    & path {
+        stroke-dasharray: 17px, 17px; 
+        stroke-dashoffset: 0px;
+        animation: checkmark 0.25s ease-in-out 0.7s backwards;
+    }
+    & circle {
+        stroke-dasharray: 76px, 76px;
+        stroke-dashoffset: 0px;
+        animation: checkmark-circle 0.6s ease-in-out forwards;
+    }
+}
+  
+@keyframes checkmark { 0% { stroke-dashoffset: 17px; } } 
+@keyframes checkmark-circle { 0% { stroke-dashoffset: 76px; } } 

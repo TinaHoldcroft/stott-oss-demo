@@ -59,3 +59,35 @@
         transition: transform .3s ease-in-out;
     }
 }
+@mixin arrow-link($color: $black) {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    font-weight: 500;
+    span { 
+        line-height: 1.5em;
+        border-bottom: solid 1px transparent;
+        color: $color; 
+        padding: 0 0 0.1rem 0;
+    }
+    i {
+        //font-family: Consolas,"courier new";
+        //font-size: 1.2em;
+        margin: 0 0 0 0.5rem;
+        color: $color;
+        transition: margin 0.3s ease-in-out;
+    }
+    &:hover, &:focus, &:active {
+        outline: none;
+        i {
+            transition: margin 0.3s ease-in-out;
+            margin: 0 1rem 0 1rem;
+            outline: none;
+        }
+        span {
+            border-bottom: solid 1px $color;
+            transition: border 0.35s ease-in-out;
+        }
+    }
+    &:active { opacity: 0.5; }
+}

@@ -34,10 +34,10 @@ const Nav = () => {
             <Link href='/'>
             <div className="logo-wrapper">
                 <img id="logo" src="/favicon.svg" alt=""/>
-                <h1 className="logo-txt">
+                <span className="logo-txt">
                     <span>Norges Blindeforbund</span>
                     <span>Synshemmedes organisasjon</span>
-                </h1>
+                </span>
             </div>
             </Link>
             <div onClick={closeDrop} className="nav-highlights">
