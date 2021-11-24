@@ -31,7 +31,7 @@ const Nav = () => {
     
     return (
         <nav className={isActive ? navClassList.join(" ") : "--fixed"} id="navbar">
-            <Link href='/'>
+            <Link passHref href='/'>
             <div className="logo-wrapper">
                 <img id="logo" src="/favicon.svg" alt=""/>
                 <span className="logo-txt">
@@ -48,7 +48,7 @@ const Nav = () => {
             </div> 
 
             <div className="btn-wrapper btn-wrapper-yellow">
-                <Link href='/'> 
+                <Link passHref href='/'> 
                     <button className="btn">Støtt oss</button>
                 </Link>
             </div>
