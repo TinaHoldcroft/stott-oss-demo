@@ -4,8 +4,7 @@
     position: absolute;
     width: 70rem;
     height: 35rem;
-    top: 50vh;
-    margin-top: -16.5rem;
+    top: 8rem;
     left: 50vw;
     margin-left: -35rem;
     z-index: 0;
@@ -19,8 +18,7 @@
     position: absolute;
     width: 34rem;
     height: 40rem;
-    top: 50vh;
-    margin-top: -19rem;
+    top: 6rem;
     left: 50vw;
     margin-left: -3rem;
     z-index: 0;
@@ -33,7 +31,6 @@
     @media only screen and (max-width: 565px) { 
         //display: none;
         padding: 2rem; margin: 0;
-        top: 6rem;
         left: 0;
         width: 100%;
         box-shadow: none;
@@ -55,35 +52,6 @@ input[type=radio] {
     height: 0;
     width: 0;
     &:checked ~ label, &:focus ~ label{
-        background-color: $yellow;
-        box-shadow: 2.0px 4.0px 4.0px hsl(0deg 0% 0% / 0.38);
-    }
-}
-.flat-btn {
-    min-width: 48%;
-    height: 3rem;
-    text-transform: uppercase;
-    background-color: $yellow;
-    border: 2px solid $yellow;
-    font-weight: 600;
-    &:focus, &:hover {
-        background-color: lighten($yellow, 30%);
-        box-shadow: 2.0px 4.0px 4.0px hsl(0deg 0% 0% / 0.38);
-        outline: none;
-    }
-}
-.checkBtn {
-    @include flex(column nowrap, center, center, center, center, 0);
-    background-color: $light-grey;
-    min-width: 48%;
-    height: 3rem;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 0.8em;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-    margin: 0 0 1rem 0;
-    &:focus, &:hover {
         background-color: $yellow;
         box-shadow: 2.0px 4.0px 4.0px hsl(0deg 0% 0% / 0.38);
     }
@@ -112,9 +80,8 @@ fieldset {
     margin: 2rem 0 0 0;
 }
 .btn-group {
-    position: absolute;
-    bottom: 4rem;
-    width: 70%;
+    position: relative;
+    margin-top: 2rem;
 }
 #fødselsnummer {
     -moz-appearance: textfield;
@@ -123,9 +90,9 @@ fieldset {
         margin: 0;
     }
 }
-.fieldset-btn-group {
+.form-group {
     p {
-        margin: 1em 0;
+        margin: 1.6em 0;
     }
 }
 .checkmark{
@@ -143,6 +110,16 @@ fieldset {
         animation: checkmark-circle 0.6s ease-in-out forwards;
     }
 }
-  
-@keyframes checkmark { 0% { stroke-dashoffset: 17px; } } 
-@keyframes checkmark-circle { 0% { stroke-dashoffset: 76px; } } 
+.active1, .active3 {
+    animation: scaleUpOdd 1s 1 ease-in-out;
+}
+.active2, .active4 {
+    animation: scaleUpEven 1s 1 ease-in-out;
+}
+.complete {
+    @include flex(column nowrap, center, stretch, auto, flex-start, 1em);
+    text-align: center;
+}
+.checkmark-wrapper {
+    margin: 2rem 0;
+}

@@ -27,6 +27,46 @@
     opacity: 1;
   }
 }
+@keyframes checkmark {
+  0% {
+    stroke-dashoffset: 17px;
+  }
+}
+@keyframes checkmark-circle {
+  0% {
+    stroke-dashoffset: 76px;
+  }
+}
+@keyframes scaleUpOdd {
+  0% {
+    transform: scale(0.6);
+    filter: grayscale(1);
+  }
+  50% {
+    filter: grayscale(0);
+  }
+  70% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scaleUpEven {
+  0% {
+    transform: scale(0.6);
+    filter: grayscale(1);
+  }
+  50% {
+    filter: grayscale(0);
+  }
+  70% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -286,18 +326,7 @@ p {
   background-color: #ffffff;
   width: 3rem;
   height: 3rem;
-  transition: 0.4s;
-  /* &::after { //line
-       content:"";
-       display: block;
-       position: relative;
-       width: 100%;
-       height: 2px;
-       background-color: $medium-grey;
-       //transform: rotate(90deg);
-       left: 2.5rem;
-       animation - fade in
-   }*/
+  transition: 2s;
 }
 .breadcrum button:focus, .breadcrum button:hover {
   outline: none;
@@ -310,7 +339,8 @@ p {
   width: 1rem;
   margin-top: 1.5rem;
   background-color: #ebebeb;
-  transition: 0.3s;
+  animation: progress 6s ease-in-out forwards;
+  transition: 1s;
   flex-grow: 4;
 }
 .breadcrum i {
@@ -341,6 +371,109 @@ p {
 }
 .breadcrum4 .line, .breadcrum4 .page4 {
   background-color: #FFD500;
+}
+
+.flat-btn {
+  min-width: 48%;
+  height: 3rem;
+  text-transform: uppercase;
+  background-color: #FFD500;
+  border: 2px solid #FFD500;
+  font-weight: 600;
+}
+.flat-btn:focus, .flat-btn:hover {
+  background-color: #ffee99;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.38);
+  outline: none;
+}
+.flat-btn:active {
+  transform: scale(1.03);
+}
+
+.checkBtn {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  gap: 0;
+  background-color: #ebebeb;
+  min-width: 48%;
+  height: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+.checkBtn:focus, .checkBtn:hover {
+  background-color: #FFD500;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.38);
+}
+.checkBtn:active {
+  transform: scale(1.03);
+}
+
+.payment {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  gap: 0.75rem;
+  margin: 1.8rem 0;
+}
+.payment span {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin: 0 0 -0.3rem 0;
+}
+.payment button {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: center;
+  align-content: center;
+  gap: 0.5em;
+  width: 50%;
+  min-height: 3.5rem;
+  padding: 1vmax 0 1vmax 3vmin;
+  border-radius: 10px;
+  border: none;
+  color: #ffffff;
+}
+.payment button:hover, .payment button:focus {
+  opacity: 0.6;
+}
+.payment .vipps {
+  background-color: #FF5B24;
+}
+.payment .vipps img {
+  width: 60%;
+}
+.payment .avtale {
+  background-color: #030504;
+}
+.payment .avtale img {
+  width: 80%;
 }
 
 .--hide {
@@ -616,7 +749,38 @@ main {
   min-height: 100vh;
 }
 .content-index .two {
-  background-color: lightcyan;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-self: auto;
+  align-content: center;
+  gap: 4rem;
+  background-color: #F4F4F4;
+  padding: 5rem 0;
+  width: calc(100% + 15rem);
+  margin: 0 0 0 -7.5rem;
+}
+@media only screen and (max-width: 1200px) {
+  .content-index .two {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-self: auto;
+    align-content: center;
+    gap: 4rem;
+    margin: 0;
+    width: 100%;
+  }
 }
 .content-index .three {
   background-color: lightgray;
@@ -626,6 +790,23 @@ main {
 }
 .content-index .five {
   background-color: lightsalmon;
+}
+
+.card {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: auto;
+  align-self: auto;
+  align-content: flex-start;
+  gap: 1em;
+  min-width: 20rem;
+  background-color: #ffffff;
+  padding: 3vmax 5vmin;
 }
 
 footer {
@@ -648,8 +829,7 @@ footer {
   position: absolute;
   width: 70rem;
   height: 35rem;
-  top: 50vh;
-  margin-top: -16.5rem;
+  top: 8rem;
   left: 50vw;
   margin-left: -35rem;
   z-index: 0;
@@ -668,8 +848,7 @@ footer {
   position: absolute;
   width: 34rem;
   height: 40rem;
-  top: 50vh;
-  margin-top: -19rem;
+  top: 6rem;
   left: 50vw;
   margin-left: -3rem;
   z-index: 0;
@@ -686,7 +865,6 @@ footer {
   .masterform {
     padding: 2rem;
     margin: 0;
-    top: 6rem;
     left: 0;
     width: 100%;
     box-shadow: none;
@@ -710,47 +888,6 @@ input[type=radio] {
   width: 0;
 }
 input[type=radio]:checked ~ label, input[type=radio]:focus ~ label {
-  background-color: #FFD500;
-  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.38);
-}
-
-.flat-btn {
-  min-width: 48%;
-  height: 3rem;
-  text-transform: uppercase;
-  background-color: #FFD500;
-  border: 2px solid #FFD500;
-  font-weight: 600;
-}
-.flat-btn:focus, .flat-btn:hover {
-  background-color: #ffee99;
-  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.38);
-  outline: none;
-}
-
-.checkBtn {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  align-content: center;
-  gap: 0;
-  background-color: #ebebeb;
-  min-width: 48%;
-  height: 3rem;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 0.8em;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-  margin: 0 0 1rem 0;
-}
-.checkBtn:focus, .checkBtn:hover {
   background-color: #FFD500;
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.38);
 }
@@ -779,9 +916,8 @@ fieldset {
 }
 
 .btn-group {
-  position: absolute;
-  bottom: 4rem;
-  width: 70%;
+  position: relative;
+  margin-top: 2rem;
 }
 
 #fødselsnummer {
@@ -792,8 +928,8 @@ fieldset {
   margin: 0;
 }
 
-.fieldset-btn-group p {
-  margin: 1em 0;
+.form-group p {
+  margin: 1.6em 0;
 }
 
 .checkmark {
@@ -812,15 +948,31 @@ fieldset {
   animation: checkmark-circle 0.6s ease-in-out forwards;
 }
 
-@keyframes checkmark {
-  0% {
-    stroke-dashoffset: 17px;
-  }
+.active1, .active3 {
+  animation: scaleUpOdd 1s 1 ease-in-out;
 }
-@keyframes checkmark-circle {
-  0% {
-    stroke-dashoffset: 76px;
-  }
+
+.active2, .active4 {
+  animation: scaleUpEven 1s 1 ease-in-out;
+}
+
+.complete {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-self: auto;
+  align-content: flex-start;
+  gap: 1em;
+  text-align: center;
+}
+
+.checkmark-wrapper {
+  margin: 2rem 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

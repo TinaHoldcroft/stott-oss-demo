@@ -15,8 +15,25 @@ main {
         min-height: 100vh;
         //transform: scale(0.75);
     }
-    .two { background-color: lightcyan; }
+    .two { 
+        @include flex(row nowrap, center, stretch, auto, center, 4rem);
+        background-color: #F4F4F4; 
+        padding: 5rem 0;
+        width: calc(100% + 15rem);
+        margin: 0 0 0 -7.5rem;
+        @media only screen and (max-width: 1200px) { 
+            @include flex(column wrap, center, stretch, auto, center, 4rem);
+            margin: 0;
+            width: 100%;
+        }
+    }
     .three { background-color: lightgray; }
     .four { background-color: lightpink; }
     .five { background-color: lightsalmon; }
+}
+.card {
+    @include flex(column wrap, flex-start, auto, auto,  flex-start, 1em);
+    min-width: 20rem;
+    background-color: $white;
+    padding: 3vmax 5vmin;
 }

@@ -54,9 +54,27 @@ class MasterForm extends React.Component {
   }
   nextButton() {
     let currentStep = this.state.currentStep;
-    if (currentStep < 3) {
+    if (currentStep === 1) {
       return (
         <button className="flat-btn float-right" type="button" onClick={this._next}>Neste</button>
+      )
+    }
+    return null;
+  }
+  payButton() {
+    let currentStep = this.state.currentStep;
+    if (currentStep === 2) {
+      return (
+        <div className="payment">
+          <button className="vipps" type="button" onClick={this._next}>
+            <span>fortsett med</span>
+            <img id="" src="/vipps.svg" alt="vipps"/>
+          </button>
+          <button className="avtale" type="button" onClick={this._next}>
+            <span>fortsett med</span>
+            <img id="" src="/avtale-giro.svg" alt="avtale giro"/>
+          </button>
+        </div>
       )
     }
     return null;
@@ -134,11 +152,11 @@ class MasterForm extends React.Component {
     const { navn, telefon, adresse, epost, frekvens, beløp, fradrag, fødselsnummer } = this.state
     if (currentStep === 4) {
       return (
-        <div>
+        <div className="complete">
           <h2>Takk</h2>
           <p>Din donasjon er registrert og du vil i løpet av kort tid motta kvitteringen via mail</p>
           <div className="checkmark-wrapper">
-            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="-263.5 236.5 26 26">
+            <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="-263.5 236.5 26 26">
               <g className="checkmark">
                 <circle cx="-250.5" cy="249.5" r="12"/>
                 <path d="M-256.46 249.65l3.9 3.74 8.02-7.8"/>
@@ -146,16 +164,11 @@ class MasterForm extends React.Component {
             </svg>
         </div>
           <div>
-            <p>Frekvens: {frekvens}</p>
-            <p>Beløp: {beløp}</p>
-            <p>Navn: {navn}</p>
-            <p>Mail: {epost}</p>
-            <p>Adresse: {adresse} </p>
-            <p>Fradrag: {fradrag}</p>
-            <p>fødselsnummer: {fødselsnummer}</p>
-          </div>
-
-          {telefon}
+            <p>{beløp} {frekvens}</p>
+            <p>{navn} <span>&#60;{epost}&#62;</span></p>
+            <p>{telefon}, {adresse} </p>
+            <p>{fradrag}, {fødselsnummer}</p>
+          </div>   
         </div>
       )
     }
@@ -206,7 +219,7 @@ class MasterForm extends React.Component {
         </div>
 
 
-        <div className="masterform">
+        <div className={'masterform active' + this.state.currentStep}>
           <div className={'breadcrum breadcrum' + this.state.currentStep}>
             {this.GoToOneButton()}
             <div className="line line1"></div>
@@ -239,6 +252,7 @@ class MasterForm extends React.Component {
               epost={this.state.epost}
             />
 
+            {this.payButton()}
 
             <div className="btn-group">
               {this.previousButton()}
@@ -303,8 +317,6 @@ function Step2(props) {
 
   return (
     <div className="form-group">
-      <fieldset className="fieldset-btn-group">
-        <legend>Velg beløp</legend>
         <p>Jeg ønsker å rapportere gavebeløpet på mitt fødselsnummer (gaven må være på minst 500kr)</p>
         <div>
           <input onChange={props.handleChange} type="radio" id="ja" name="fradrag" value='ja' checked={props.fradrag === 'ja'} />
@@ -318,8 +330,7 @@ function Step2(props) {
           <label htmlFor="fødselsnummer">Fødselsnummer</label>
           <input id="fødselsnummer" name="fødselsnummer" type="number" placeholder={props.fødselsnummer} onChange={props.handleChange} />
         </div>
-      </fieldset>
-    </div>
+      </div>
   );
 }
 
