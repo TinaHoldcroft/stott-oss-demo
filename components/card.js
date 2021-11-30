@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import BTN from './btn';
 
 function Card(props) {
     
@@ -6,11 +6,7 @@ function Card(props) {
         <div className="card">
             <h2>{props.heading}</h2>
             <p>{props.txt}</p>
-            <div className="btn-wrapper btn-wrapper-yellow">
-                <Link passHref href={props.link} target={props.target}> 
-                    <button type="button" value={props.btn} className="btn"> {props.btn}</button>
-                </Link>
-            </div>
+            <BTN link='/' value={props.value}/>
         </div>
     );
 }

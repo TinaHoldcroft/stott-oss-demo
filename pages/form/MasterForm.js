@@ -213,7 +213,7 @@ class MasterForm extends React.Component {
   }
   render() {
     return (
-      <>
+      <div className="masterform-wrapper">
         <div className="formTxt">
           {this.TextPanel()}
         </div>
@@ -263,7 +263,7 @@ class MasterForm extends React.Component {
             {this.complete()}
           </form>
         </div>
-      </>
+      </div>
     );
   }
 }

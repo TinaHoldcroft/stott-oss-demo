@@ -28,7 +28,7 @@
 
 @keyframes scaleUpOdd {
     0% { 
-        transform: scale(0.6);
+        transform: scale(0.8);
         filter: grayscale(1);
     }
     50% { 
@@ -41,7 +41,7 @@
 }
 @keyframes scaleUpEven {
     0% { 
-        transform: scale(0.6);
+        transform: scale(0.8);
         filter: grayscale(1);
     }
     50% { 
@@ -51,4 +51,8 @@
         transform: scale(1.03); 
     }
     100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+    50% { margin-right: -0.15em;  }
 }

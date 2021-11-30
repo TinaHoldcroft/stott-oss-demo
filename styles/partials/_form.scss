@@ -1,10 +1,14 @@
-
+.masterform-wrapper {
+    height: 100vh;
+    min-height: 40rem;
+}
 .formTxt {
     @include flex(column nowrap, center, stretch, auto, flex-start, 1em);
     position: absolute;
     width: 70rem;
-    height: 35rem;
-    top: 8rem;
+    height: 30rem;
+    top: 50vh;
+    margin-top: -16rem;
     left: 50vw;
     margin-left: -35rem;
     z-index: 0;
@@ -13,12 +17,21 @@
     background-color: $yellow;
     box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38), -2px -2px 8px hsl(0deg 0% 0% / 0.1);
     @media only screen and (max-width: 1160px) { display: none; }
+    @media only screen and (max-height: 800px) {
+        top: 8rem;
+        margin-top: 0;
+    }
 }
 .masterform {
     position: absolute;
     width: 34rem;
-    height: 40rem;
-    top: 6rem;
+    height: 38rem;
+    @media only screen and (max-height: 800px) { 
+        top: 5rem;
+        margin-top: 0;
+    }
+    top: 50vh;
+    margin-top: -19rem;
     left: 50vw;
     margin-left: -3rem;
     z-index: 0;

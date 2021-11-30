@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import FocusLock from 'react-focus-lock';
 import Link from 'next/link';
 import useScrollListener from "./ScrollListener";
+import BTN from './btn';
 
 const Nav = () => {
     const handleToggle = () => { setActive(!isActive); };
@@ -47,11 +48,7 @@ const Nav = () => {
                 <Link href='/'>Råd og tips</Link>
             </div> 
 
-            <div className="btn-wrapper btn-wrapper-yellow">
-                <Link passHref href='/'> 
-                    <button className="btn">Støtt oss</button>
-                </Link>
-            </div>
+            <BTN link='/' value="støtt oss"/>
             
             <FocusLock className="focus" disabled={isActive ? true : false}>
                 <div className="nav-btn-wrapper">

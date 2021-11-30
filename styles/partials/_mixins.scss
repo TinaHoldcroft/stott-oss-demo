@@ -39,9 +39,15 @@
 }
 @mixin hover-highlight(
     $color: $yellow,
+    $font-size: 1em
 ){
     position: relative;
-    font-size: 1rem;
+    font-size: $font-size;
+    line-height: 2em;
+    font-weight: 400;
+    cursor: pointer;
+    outline: none;
+    padding: 0 1em;
     &:hover::before, &:focus::before, &:active::before {
         transform: scaleX(1);
         transform-origin: bottom left;
@@ -66,14 +72,17 @@
     font-weight: 500;
     span { 
         line-height: 1.5em;
-        border-bottom: solid 1px transparent;
+        border-bottom: dotted 3px transparent;
         color: $color; 
-        padding: 0 0 0.1rem 0;
+        padding: 0 0 0.1rem 0.1em;
+        &::first-letter {
+            text-transform: uppercase;
+        }
     }
     i {
-        //font-family: Consolas,"courier new";
-        //font-size: 1.2em;
-        margin: 0 0 0 0.5rem;
+        font-size: 1.1em;
+        font-weight: 900;
+        margin: 0 0 0 1rem;
         color: $color;
         transition: margin 0.3s ease-in-out;
     }
@@ -81,13 +90,64 @@
         outline: none;
         i {
             transition: margin 0.3s ease-in-out;
-            margin: 0 1rem 0 1rem;
+            margin: 0 1rem 0 2rem;
             outline: none;
         }
         span {
-            border-bottom: solid 1px $color;
+            border-bottom: dotted 3px $color;
             transition: border 0.35s ease-in-out;
         }
     }
     &:active { opacity: 0.5; }
+}
+
+@mixin BTN(
+    $color: $yellow,
+    $width: 6.2rem,
+    $height: 2.2rem,
+    $font-size: 1em,
+    $BGcolor:  lighten($color, 30%)
+){
+    width: $width;
+    height: $height;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    transition: all 0.15s ease-in-out;
+    border: 1.5px solid $color;
+    background-color: $BGcolor;
+    button {
+        background-color: $color;
+        border: 1.5px solid $color;
+        position: relative;
+        width: $width;
+        height: $height;
+        bottom: 0;
+        top: -2px;
+        right: 0;
+        left: -2px;
+        transform-style: preserve-3d;
+        transform: translateZ(0);
+        transition: all 0.15s ease-in-out;
+        border-radius: 0;
+        font-size: $font-size;
+        letter-spacing: 0.1em;
+        &::first-letter {
+            text-transform: uppercase;
+        }
+        &:focus {
+            border: 1.5px solid $color;
+            background-color: lighten($color, 30%);
+            outline-offset: 4px;
+            outline: 2px solid $light-grey;
+        }
+    }
+    &:hover, &:focus {
+        transition: all 0.5s;
+        transform: translate3d(-0.25em, 0.2em, 0);
+        button {
+            transition: all 0.5s;
+            transform: translate3d(0.5em, -0.4em, 0);
+            outline: none;
+        }
+    }
 }

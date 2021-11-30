@@ -31,6 +31,10 @@
     margin: 0 1rem;
 }
 nav {
+    .btn {
+        @include BTN($yellow, 6.8rem, 2.2rem, 0.9em);
+        margin-right: -10rem;
+    }
     @include flex(row nowrap, space-between, center, auto, flex-start, 0);
     position: fixed;
     left: 0;
@@ -93,12 +97,6 @@ nav {
     @media only screen and (max-width: 1000px) { display: none; }
     a {
         @include hover-highlight;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 0.9em;
-        padding: 0.2em 0.5em;
-        outline: none;
-        cursor: pointer;
     }
 }
 .search {
