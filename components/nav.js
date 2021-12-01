@@ -66,21 +66,21 @@ const Nav = () => {
                 <ul className={isActive ? "--close" : "--open"} role="menu">
                     <div className="nav--overlay"></div>
                     <ul className="menu-group">
-                        <li role="none" className="menu-heading" onClick={handleToggle}><Link role="menuitem" href='/'>Title</Link></li>
+                        <li role="none" className="menu-heading" onClick={handleToggle}><Link role="menuitem" href='/'>Overskrift</Link></li>
                         <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
                         <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
                         <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
                         <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'>Link</Link></li>
                     </ul>
                     <ul className="menu-group">
-                        <li role="none" className="menu-heading" onClick={handleToggle}><Link role="menuitem" href='/'>Title</Link></li>
+                        <li role="none" className="menu-heading" onClick={handleToggle}><Link role="menuitem" href='/'>Overskrift</Link></li>
                         <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
                         <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
                         <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
                         <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'>Link</Link></li>
                     </ul>
                     <ul className="menu-group">
-                        <li role="none" className="menu-heading" onClick={handleToggle}><Link role="menuitem" href='/'>Title</Link></li>
+                        <li role="none" className="menu-heading" onClick={handleToggle}><Link role="menuitem" href='/'>Overskrift</Link></li>
                         <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
                         <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
                         <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>

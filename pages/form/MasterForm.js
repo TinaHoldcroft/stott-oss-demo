@@ -1,125 +1,126 @@
-import React from 'react'
-//import Link from "next/link";
+import React, { useState } from 'react';
 import ArrowLink from "../../components/ArrowLink";
+import BTN from '../../components/btn';
+import Link from 'next/link';
 
 class MasterForm extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      currentStep: 1,
-      frekvens: 'månedlig',
-      beløp: '300',
-      fradrag: 'nei',
-      fødselsnummer: '',
-      telefon: '',
-      navn: '',
-      adresse: '',
-      epost: '',
+    constructor(props) {
+        super(props)
+        this.state = {
+            currentStep: 1,
+            frekvens: 'månedlig',
+            beløp: '300',
+            fradrag: 'nei',
+            fødselsnummer: '',
+            telefon: '',
+            navn: '',
+            adresse: '',
+            epost: '',
+        }
     }
-  }
 
-  handleChange = event => {
-    const { name, value } = event.target
-    this.setState({
-      [name]: value
-    })
-  }
+    handleChange = event => {
+        const { name, value } = event.target
+        this.setState({ [name]: value })
+    }
 
-  handleSubmit = event => {
-    event.preventDefault()
-    let currentStep = this.state.currentStep
-    currentStep = currentStep >= 3 ? 4 : currentStep + 1
-    this.setState({
-      currentStep: currentStep
-    })
-  }
-  
-  submitButton() {
-    let currentStep = this.state.currentStep;
-    if (currentStep === 3) {
+    handleSubmit = event => {
+        event.preventDefault()
+        let currentStep = this.state.currentStep
+        currentStep = currentStep >= 3 ? 4 : currentStep + 1
+        this.setState({
+            currentStep: currentStep
+        })
+    }
+
+    submitButton() {
+        let currentStep = this.state.currentStep;
+        if (currentStep === 3) {
+            return (
+                <button className="flat-btn float-right">Send inn</button>
+            )
+        }
+        return null;
+    }
+
+    _next = () => {
+        let currentStep = this.state.currentStep
+        currentStep = currentStep >= 2 ? 3 : currentStep + 1
+        this.setState({
+            currentStep: currentStep
+        })
+    }
+    nextButton() {
+        let currentStep = this.state.currentStep;
+        if (currentStep === 1) {
+            return (
+                <button className="flat-btn float-right" type="button" onClick={this._next}>Neste</button>
+            )
+        }
+        return null;
+    }
+
+    payButton() {
+        let currentStep = this.state.currentStep;
+        if (currentStep === 2) {
+            return (
+                <div className="payment">
+                    <button className="vipps" type="button" onClick={this._next}>
+                        <span>fortsett med</span>
+                        <img id="" src="/vipps.svg" alt="vipps"/>
+                    </button>
+                    <button className="avtale" type="button" onClick={this._next}>
+                        <span>fortsett med</span>
+                        <img id="" src="/avtale-giro.svg" alt="avtale giro"/>
+                    </button>
+                </div>
+            )
+        }
+        return null;
+    }
+
+    _prev = () => {
+        let currentStep = this.state.currentStep
+        currentStep = currentStep <= 1 ? 1 : currentStep - 1
+        this.setState({
+            currentStep: currentStep
+        })
+    }
+
+    previousButton() {
+        let currentStep = this.state.currentStep;
+        if (currentStep === 4) { return null }
+        if (currentStep !== 1) {
+            return (
+                <button className="flat-btn float-left" type="button" onClick={this._prev}>Tilbake</button>
+            )
+        }
+        return null
+    }
+
+    _GoToOne = () => {
+      let currentStep = this.state.currentStep
+      currentStep = 1
+      this.setState({ currentStep: currentStep })
+    }
+    GoToOneButton() {
       return (
-        <button className="flat-btn float-right">Send inn</button>
+        <button className="page1" type="button" onClick={this._GoToOne} value="gå direkte til valg av frekvens og beløp">
+          <i className="fas fa-hand-holding-usd"></i>
+        </button>
       )
     }
-    return null;
-  }
-
-  _next = () => {
-    let currentStep = this.state.currentStep
-    currentStep = currentStep >= 2 ? 3 : currentStep + 1
-    this.setState({
-      currentStep: currentStep
-    })
-  }
-  nextButton() {
-    let currentStep = this.state.currentStep;
-    if (currentStep === 1) {
-      return (
-        <button className="flat-btn float-right" type="button" onClick={this._next}>Neste</button>
-      )
+    _GoToTwo = () => {
+      let currentStep = this.state.currentStep
+      currentStep = 2
+      this.setState({ currentStep: currentStep })
     }
-    return null;
-  }
-  payButton() {
-    let currentStep = this.state.currentStep;
-    if (currentStep === 2) {
-      return (
-        <div className="payment">
-          <button className="vipps" type="button" onClick={this._next}>
-            <span>fortsett med</span>
-            <img id="" src="/vipps.svg" alt="vipps"/>
-          </button>
-          <button className="avtale" type="button" onClick={this._next}>
-            <span>fortsett med</span>
-            <img id="" src="/avtale-giro.svg" alt="avtale giro"/>
-          </button>
-        </div>
-      )
-    }
-    return null;
-  }
-
-  _prev = () => {
-    let currentStep = this.state.currentStep
-    currentStep = currentStep <= 1 ? 1 : currentStep - 1
-    this.setState({
-      currentStep: currentStep
-    })
-  }
-  previousButton() {
-    let currentStep = this.state.currentStep;
-    if (currentStep === 4) { return null }
-    if (currentStep !== 1) {
-      return (
-        <button className="flat-btn float-left" type="button" onClick={this._prev}>Tilbake</button>
-      )
-    }
-    return null
-  }
-
-  _GoToOne = () => {
-    let currentStep = this.state.currentStep
-    currentStep = 1
-    this.setState({ currentStep: currentStep })
-  }
-  GoToOneButton() {
-    return (
-      <button className="page1" type="button" onClick={this._GoToOne} value="gå direkte til valg av frekvens og beløp">
-        <i className="fas fa-hand-holding-usd"></i>
-      </button>
-    )
-  }
-  _GoToTwo = () => {
-    let currentStep = this.state.currentStep
-    currentStep = 2
-    this.setState({ currentStep: currentStep })
-  }
   GoToTwoButton() {
     return (
-      <button className="page2" type="button" onClick={this._GoToTwo}>
-        <i className="fas fa-credit-card"></i>
-      </button>
+        <button className="page2" type="button" onClick={this._GoToTwo}>
+            <i className="fas fa-credit-card"></i>
+        </button>
     )
   }
   _GoToThree = () => {
@@ -149,7 +150,6 @@ class MasterForm extends React.Component {
 
   complete() {
     let currentStep = this.state.currentStep;
-    const { navn, telefon, adresse, epost, frekvens, beløp, fradrag, fødselsnummer } = this.state
     if (currentStep === 4) {
       return (
         <div className="complete">
@@ -158,17 +158,11 @@ class MasterForm extends React.Component {
           <div className="checkmark-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="-263.5 236.5 26 26">
               <g className="checkmark">
-                <circle cx="-250.5" cy="249.5" r="12"/>
-                <path d="M-256.46 249.65l3.9 3.74 8.02-7.8"/>
+                <circle cx="-250.5" cy="249.5" r="12" />
+                <path d="M-256.46 249.65l3.9 3.74 8.02-7.8" />
               </g>
             </svg>
-        </div>
-          <div>
-            <p>{beløp} {frekvens}</p>
-            <p>{navn} <span>&#60;{epost}&#62;</span></p>
-            <p>{telefon}, {adresse} </p>
-            <p>{fradrag}, {fødselsnummer}</p>
-          </div>   
+          </div>
         </div>
       )
     }
@@ -189,25 +183,38 @@ class MasterForm extends React.Component {
     if (currentStep === 2) {
       return (
         <>
-          <h1>Heading for page 2</h1>
-          <p>Here is some text for page 2</p>
+          <h1>Slik får du fradraget</h1>
+          <p>Din gave skal stå ferdig påført i skattemeldingen din. Hvis forhåndsutfylling mangler, skal du ikke føre beløpet selv, men ta kontakt og be oss rapportere gavebeløpet på ditt fødselsnummer.</p>
+          <ArrowLink target="_blank" txt="Lær mer her" link="/" />
         </>
       )
     }
     if (currentStep === 3) {
       return (
         <>
-          <h1>Heading for page 3</h1>
-          <p>Here is some text for page 3</p>
+          <h1>Du kan stole på oss</h1>
+          <p>Hver eneste person som støtter Blindeforbundet er like viktig for at blinde og svaksynte i Norge kan få livsnødvendig omsorg, praktisk hjelp og mestringskurs. Vi ønsker derfor å behandle deg og dine gavebidrag med ydmykhet og respekt.</p>
+          <div className="action-group">
+            <BTN value="Personvernsærklæring" link="/" />
+          </div>
         </>
       )
     }
     if (currentStep === 4) {
+      const { navn, telefon, adresse, epost, frekvens, beløp, fradrag } = this.state
+
       return (
-        <>
-          <h1>Heading for page 4</h1>
-          <p>Here is some text for page 4</p>
-        </>
+        <div className="summary">
+          <h1>Oppsummering</h1>
+          <div>
+            <p>{navn} <i>&#60;{epost}&#62;</i></p>
+            <p>{beløp} {frekvens}</p>
+            <p>{telefon}, {adresse} </p>
+            <p>Fradrag: {fradrag}</p>   
+          </div>
+          <h2>Lurer du på noe?</h2>
+          <p>Kontakt giverservice på <Link href='/'>23 00 06 00</Link> eller send mail til <Link href='/'>giver@blindeforbundet.no</Link></p>
+        </div>
       )
     }
   }
@@ -217,7 +224,6 @@ class MasterForm extends React.Component {
         <div className="formTxt">
           {this.TextPanel()}
         </div>
-
 
         <div className={'masterform active' + this.state.currentStep}>
           <div className={'breadcrum breadcrum' + this.state.currentStep}>
@@ -252,7 +258,7 @@ class MasterForm extends React.Component {
               epost={this.state.epost}
             />
 
-            {this.payButton()}
+            <div className="">{this.payButton()}</div>
 
             <div className="btn-group">
               {this.previousButton()}
@@ -276,7 +282,7 @@ function Step1(props) {
       <fieldset className="fieldset-btn-group">
         <legend>Velg Frekvens</legend>
         <div>
-          <input onChange={props.handleChange} type="radio" id="enGang" name="frekvens" value='en gang' checked={props.frekvens === 'enGang'} />
+          <input onChange={props.handleChange} type="radio" id="enGang" name="frekvens" value='en gang' checked={props.frekvens === 'en gang'} />
           <label className="checkBtn float-left" htmlFor="enGang">en gang</label>
         </div>
         <div>
@@ -314,23 +320,25 @@ function Step1(props) {
 
 function Step2(props) {
   if (props.currentStep !== 2) { return null }
+  const handleToggle = () => { setActive(!isActive); };
+  const [isActive, setActive] = useState("false");
 
   return (
     <div className="form-group">
-        <p>Jeg ønsker å rapportere gavebeløpet på mitt fødselsnummer (gaven må være på minst 500kr)</p>
-        <div>
-          <input onChange={props.handleChange} type="radio" id="ja" name="fradrag" value='ja' checked={props.fradrag === 'ja'} />
-          <label id="jaLabel" className="checkBtn float-left" htmlFor="ja">ja</label>
-        </div>
-        <div>
-          <input onChange={props.handleChange} type="radio" id="nei" name="fradrag" value="nei" checked={props.fradrag === 'nei'} />
-          <label className="checkBtn  float-right" htmlFor="nei">nei</label>
-        </div>
-        <div className="txt-input-wrapper">
-          <label htmlFor="fødselsnummer">Fødselsnummer</label>
-          <input id="fødselsnummer" name="fødselsnummer" type="number" placeholder={props.fødselsnummer} onChange={props.handleChange} />
-        </div>
+      <p>Jeg ønsker å rapportere gavebeløpet på mitt fødselsnummer (gaven må være på minst 500kr)</p>
+      <div>
+        <input onClick={handleToggle} onChange={props.handleChange} type="radio" id="ja" name="fradrag" value='ja' checked={props.fradrag === 'ja'} />
+        <label id="jaLabel" className="checkBtn float-left" htmlFor="ja">ja</label>
       </div>
+      <div>
+        <input onClick={handleToggle} onChange={props.handleChange} type="radio" id="nei" name="fradrag" value="nei" checked={props.fradrag === 'nei'} />
+        <label className="checkBtn  float-right" htmlFor="nei">nei</label>
+      </div>
+      <div className={isActive ? "--close" : "txt-input-wrapper"}>
+        <label htmlFor="fødselsnummer">Fødselsnummer</label>
+        <input id="fødselsnummer" name="fødselsnummer" type="number" placeholder={props.fødselsnummer} onChange={props.handleChange}/>
+      </div>
+    </div>
   );
 }
 
@@ -338,22 +346,22 @@ function Step3(props) {
   if (props.currentStep !== 3) { return null }
 
   return (
-    <div className="form-group">  
+    <div className="form-group">
       <div className="txt-input-wrapper">
         <label htmlFor="telefon">telefon</label>
-        <input className="form-control" id="telefon" name="telefon" type="tel" value={props.telefon} onChange={props.handleChange}/>
+        <input className="form-control" id="telefon" name="telefon" type="tel" value={props.telefon} onChange={props.handleChange} />
       </div>
       <div className="txt-input-wrapper">
         <label htmlFor="navn">navn</label>
-        <input className="form-control" id="navn" name="navn" type="text" value={props.navn} onChange={props.handleChange}/>
+        <input className="form-control" id="navn" name="navn" type="text" value={props.navn} onChange={props.handleChange} />
       </div>
       <div className="txt-input-wrapper">
         <label htmlFor="adresse">adresse</label>
-        <input className="form-control" id="adresse" name="adresse" type="text" value={props.adresse} onChange={props.handleChange}/>
+        <input className="form-control" id="adresse" name="adresse" type="text" value={props.adresse} onChange={props.handleChange} />
       </div>
       <div className="txt-input-wrapper">
-        <label htmlFor="epost">epost</label>
-        <input className="form-control" id="epost" name="epost" type="email" value={props.epost} onChange={props.handleChange}/>
+        <label htmlFor="epost">e-post</label>
+        <input className="form-control" id="epost" name="epost" type="email" value={props.epost} onChange={props.handleChange} />
       </div>
     </div>
   );

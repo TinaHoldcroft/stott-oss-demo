@@ -105,7 +105,6 @@ html, body {
   line-height: 1.5em;
   border-bottom: dotted 3px transparent;
   color: #242424;
-  padding: 0 0 0.1rem 0.1em;
 }
 .arrow-link a span::first-letter {
   text-transform: uppercase;
@@ -133,17 +132,21 @@ html, body {
   opacity: 0.5;
 }
 
+.--close {
+  display: none;
+}
+
 body {
   font-family: open-sans, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #000;
+  color: #212121;
   font-size: 1em;
 }
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #212121;
   font-weight: 400;
   font-size: 0.9em;
 }
@@ -156,7 +159,7 @@ button, a {
   font-family: open-sans, sans-serif;
 }
 
-h1 {
+h1, h2 {
   font-weight: 500;
   font-size: clamp(1.5em, 2.5vw, 2rem);
   line-height: 1em;
@@ -381,14 +384,12 @@ p {
   align-self: center;
   align-content: center;
   gap: 0.75rem;
-  margin: 1.8rem 0;
 }
 .payment span {
   text-transform: uppercase;
   font-size: 0.7em;
   letter-spacing: 0.1em;
   font-weight: 600;
-  margin: 0 0 -0.3rem 0;
 }
 .payment button {
   display: -webkit-box;
@@ -405,7 +406,7 @@ p {
   width: 50%;
   min-height: 3.5rem;
   padding: 1vmax 0 1vmax 3vmin;
-  border-radius: 10px;
+  border-radius: 6px;
   border: none;
   color: #ffffff;
 }
@@ -415,11 +416,17 @@ p {
 .payment .vipps {
   background-color: #FF5B24;
 }
+.payment .vipps span {
+  margin: 0 0 0.25em 0;
+}
 .payment .vipps img {
   width: 60%;
 }
 .payment .avtale {
   background-color: #030504;
+}
+.payment .avtale span {
+  margin: 0 0 0.25em 0;
 }
 .payment .avtale img {
   width: 80%;
@@ -753,7 +760,7 @@ main {
   background-color: #F4F4F4;
   padding: 5rem 0;
   width: calc(100% + 15rem);
-  margin: 0 0 0 -7.5rem;
+  margin: 0 0 10rem -7.5rem;
 }
 @media only screen and (max-width: 1200px) {
   .content-index .two {
@@ -784,9 +791,6 @@ main {
   align-self: auto;
   align-content: center;
   gap: 3rem;
-}
-.content-index .five {
-  background-color: lightsalmon;
 }
 
 .card {
@@ -921,6 +925,7 @@ main {
   align-self: auto;
   align-content: center;
   gap: 0;
+  margin: 10rem 0;
 }
 .campaign .txt, .campaign img {
   height: 24.2rem;
@@ -1012,32 +1017,42 @@ footer {
   display: -webkit-flex;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-start;
   align-self: auto;
   align-content: center;
-  gap: 0;
+  gap: 3rem;
   margin: 15rem 0 0 0;
-  padding: 5vw;
-  height: 30rem;
+  color: #3d3d4e;
+  padding: 3vw;
   background-color: #E4E4E4;
 }
+footer .logo-wrapper {
+  flex-flow: row nowrap !important;
+  margin: 0 0 0.5rem -1rem;
+}
+footer .tagline {
+  max-width: 20rem;
+  font-size: 0.8em;
+}
 footer h6 {
-  font-size: 1.25em;
-  text-transform: uppercase;
+  font-size: 1.1em;
+  font-weight: 600;
 }
 footer .col-1 {
+  width: 100%;
+  margin: 2rem 0;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-start;
   align-self: auto;
   align-content: center;
-  gap: 5vw;
+  gap: 0;
 }
 footer .col-1 div {
   display: -webkit-box;
@@ -1046,62 +1061,70 @@ footer .col-1 div {
   display: -webkit-flex;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-start;
   align-self: auto;
   align-content: center;
-  gap: 1rem;
+  gap: 0.5em;
 }
-footer .col-1 .btn {
-  width: 12rem;
-  height: 3rem;
-  transform-style: preserve-3d;
-  transform: translateZ(0);
-  transition: all 0.15s ease-in-out;
-  border: 1.5px solid #FFD500;
-  background-color: #ffee99;
+footer .col-1 .SoMe {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: auto;
+  align-content: center;
+  gap: 1.5rem;
+  margin: 1rem 0 0 0;
+  font-size: 1.2em;
 }
-footer .col-1 .btn button {
-  background-color: #FFD500;
-  border: 1.5px solid #FFD500;
-  position: relative;
-  width: 12rem;
-  height: 3rem;
-  bottom: 0;
-  top: -2px;
-  right: 0;
-  left: -2px;
-  transform-style: preserve-3d;
-  transform: translateZ(0);
-  transition: all 0.15s ease-in-out;
-  border-radius: 0;
-  font-size: 1em;
-  letter-spacing: 0.1em;
-}
-footer .col-1 .btn button::first-letter {
-  text-transform: uppercase;
-}
-footer .col-1 .btn button:focus {
-  border: 1.5px solid #FFD500;
-  background-color: #ffee99;
-  outline-offset: 4px;
-  outline: 2px solid #ebebeb;
-}
-footer .col-1 .btn:hover, footer .col-1 .btn:focus {
-  transition: all 0.5s;
-  transform: translate3d(-0.25em, 0.2em, 0);
-}
-footer .col-1 .btn:hover button, footer .col-1 .btn:focus button {
-  transition: all 0.5s;
-  transform: translate3d(0.5em, -0.4em, 0);
-  outline: none;
+footer .col-2 {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  gap: 0;
+  border-top: solid 1px #ccc;
+  width: 100%;
+  padding: 1rem 0 0 0;
 }
 footer .col-2 img {
-  height: 5rem;
+  height: 3rem;
   filter: grayscale(1);
+  opacity: 0.8;
 }
 footer .col-2 img:hover, footer .col-2 img:focus {
   filter: none;
+  opacity: 1;
+}
+footer .col-2 p {
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  margin: -2rem 0 0 0.5rem;
+}
+footer .col-2 .partners {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: auto;
+  align-content: center;
+  gap: 3rem;
+  margin: 1rem 0 0 0;
 }
 
 .masterform-wrapper {
@@ -1144,6 +1167,50 @@ footer .col-2 img:hover, footer .col-2 img:focus {
     top: 8rem;
     margin-top: 0;
   }
+}
+.formTxt .action-group .btn {
+  width: 13rem;
+  height: 2.4rem;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  transition: all 0.15s ease-in-out;
+  border: 1.5px solid #ffffff;
+  background-color: #ffffff49;
+}
+.formTxt .action-group .btn button {
+  background-color: #ffffff;
+  border: 1.5px solid #ffffff;
+  position: relative;
+  width: 13rem;
+  height: 2.4rem;
+  bottom: 0;
+  top: -2px;
+  right: 0;
+  left: -2px;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  transition: all 0.15s ease-in-out;
+  border-radius: 0;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}
+.formTxt .action-group .btn button::first-letter {
+  text-transform: uppercase;
+}
+.formTxt .action-group .btn button:focus {
+  border: 1.5px solid #ffffff;
+  background-color: white;
+  outline-offset: 4px;
+  outline: 2px solid #ebebeb;
+}
+.formTxt .action-group .btn:hover, .formTxt .action-group .btn:focus {
+  transition: all 0.5s;
+  transform: translate3d(-0.25em, 0.2em, 0);
+}
+.formTxt .action-group .btn:hover button, .formTxt .action-group .btn:focus button {
+  transition: all 0.5s;
+  transform: translate3d(0.5em, -0.4em, 0);
+  outline: none;
 }
 
 .masterform {
@@ -1229,8 +1296,16 @@ fieldset {
   margin-top: 2rem;
 }
 
+.payment {
+  width: 100%;
+  padding-top: 1.2rem;
+  margin: 0;
+}
+
 #fødselsnummer {
   -moz-appearance: textfield;
+  padding: 0;
+  margin: 0;
 }
 #fødselsnummer::-webkit-outer-spin-button, #fødselsnummer::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -1278,6 +1353,31 @@ fieldset {
   align-content: flex-start;
   gap: 1em;
   text-align: center;
+  padding: 2rem 0 0 0;
+}
+
+.summary h2, .summary h1 {
+  padding: 1rem 0;
+}
+.summary a {
+  position: relative;
+  display: inline-block;
+}
+.summary a::after {
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1.5px;
+  bottom: -3px;
+  transform: scale(0, 1);
+  transition: transform 0.4s;
+}
+.summary a:hover::after, .summary a:focus::after, .summary a:active::after {
+  transform: scale(1, 1);
+}
+.summary a:after, .summary a:after {
+  background: #383838;
 }
 
 .checkmark-wrapper {

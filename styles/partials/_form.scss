@@ -21,6 +21,11 @@
         top: 8rem;
         margin-top: 0;
     }
+    .action-group {
+        .btn {
+            @include BTN($white, 13rem, 2.4rem, 0.8em, #ffffff49);
+        }
+    }
 }
 .masterform {
     position: absolute;
@@ -87,6 +92,8 @@ input[type=radio] {
             border: 2px solid $yellow;
         }
     }
+
+
 }
 fieldset {
     border: none;
@@ -96,8 +103,14 @@ fieldset {
     position: relative;
     margin-top: 2rem;
 }
+.payment {
+    width: 100%;
+    padding-top: 1.2rem;
+    margin: 0;
+}
 #fødselsnummer {
     -moz-appearance: textfield;
+    padding:0; margin: 0;
     &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
@@ -132,6 +145,16 @@ fieldset {
 .complete {
     @include flex(column nowrap, center, stretch, auto, flex-start, 1em);
     text-align: center;
+    padding: 2rem  0 0 0;
+}
+.summary {
+
+    h2, h1 {
+        padding: 1rem 0;
+    }
+    a {
+        @include hover-underline(1.5px, $medium-grey);
+    }
 }
 .checkmark-wrapper {
     margin: 2rem 0;

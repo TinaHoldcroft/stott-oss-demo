@@ -1,30 +1,57 @@
 footer {
-    @include flex(column nowrap, space-evenly, flex-start, auto, center, 0);
+    @include flex(column nowrap, space-between, flex-start, auto, center, 3rem);
     margin: 15rem 0 0 0;
-    padding: 5vw;
-    height: 30rem;
+    color: #3d3d4e;
+    padding: 3vw;
     background-color: #E4E4E4;
+    .logo-wrapper {
+        flex-flow: row nowrap!important;
+        margin: 0 0 0.5rem -1rem;
+    }
+    .tagline {
+        max-width: 20rem;
+        font-size: 0.8em;
+    }
     h6 {
-        font-size: 1.25em;
-        text-transform: uppercase;
+        font-size: 1.1em;
+        font-weight: 600;
     }
     .col-1 {
-        @include flex(row nowrap, space-evenly, flex-start, auto, center, 5vw);
+        width: 100%;
+        margin: 2rem 0;
+        @include flex(row nowrap, space-between, flex-start, auto, center, 0);
         div {
-            @include flex(column nowrap, space-evenly, flex-start, auto, center, 1rem);
+            @include flex(column nowrap, space-between, flex-start, auto, center, 0.5em);
         }
-        .btn {
-            @include BTN($yellow, 12rem, 3rem);
+        .SoMe {
+            @include flex(row nowrap, center, flex-start, auto, center, 1.5rem);
+            margin: 1rem 0 0 0;
+            font-size: 1.2em;
         }
-
     }
     .col-2 {
+        @include flex(row nowrap, space-between, center, center, center, 0);
+        border-top: solid 1px #ccc;
+        width: 100%;
+        padding: 1rem 0 0 0;
         img {
-            height: 5rem;
+            height: 3rem;
             filter: grayscale(1);
+            opacity: 0.8;
             &:hover, &:focus {
                 filter: none;
+                opacity: 1;
             }
         }
+        p {
+            font-size: 0.8em;
+            letter-spacing: 0.1em;
+            margin: -2rem 0 0 0.5rem;
+        }
+        .partners {
+            @include flex(row nowrap, center, flex-start, auto, center, 3rem);
+            margin: 1rem 0 0 0;
+        }
     }
+
 }

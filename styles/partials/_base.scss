@@ -21,3 +21,6 @@ html, body {
 .arrow-link {
     a { @include arrow-link; }
 }
+.--close {
+    display: none;
+}

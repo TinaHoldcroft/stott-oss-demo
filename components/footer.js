@@ -1,4 +1,4 @@
-import BTN from "./btn";
+import Link from 'next/link';
 
 const Footer = () => {
 
@@ -6,38 +6,57 @@ const Footer = () => {
         <footer>
             <div className="col-1">
                 <div>
-                    <h6>Om oss</h6>
-                    <p>Norges Blindeforbund, synshemmedes organisasjon, er blinde og svaksyntes interesse- og serviceorganisasjon i Norge. Vårt overordnede mål er samfunnsmessig likestilling for blinde og svaksynte og andre grupper med funksjonsnedsettelser</p>
-                    <BTN link="/" value="les mer om oss"/>
-                </div>
-                <div>
-                    <h6>Nyttige lenker</h6>
-                    Tilgjengelighetserklæring
-                    Smitteveileder
-                    Personvernerklæring
+                    <Link passHref href='/'>
+                        <div className="logo-wrapper">
+                            <img id="logo" src="/favicon.svg" alt=""/>
+                            <span className="logo-txt">
+                                <span>Norges Blindeforbund</span>
+                                <span>Synshemmedes organisasjon</span>
+                            </span>
+                        </div>
+                    </Link>
+                    <p className="tagline">Norges Blindeforbund, synshemmedes organisasjon, er blinde og svaksyntes interesse- og serviceorganisasjon i Norge</p>
+                    <div className="SoMe">
+                        <Link href='/'><i className="fas fa-envelope-open-text"></i></Link>
+                        <Link href='/'><i className="fab fa-youtube"></i></Link>
+                        <Link href='/'><i className="fab fa-twitter"></i></Link>
+                        <Link href='/'><i className="fab fa-facebook"></i></Link>
+                    </div>
                 </div>
                 <div>
                     <h6>Kontakt informasjon</h6>
-                    info@blindeforbundet.no
-                    NO971038179MVA
-                    <i className="fas fa-envelope-open-text"></i>
-                    <i className="fab fa-youtube"></i>
-                    <i className="fab fa-twitter"></i>
-                    <i className="fab fa-facebook"></i>
+                    <Link href='/'>info@blindeforbundet.no</Link>
+                    <Link href='/'>+47 23 21 50 00</Link>
+                    <Link href='/'>Sporveisgaten 10, 0354 OSLO</Link>
+                    <Link href='/'>PB: 5900 Majorstuen, 0308 OSLO</Link>              
                 </div>
                 <div>
                     <h6>Giver informasjon</h6>
-                    Vipps til 05030
-                    1644 08 26974
-                    +47 23 00 06 00
-                    giver@blindeforbundet.no
+                    <p>Vipps til 05030</p>
+                    <p>1644 08 26974</p>
+                    <Link href='/'>+47 23 00 06 00</Link>
+                    <Link href='/'>giver@blindeforbundet.no</Link>
+                </div>
+                <div>
+                    <h6>Annet</h6>
+                    <Link href='/'>Tilgjengelighetserklæring</Link>
+                    <Link href='/'>Smitteveileder</Link>
+                    <Link href='/'>Personvernerklæring</Link>
+                </div>
+                <div>
+                    
                 </div>
             </div>
             <div className="col-2">
-                <img src="https://www.blindeforbundet.no/Plone/++theme++nbf.tema.react_components/static/media/innsamlingskontrollen.8ba14228.png" alt="innsamlingskontrollen"/>
-                <img src="https://www.blindeforbundet.no/Plone/++theme++nbf.tema.react_components/static/media/specsavers.cfd3d9d6.png" alt="specsavers"/>
-                <img src="https://www.blindeforbundet.no/Plone/++theme++nbf.tema.react_components/static/media/anicura.f464da53.png" alt="anicura"/>
-                <img src="https://www.blindeforbundet.no/Plone/++theme++nbf.tema.react_components/static/media/royal-canin.93778b5d.png" alt="royal canin"/>
+                <div>
+                    <p>NO 971038179 MVA</p>
+                </div>
+                <div className="partners">
+                    <img src="/innsamlingskontrollen.png" alt="innsamlingskontrollen"/>
+                    <img src="/specsavers.png" alt="specsavers"/>
+                    <img src="/anicura.png" alt="anicura"/>
+                    <img src="/royal-canin.png" alt="royal canin"/>
+                </div>
             </div>
         </footer>
     )
