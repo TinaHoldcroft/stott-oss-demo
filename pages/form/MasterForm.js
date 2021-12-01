@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import ArrowLink from "../../components/ArrowLink";
 import BTN from '../../components/btn';
 import Link from 'next/link';
@@ -320,21 +320,19 @@ function Step1(props) {
 
 function Step2(props) {
   if (props.currentStep !== 2) { return null }
-  const handleToggle = () => { setActive(!isActive); };
-  const [isActive, setActive] = useState("false");
 
   return (
     <div className="form-group">
       <p>Jeg ønsker å rapportere gavebeløpet på mitt fødselsnummer (gaven må være på minst 500kr)</p>
       <div>
-        <input onClick={handleToggle} onChange={props.handleChange} type="radio" id="ja" name="fradrag" value='ja' checked={props.fradrag === 'ja'} />
+        <input onChange={props.handleChange} type="radio" id="ja" name="fradrag" value='ja' checked={props.fradrag === 'ja'} />
         <label id="jaLabel" className="checkBtn float-left" htmlFor="ja">ja</label>
       </div>
       <div>
-        <input onClick={handleToggle} onChange={props.handleChange} type="radio" id="nei" name="fradrag" value="nei" checked={props.fradrag === 'nei'} />
+        <input onChange={props.handleChange} type="radio" id="nei" name="fradrag" value="nei" checked={props.fradrag === 'nei'} />
         <label className="checkBtn  float-right" htmlFor="nei">nei</label>
       </div>
-      <div className={isActive ? "--close" : "txt-input-wrapper"}>
+      <div>
         <label htmlFor="fødselsnummer">Fødselsnummer</label>
         <input id="fødselsnummer" name="fødselsnummer" type="number" placeholder={props.fødselsnummer} onChange={props.handleChange}/>
       </div>
