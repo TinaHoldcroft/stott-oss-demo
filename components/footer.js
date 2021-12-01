@@ -17,31 +17,31 @@ const Footer = () => {
                     </Link>
                     <p className="tagline">Norges Blindeforbund, synshemmedes organisasjon, er blinde og svaksyntes interesse- og serviceorganisasjon i Norge</p>
                     <div className="SoMe">
-                        <Link href='/'><i className="fas fa-envelope-open-text"></i></Link>
-                        <Link href='/'><i className="fab fa-youtube"></i></Link>
-                        <Link href='/'><i className="fab fa-twitter"></i></Link>
-                        <Link href='/'><i className="fab fa-facebook"></i></Link>
+                        <Link passHref href='/'><i className="fas fa-envelope-open-text"></i></Link>
+                        <Link passHref href='/'><i className="fab fa-youtube"></i></Link>
+                        <Link passHref href='/'><i className="fab fa-twitter"></i></Link>
+                        <Link passHref href='/'><i className="fab fa-facebook"></i></Link>
                     </div>
                 </div>
                 <div>
                     <h6>Kontakt informasjon</h6>
-                    <Link href='/'>info@blindeforbundet.no</Link>
-                    <Link href='/'>+47 23 21 50 00</Link>
-                    <Link href='/'>Sporveisgaten 10, 0354 OSLO</Link>
-                    <Link href='/'>PB: 5900 Majorstuen, 0308 OSLO</Link>              
+                    <Link passHref href='/'>info@blindeforbundet.no</Link>
+                    <Link passHref href='/'>+47 23 21 50 00</Link>
+                    <Link passHref href='/'>Sporveisgaten 10, 0354 OSLO</Link>
+                    <Link passHref href='/'>PB: 5900 Majorstuen, 0308 OSLO</Link>              
                 </div>
                 <div>
                     <h6>Giver informasjon</h6>
                     <p>Vipps til 05030</p>
                     <p>1644 08 26974</p>
-                    <Link href='/'>+47 23 00 06 00</Link>
-                    <Link href='/'>giver@blindeforbundet.no</Link>
+                    <Link passHref  href='/'>+47 23 00 06 00</Link>
+                    <Link passHref href='/'>giver@blindeforbundet.no</Link>
                 </div>
                 <div>
                     <h6>Annet</h6>
-                    <Link href='/'>Tilgjengelighetserklæring</Link>
-                    <Link href='/'>Smitteveileder</Link>
-                    <Link href='/'>Personvernerklæring</Link>
+                    <Link passHref href='/'>Tilgjengelighetserklæring</Link>
+                    <Link passHref href='/'>Smitteveileder</Link>
+                    <Link passHref href='/'>Personvernerklæring</Link>
                 </div>
                 <div>
                     
