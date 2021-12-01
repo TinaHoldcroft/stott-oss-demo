@@ -213,7 +213,7 @@ class MasterForm extends React.Component {
             <p>Fradrag: {fradrag}</p>   
           </div>
           <h2>Lurer du på noe?</h2>
-          <p>Kontakt giverservice på <Link href='/'>23 00 06 00</Link> eller send mail til <Link href='/'>giver@blindeforbundet.no</Link></p>
+          <p>Kontakt giverservice på <Link passHref href='/'>23 00 06 00</Link> eller send mail til <Link passHref href='/'>giver@blindeforbundet.no</Link></p>
         </div>
       )
     }
