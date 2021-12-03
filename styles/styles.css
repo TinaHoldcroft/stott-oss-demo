@@ -1255,6 +1255,9 @@ footer .col-2 .partners {
 .masterform label {
   margin: 0.5rem 0;
 }
+.masterform .flat-btn {
+  margin-top: 1rem;
+}
 
 input[type=radio] {
   position: absolute;
@@ -1263,7 +1266,7 @@ input[type=radio] {
   height: 0;
   width: 0;
 }
-input[type=radio]:checked ~ label, input[type=radio]:focus ~ label {
+input[type=radio]:checked ~ label, input[type=radio]:focus ~ label, input[type=radio]:focus + label {
   background-color: #FFD500;
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.38);
 }
@@ -1289,11 +1292,6 @@ input[type=radio]:checked ~ label, input[type=radio]:focus ~ label {
 fieldset {
   border: none;
   margin: 2rem 0 0 0;
-}
-
-.btn-group {
-  position: relative;
-  margin-top: 2rem;
 }
 
 .payment {
