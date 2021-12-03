@@ -1,4 +1,3 @@
-
 import ArrowLink from "../../components/ArrowLink";
 
 export default function Txt1(props) {

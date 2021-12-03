@@ -323,6 +323,10 @@ p {
   background-color: #FFD500;
 }
 
+.line4 {
+  display: none;
+}
+
 .flat-btn {
   min-width: 48%;
   height: 3rem;
