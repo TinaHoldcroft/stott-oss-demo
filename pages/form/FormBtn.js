@@ -6,6 +6,7 @@ export default function FormBnt(props) {
             type='button' 
             onClick={props.click}
             value={props.value}
+            disabled={props.disabled}
         >
             {props.value}
         </button>

@@ -6,6 +6,7 @@ import Step2 from './Step2';
 import Txt2 from './Txt2';
 import Step3 from './Step3';
 import Txt3 from './Txt3';
+import Step4 from './Step4';
 import BreadcrumBnt from './BreadcrumBtn';
 import FormBnt from './FormBtn';
 
@@ -17,18 +18,11 @@ class MasterForm extends React.Component {
       console.log(this.state)
   }
 
-  handleClick = event => { 
-    let currentStep = this.state.currentStep
-    const { value } = event.target
-    currentStep = value
-    this.setState({ currentStep: currentStep })
-  };
-
   handleChange = event => {
     const { name, value } = event.target
     this.setState({ [name]: value })
   }
-
+  
   handleSubmit = event => {
     event.preventDefault()
     let currentStep = this.state.currentStep
@@ -40,9 +34,7 @@ class MasterForm extends React.Component {
 
   Buttons() {
     let currentStep = this.state.currentStep;
-
     if (currentStep === 1) { return <FormBnt value='neste' direction='right' click={this._next}/> }
-
     if (currentStep === 2) {
       return (
         <div className="payment">
@@ -57,41 +49,30 @@ class MasterForm extends React.Component {
         </div>
       )
     }
-
     if (currentStep === 3) {
       return (
         <>
           <FormBnt value='tilbake' direction='left' click={this._prev}/>
-          <FormBnt value='send inn' direction='right'/>
+          <button className="flat-btn float-right">Send inn</button>
         </>
       )
     }
-
     return null;
   }
-
 
   _next = () => {
     let currentStep = this.state.currentStep
     currentStep = currentStep >= 2 ? 3 : currentStep + 1
-    this.setState({
-      currentStep: currentStep
-    })
+    this.setState({ currentStep: currentStep })
   }
-
   _prev = () => {
     let currentStep = this.state.currentStep
     currentStep = currentStep <= 1 ? 1 : currentStep - 1
-    this.setState({
-      currentStep: currentStep
-    })
-  }
-
-
-  _GoToOne = () => {
-    let currentStep = this.state.currentStep
-    currentStep = 1
     this.setState({ currentStep: currentStep })
+  }
+  _GoToOne = () => {
+    this.state.currentStep = 1
+    this.setState({ currentStep: this.state.currentStep })
   }
   _GoToTwo = () => {
     let currentStep = this.state.currentStep
@@ -109,28 +90,7 @@ class MasterForm extends React.Component {
     this.setState({ currentStep: currentStep })
   }
 
-  complete() {
-    let currentStep = this.state.currentStep;
-    if (currentStep === 4) {
-      return (
-        <div className="complete">
-          <h2>Takk</h2>
-          <p>Din donasjon er registrert og du vil i løpet av kort tid motta kvitteringen via mail</p>
-          <div className="checkmark-wrapper">
-            <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="-263.5 236.5 26 26">
-              <g className="checkmark">
-                <circle cx="-250.5" cy="249.5" r="12"/>
-                <path d="M-256.46 249.65l3.9 3.74 8.02-7.8"/>
-              </g>
-            </svg>
-          </div>
-        </div>
-      )
-    }
-    return null;
-  }
-  
-  TextPanel() {
+  Summary() {
     let currentStep = this.state.currentStep;
 
     if (currentStep === 4) {
@@ -159,7 +119,7 @@ class MasterForm extends React.Component {
           <Txt1 currentStep={this.state.currentStep}/>
           <Txt2 currentStep={this.state.currentStep}/>
           <Txt3 currentStep={this.state.currentStep}/>
-          {this.TextPanel()}
+          {this.Summary()}
         </div>
 
         <div className={'masterform active' + this.state.currentStep}>
@@ -174,8 +134,8 @@ class MasterForm extends React.Component {
             <Step1 currentStep={this.state.currentStep} handleChange={this.handleChange} frekvens={this.state.frekvens} beløp={this.state.beløp}/>
             <Step2 currentStep={this.state.currentStep} handleChange={this.handleChange} fradrag={this.state.fradrag} fødselsnummer={this.state.fødselsnummer}/>
             <Step3 currentStep={this.state.currentStep} handleChange={this.handleChange} navn={this.state.navn} telefon={this.state.telefon} adresse={this.state.adresse} epost={this.state.epost}/>
+            <Step4 currentStep={this.state.currentStep}/>
             {this.Buttons()}
-            {this.complete()}
           </form>
         </div>
       </div>
