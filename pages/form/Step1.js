@@ -45,6 +45,7 @@ export function Step1(props) {
 }
 
 
+
 export function Txt1(props) {
     if (props.currentStep !== 1) { return null }
 
@@ -57,3 +58,4 @@ export function Txt1(props) {
         </>
     );
 }
+export default function StepOne(){ Step1, Txt1};
