@@ -1,4 +1,4 @@
-export default function Step3(props) {
+export default function Step4(props) {
     if (props.currentStep !== 4) { return null }
 
     return (
