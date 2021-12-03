@@ -37,5 +37,3 @@ export function Txt2(props) {
         </>
     );
 }
-
-export default function StepTwo() { Step2, Txt2 };

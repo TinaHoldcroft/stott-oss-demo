@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { Step1, Txt1 } from './Step1';
-import { Step2, Txt2 } from './Step2';
-import { Step3, Txt3 } from './Step3';
+import { Step1, Txt1 } from './step1';
+import { Step2, Txt2 } from './step2';
+import { Step3, Txt3 } from './step3';
 
 class MasterForm extends React.Component {
 

@@ -39,5 +39,3 @@ export function Txt3(props) {
         </>
     );
 }
-
-export default function StepThree() { Step3, Txt3 };
