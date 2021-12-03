@@ -1,6 +1,6 @@
 import BTN from '../../components/btn';
 
-export function Step3(props) {
+export default function Step3(props) {
     if (props.currentStep !== 3) { return null }
 
     return (
@@ -24,7 +24,7 @@ export function Step3(props) {
         </div>
     );
 }
-
+/*
 
 export function Txt3(props) {
     if (props.currentStep !== 3) { return null }
@@ -39,3 +39,4 @@ export function Txt3(props) {
         </>
     );
 }
+*/

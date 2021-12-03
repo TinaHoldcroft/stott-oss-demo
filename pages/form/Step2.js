@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ArrowLink from "../../components/ArrowLink";
 
-export function Step2(props) {
+export default function Step2(props) {
     const handleToggle = () => { setActive(!isActive); };
     const [isActive, setActive] = useState("false");
 
@@ -25,7 +25,7 @@ export function Step2(props) {
         </div>
     );
 }
-
+/*
 export function Txt2(props) {
     if (props.currentStep !== 2) { return null }
 
@@ -36,4 +36,4 @@ export function Txt2(props) {
             <ArrowLink target="_blank" txt="Lær mer her" link="/" />
         </>
     );
-}
+}*/
