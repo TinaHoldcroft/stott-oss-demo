@@ -71,8 +71,9 @@ class MasterForm extends React.Component {
     this.setState({ currentStep: currentStep })
   }
   _GoToOne = () => {
+    let currentStep = this.state.currentStep
     this.state.currentStep = 1
-    this.setState({ currentStep: this.state.currentStep })
+    this.setState({ currentStep: currentStep })
   }
   _GoToTwo = () => {
     let currentStep = this.state.currentStep
