@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { Step1, Txt1 } from './step1';
-import { Step2, Txt2 } from './step2';
-import { Step3, Txt3 } from './step3';
+import Step1 from './Step1';
+import Txt1 from './Txt1';
+//import { Step2, Txt2 } from './Step2';
+//import { Step3, Txt3 } from './Step3';
 
 class MasterForm extends React.Component {
 
@@ -180,8 +181,8 @@ class MasterForm extends React.Component {
       <div className="masterform-wrapper">
         <div className="formTxt">
           <Txt1 currentStep={this.state.currentStep}/>
-          <Txt2 currentStep={this.state.currentStep}/>
-          <Txt3 currentStep={this.state.currentStep}/>
+          {/*<Txt2 currentStep={this.state.currentStep}/>
+          <Txt3 currentStep={this.state.currentStep}/>*/}
           {this.TextPanel()}
         </div>
 
@@ -202,9 +203,9 @@ class MasterForm extends React.Component {
               handleChange={this.handleChange}
               frekvens={this.state.frekvens}
               beløp={this.state.beløp}
-            />
+            />  {/*
             <Step2
-              currentStep={this.state.currentStep}
+            currentStep={this.state.currentStep}
               handleChange={this.handleChange}
               fradrag={this.state.fradrag}
               fødselsnummer={this.state.fødselsnummer}
@@ -216,7 +217,7 @@ class MasterForm extends React.Component {
               telefon={this.state.telefon}
               adresse={this.state.adresse}
               epost={this.state.epost}
-            />
+        />*/}
               {this.Buttons()}
               {this.complete()}
           </form>

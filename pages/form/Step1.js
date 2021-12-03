@@ -1,6 +1,6 @@
-import ArrowLink from "../../components/ArrowLink";
+//import ArrowLink from "../../components/ArrowLink";
 
-export function Step1(props) {
+export default function Step1(props) {
     if (props.currentStep !== 1) { return null }
 
     return (
@@ -43,7 +43,7 @@ export function Step1(props) {
         </div>
     );
 }
-
+/*
 
 export function Txt1(props) {
     if (props.currentStep !== 1) { return null }
@@ -57,3 +57,4 @@ export function Txt1(props) {
         </>
     );
 }
+*/
