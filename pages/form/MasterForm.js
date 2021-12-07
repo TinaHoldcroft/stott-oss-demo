@@ -7,7 +7,7 @@ import Txt2 from './Txt2';
 import Step3 from './Step3';
 import Txt3 from './Txt3';
 import Step4 from './Step4';
-import BreadcrumBnt from './BreadcrumBtn';
+import BreadcrumBnt from './Breadcrum';
 import FormBnt from './FormBtn';
 
 class MasterForm extends React.Component {

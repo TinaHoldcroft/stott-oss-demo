@@ -1,39 +1,11 @@
-.--hide {
+.--hide { //hide navbar on scroll
     top: -3.5rem;
     box-shadow: 3px 3px 7px rgba(136,165,191,.301);
-}
-.logo-wrapper {
-    @include flex(row nowrap, flex-start, center, auto, flex-start, 0);
-    cursor: pointer;
-}
-.logo-txt {
-    @include flex(column nowrap, flex-start, flex-start, auto, flex-start, 0);
-    font-size: 0.75em;
-    letter-spacing: 0.07em;
-    font-weight: 700;
-    text-align: left;
-    margin-left: -0.5rem;
-    text-transform: uppercase;
-    span:nth-child(1) {
-        line-height: 1.1em;
-        margin-top: 0.2em ;
-    }
-    span:nth-child(2) {
-        font-size: 0.815em;
-        font-weight: 400;
-    }
-    @media only screen and (max-width: 600px) { display: none; }
-}
-#logo {
-    height: 2rem;
-    width: 2rem;
-    filter: drop-shadow(1px 1px 0.5px #808080);
-    margin: 0 1rem;
 }
 nav {
     .btn {
         @include BTN($yellow, 6.8rem, 2.2rem, 0.9em);
-        margin-right: -10rem;
+        @media only screen and (max-width: 1200px) { display: none; }
     }
     @include flex(row nowrap, space-between, center, auto, flex-start, 0);
     position: fixed;
@@ -45,7 +17,6 @@ nav {
     z-index: 999;
     font-weight: 500;
     transition: top 1s;
-    .--close { display: none; }
     .--open { 
         @include flex(row nowrap, center, center, auto, flex-start, 10vw);
         position: fixed; 
@@ -102,6 +73,7 @@ nav {
 .search {
     font-size: 1em;
     transform: scale(0.9);
+    cursor: not-allowed;
     &::before { //circle
         content:"";
         display: block;

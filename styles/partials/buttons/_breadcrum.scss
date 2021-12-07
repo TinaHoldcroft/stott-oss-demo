@@ -1,0 +1,35 @@
+.breadcrum {
+    @include flex(row nowrap, space-around, stretch, auto, flex-start, 0);
+    margin: 0 0 2rem 0; 
+    button {
+        @include flex(row nowrap, center, center, center, center, 0);
+        border-radius: 50%;
+        border: $light-grey 2px solid;
+        background-color: $white;
+        width: 3rem;
+        height: 3rem;
+        transition: 2s;
+        &:focus, &:hover {
+            outline: none;
+            box-shadow: 1.0px 1.0px 2.0px hsl(0deg 0% 0% / 0.38);
+            background-color: $yellow;
+            border: $yellow 2px solid;
+        }
+    }
+    .line {
+        height: 2px;
+        width: 1rem;
+        margin-top: 1.5rem;
+        background-color: $light-grey;
+        animation: progress 6s ease-in-out forwards;
+        transition: 1s;
+        flex-grow: 4;
+        
+    }
+    i {  font-size: 1.2em; }
+}
+.line4 {  display: none; }
+.breadcrum1 .page1, .breadcrum2 .line1, .breadcrum2 .page2, .breadcrum3 .line1, .breadcrum3 .line2, 
+.breadcrum3 .page3, .breadcrum4 .line, .breadcrum4 .page4 { background-color: $yellow; }
+.breadcrum1 .page1, .breadcrum2 .page1, .breadcrum2 .page1, .breadcrum3  .page1, .breadcrum3 .page2,
+.breadcrum3 .page3, .breadcrum4 button, .breadcrum4 .page4 { border-color: $yellow; }

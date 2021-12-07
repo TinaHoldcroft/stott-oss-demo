@@ -1,0 +1,28 @@
+.logo-wrapper {
+    @include flex(row nowrap, flex-start, center, auto, flex-start, 0);
+    cursor: pointer;
+}
+.logo-txt {
+    @include flex(column nowrap, flex-start, flex-start, auto, flex-start, 0);
+    font-size: 0.75em;
+    letter-spacing: 0.07em;
+    font-weight: 700;
+    text-align: left;
+    margin-left: -0.5rem;
+    text-transform: uppercase;
+    span:nth-child(1) {
+        line-height: 1.1em;
+        margin-top: 0.2em ;
+    }
+    span:nth-child(2) {
+        font-size: 0.815em;
+        font-weight: 400;
+    }
+    @media only screen and (max-width: 600px) { display: none; }
+}
+#logo {
+    height: 2rem;
+    width: 2rem;
+    filter: drop-shadow(1px 1px 0.5px #808080);
+    margin: 0 1rem;
+}

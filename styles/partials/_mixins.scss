@@ -38,7 +38,7 @@
     &:after, &:after { background: $background; }
 }
 @mixin hover-highlight(
-    $color: $yellow,
+    $color: lighten($yellow, 20%),
     $font-size: 1em
 ){
     position: relative;

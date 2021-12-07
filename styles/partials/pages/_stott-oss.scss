@@ -1,0 +1,38 @@
+main {
+    @include flex(column nowrap, flex-start, center, auto, center, 0);
+    margin: 3.5rem 0 0 0;
+    min-height: 100vh;
+    width: 100vw;
+}
+.content-index {
+    @include flex(column nowrap, center, stretch, auto, flex-start, 5rem);
+    width: 100%;
+    max-width: 1280px;
+    @media only screen and (max-width: 1200px) { 
+        @include flex(column nowrap, center, stretch, auto, flex-start, 2rem);
+    }
+    .two { 
+        @include flex(row nowrap, center, stretch, auto, center, 4rem);
+        background-color: #F4F4F4; 
+        padding: 5rem 0;
+        width: calc(100% + 15rem);
+        margin: 0 0 10rem -7.5rem;
+        @media only screen and (max-width: 1200px) { 
+            @include flex(column wrap, center, stretch, auto, center, 4rem);
+            margin: 0;
+            width: 100%;
+        }
+    }
+    .three { 
+        @include flex(column nowrap, space-between, flex-start, auto, center, 1rem);
+        @media only screen and (max-width: 1000px) { 
+            @include flex(column nowrap, space-between, flex-start, auto, center, 0);
+        }
+        .sub { 
+            @include flex(row nowrap, space-between, flex-start, auto, center, 3rem);
+            @media only screen and (max-width: 1000px) { 
+                @include flex(column nowrap, space-between, flex-start, auto, center, 0);
+            }
+        }
+    }
+}

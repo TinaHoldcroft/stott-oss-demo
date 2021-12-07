@@ -9,18 +9,8 @@ html {
     //touch-action: pan-y;
     //-ms-touch-action: pan-y;
 }
-html, body {
-    scroll-behavior: smooth;
-}
-.float-right {
-    float: right;
-}
-.float-left {
-    float: left;
-}
-.arrow-link {
-    a { @include arrow-link; }
-}
-.--close {
-    display: none;
-}
+html, body { scroll-behavior: smooth; }
+.float-right { float: right; }
+.float-left { float: left; }
+.arrow-link { a { @include arrow-link; } }
+.--close { display: none; }

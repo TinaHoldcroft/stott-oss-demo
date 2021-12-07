@@ -1,6 +1,5 @@
 .masterform-wrapper {
     height: 100vh;
-    min-height: 40rem;
 }
 .formTxt {
     @include flex(column nowrap, center, stretch, auto, flex-start, 1em);
@@ -31,10 +30,6 @@
     position: absolute;
     width: 34rem;
     height: 38rem;
-    @media only screen and (max-height: 800px) { 
-        top: 5rem;
-        margin-top: 0;
-    }
     top: 50vh;
     margin-top: -19rem;
     left: 50vw;
@@ -46,8 +41,15 @@
     @media only screen and (max-width: 1160px) { 
         margin-left: -17rem;
     }
+    @media only screen and (max-height: 750px) { 
+        top: 5rem;
+        margin-top: 0;
+    }
+    @media only screen and (max-width: 750px) { 
+        top: 5rem;
+        margin-top: 0;
+    }
     @media only screen and (max-width: 565px) { 
-        //display: none;
         padding: 2rem; margin: 0;
         left: 0;
         width: 100%;

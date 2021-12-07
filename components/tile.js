@@ -3,7 +3,11 @@ import Link from 'next/link';
 function Tile(props) {
     
     return (
-        <Link passHref href={props.link} target={props.target}>
+        <Link 
+            passHref 
+            href={'https://www.blindeforbundet.no/stott-blindeforbundet/' + props.link} 
+            target={props.target}
+        >
             <a className="tile">
                 <h3>
                     <span>{props.heading}</span> 

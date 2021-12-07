@@ -1,13 +1,24 @@
+//global
 @import 'partials/varibles';
 @import 'partials/keyframes';
 @import 'partials/mixins';
-
 @import 'partials/base';
 @import 'partials/typograpy';
 
-@import 'partials/hamburger';
-@import 'partials/buttons';
-@import 'partials/nav';
-@import 'partials/main';
-@import 'partials/footer';
-@import 'partials/form';
+//components
+@import 'partials/components/nav';
+@import 'partials/components/footer';
+@import 'partials/components/form';
+@import 'partials/components/tiles';
+@import 'partials/components/campaign';
+@import 'partials/components/card';
+
+//buttons
+@import 'partials/buttons/hamburger';
+@import 'partials/buttons/logo';
+@import 'partials/buttons/breadcrum';
+@import 'partials/buttons/buttons';
+@import 'partials/buttons/form-btn';
+
+//pages
+@import 'partials/pages/stott-oss';
