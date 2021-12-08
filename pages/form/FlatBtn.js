@@ -7,6 +7,7 @@ export default function FormBnt(props) {
             onClick={props.click}
             value={props.value}
             disabled={props.disabled}
+            form='masterform'
         >
             {props.value}
         </button>

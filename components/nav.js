@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import FocusLock from 'react-focus-lock';
 import Link from 'next/link';
 import useScrollListener from "./ScrollListener";
-import BTN from './btn';
+import SearchBtn from './SearchBtn';
 
 const Nav = () => {
     const handleToggle = () => { setActive(!isActive); };
@@ -47,12 +47,10 @@ const Nav = () => {
                 <Link href='/'>Hjelpemidler</Link>
                 <Link href='/'>Råd og tips</Link>
             </div> 
-
-            <BTN link='/' value="støtt oss"/>
             
             <FocusLock className="focus" disabled={isActive ? true : false}>
                 <div className="nav-btn-wrapper">
-                    <div className="search"></div>
+                    <SearchBtn/>
                     <button className={isActive ? "btn-dropdown" : "btn-dropdown is-menu-open" } accessKey="m" title={isActive ? "Open menu" : "Close menu"} type="button" value={isActive ? "Open menu" : "Close menu"} onClick={handleToggle}>
                         <div className="bars">
                             <span></span>

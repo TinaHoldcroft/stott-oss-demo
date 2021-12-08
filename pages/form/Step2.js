@@ -19,7 +19,7 @@ export default function Step2(props) {
             </div>
             <div className={isActive ? "--close" : "txt-input-wrapper"}>
                 <label htmlFor="fødselsnummer">Fødselsnummer</label>
-                <input id="fødselsnummer" name="fødselsnummer" type="number" placeholder={props.fødselsnummer} onChange={props.handleChange} />
+                <input id="fødselsnummer" name="fødselsnummer" type="number" placeholder={props.fødselsnummer} onChange={props.handleChange} pattern="[0-9]{11,}" required/>
             </div>
         </div>
     );

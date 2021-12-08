@@ -20,6 +20,21 @@ footer {
     h6 {
         font-size: 1.1em;
         font-weight: 600;
+        margin: 0 0 0.5em 0;
+    }
+    a:hover, a:focus { 
+        border-bottom: 3px dotted $black; 
+        transition: 0.3s;
+    }
+    p, a {
+        font-size: 0.9em;
+        letter-spacing: 0.1em;
+        padding: 0 0 0.35em 0;
+        border-bottom: 3px dotted transparent;
+        transition: 0.3s;
+        @media only screen and (max-width: 1000px) { 
+            margin: 0;
+        }
     }
     .col-1 {
         width: 100%;
@@ -55,14 +70,6 @@ footer {
             &:hover, &:focus {
                 filter: none;
                 opacity: 1;
-            }
-        }
-        p {
-            font-size: 0.8em;
-            letter-spacing: 0.1em;
-            margin: -2rem 0 0 0.5rem;
-            @media only screen and (max-width: 1000px) { 
-                margin: 0;
             }
         }
         .partners {

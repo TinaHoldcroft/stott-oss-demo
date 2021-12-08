@@ -1,7 +1,8 @@
-.masterform-wrapper {
-    height: 100vh;
+.masterform-wrapper { 
+    height: 100vh; 
+    min-height: 40rem;
 }
-.formTxt {
+.txt-panel {
     @include flex(column nowrap, center, stretch, auto, flex-start, 1em);
     position: absolute;
     width: 70rem;
@@ -61,12 +62,8 @@
         letter-spacing: 0.1em;
         font-weight: 600;        
     }
-    label {
-        margin: 0.5rem 0;
-    }
-    .flat-btn {
-        margin-top: 1rem;
-    }
+    label { margin: 0.5rem 0; }
+    .flat-btn { margin-top: 1rem; }
 }
 input[type=radio] {
     position: absolute;
@@ -74,7 +71,7 @@ input[type=radio] {
     cursor: pointer;
     height: 0;
     width: 0;
-    &:checked ~ label, &:focus ~ label, &:focus + label{
+    &:checked ~ label, &:focus ~ label, &:focus + label { 
         background-color: $yellow;
         box-shadow: 2.0px 4.0px 4.0px hsl(0deg 0% 0% / 0.38);
     }
@@ -97,8 +94,6 @@ input[type=radio] {
             border: 2px solid $yellow;
         }
     }
-
-
 }
 fieldset {
     border: none;
@@ -111,17 +106,24 @@ fieldset {
 }
 #fødselsnummer {
     -moz-appearance: textfield;
-    padding:0; margin: 0;
     &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
 }
-.form-group {
-    p {
-        margin: 1.6em 0;
-    }
+.form-group p { margin: 1.6em 0; }
+.active1, .active3 { animation: scaleUpOdd 1s 1 ease-in-out; }
+.active2, .active4 { animation: scaleUpEven 1s 1 ease-in-out; }
+.complete {
+    @include flex(column nowrap, center, stretch, auto, flex-start, 1em);
+    text-align: center;
+    padding: 2rem  0 0 0;
 }
+.summary {
+    h2, h1 { padding: 1rem 0; }
+    a { @include hover-underline(1.5px, $medium-grey); }
+}
+.checkmark-wrapper { margin: 2rem 0; }
 .checkmark{
     stroke-width: 2px;
     stroke: $yellow;
@@ -136,27 +138,4 @@ fieldset {
         stroke-dashoffset: 0px;
         animation: checkmark-circle 0.6s ease-in-out forwards;
     }
-}
-.active1, .active3 {
-    animation: scaleUpOdd 1s 1 ease-in-out;
-}
-.active2, .active4 {
-    animation: scaleUpEven 1s 1 ease-in-out;
-}
-.complete {
-    @include flex(column nowrap, center, stretch, auto, flex-start, 1em);
-    text-align: center;
-    padding: 2rem  0 0 0;
-}
-.summary {
-
-    h2, h1 {
-        padding: 1rem 0;
-    }
-    a {
-        @include hover-underline(1.5px, $medium-grey);
-    }
-}
-.checkmark-wrapper {
-    margin: 2rem 0;
 }
