@@ -31,3 +31,19 @@
         img { width: 80%; }
     }
 }
+.vipps-approve {
+    background-color: #FF5B24;
+    color: $white;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 0.8rem;
+    margin: 1rem 0 0 34%;
+    border-radius: 50px;
+    border: solid 3px #FF5B24;
+    float: center;
+    width: 30%;
+    &:focus, &:hover {
+        background-color: $white;
+        color: #FF5B24;
+    }
+}

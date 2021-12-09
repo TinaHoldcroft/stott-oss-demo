@@ -4,11 +4,12 @@ $menu-color: $medium-grey;
     transform: scale(0.2);
     background-color: transparent;
     border: none;
-    margin: 0.5rem -2rem;
-    padding: 0.5rem;
+    margin: 0.5rem -3rem;
+    padding: 2rem;
     &:focus {
         outline: none;
-        transform: scale(0.22);
+        transform: scale(0.22);    
+        outline: 10px solid $yellow;
     }
     .bars {
         width: 120px;

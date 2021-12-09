@@ -11,7 +11,7 @@ main {
     @media only screen and (max-width: 1200px) { 
         @include flex(column nowrap, center, stretch, auto, flex-start, 2rem);
     }
-    .two { 
+    .card-container { 
         @include flex(row nowrap, center, stretch, auto, center, 4rem);
         background-color: #F4F4F4; 
         padding: 5rem 0;
@@ -23,7 +23,7 @@ main {
             width: 100%;
         }
     }
-    .three { 
+    .tile-container { 
         @include flex(column nowrap, space-between, flex-start, auto, center, 1rem);
         @media only screen and (max-width: 1000px) { 
             @include flex(column nowrap, space-between, flex-start, auto, center, 0);

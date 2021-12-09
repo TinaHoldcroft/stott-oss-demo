@@ -13,78 +13,79 @@ const Nav = () => {
     // update classList of nav on scroll
     useEffect(() => {
         const _classList = [];
-        if (scroll.y > 150 && scroll.y - scroll.lastY > 0)_classList.push("--hide");
+        if (scroll.y > 150 && scroll.y - scroll.lastY > 0) _classList.push("--hide");
         setNavClassList(_classList);
     }, [scroll.y, scroll.lastY]);
 
     const closeDrop = () => { //close dropdown when link is chosen
         if (isActive === false) { setActive(!isActive); }
     }
-    
+
     //use esc to close menu
-    global.onkeydown = function(close) { 
+    global.onkeydown = function (close) {
         if (close.keyCode == '27') {
             if (isActive === false) {
                 setActive(!isActive);
             }
         }
     }
-    
+
     return (
         <nav className={isActive ? navClassList.join(" ") : "--fixed"} id="navbar">
             <Link passHref href='/'>
-            <div className="logo-wrapper">
-                <img id="logo" src="/favicon.svg" alt=""/>
-                <span className="logo-txt">
-                    <span>Norges Blindeforbund</span>
-                    <span>Synshemmedes organisasjon</span>
-                </span>
-            </div>
+                <a className="logo-wrapper">
+                    <img className="logo" src="/favicon.svg" alt="" />
+                    <span className="logo-txt">
+                        <span>Norges Blindeforbund</span>
+                        <span>Synshemmedes organisasjon</span>
+                    </span>
+                </a>
             </Link>
             <div onClick={closeDrop} className="nav-highlights">
-                <Link href='/'>Bli medlem</Link>
-                <Link href='/'>Om oss</Link>
-                <Link href='/'>Hjelpemidler</Link>
-                <Link href='/'>Råd og tips</Link>
-            </div> 
-            
+                <Link href='https://www.blindeforbundet.no/medlemskap'>Bli medlem</Link>
+                <Link href='https://www.blindeforbundet.no/om-blindeforbundet'>Om oss</Link>
+                <Link href='https://www.blindeforbundet.no/hjelpemidler-og-produkter'>Hjelpemidler</Link>
+                <Link href='https://www.blindeforbundet.no/rad-tips-og-rettigheter'>Råd og tips</Link>
+            </div>
+
             <FocusLock className="focus" disabled={isActive ? true : false}>
                 <div className="nav-btn-wrapper">
-                    <SearchBtn/>
-                    <button className={isActive ? "btn-dropdown" : "btn-dropdown is-menu-open" } accessKey="m" title={isActive ? "Open menu" : "Close menu"} type="button" value={isActive ? "Open menu" : "Close menu"} onClick={handleToggle}>
-                        <div className="bars">
+                    <SearchBtn />
+                    <button className={isActive ? "btn-dropdown" : "btn-dropdown is-menu-open"} accessKey="m" title={isActive ? "Open menu" : "Close menu"} type="button" value={isActive ? "Open menu" : "Close menu"} onClick={handleToggle}>
+                        <p className="bars">
                             <span></span>
                             <span></span>
                             <span></span>
-                            <div className="other-bar"></div>
-                        </div>
+                            <i className="other-bar"></i>
+                        </p>
                     </button>
                 </div>
-
-                <ul className={isActive ? "--close" : "--open"} role="menu">
-                    <div className="nav--overlay"></div>
-                    <ul className="menu-group">
-                        <li role="none" className="menu-heading" onClick={handleToggle}><Link role="menuitem" href='/'>Overskrift</Link></li>
-                        <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
-                        <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
-                        <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
-                        <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'>Link</Link></li>
+                <div className={isActive ? "--close" : "nav--overlay"}>
+                    <ul className={isActive ? "--close" : "--open"} role="menu">
+                        <SearchBtn />
+                        <ul className="menu-group">
+                            <li role="none" className="menu-heading" onClick={handleToggle}><Link role="menuitem" href='/'>Overskrift</Link></li>
+                            <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
+                            <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
+                            <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
+                            <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'>Link</Link></li>
+                        </ul>
+                        <ul className="menu-group">
+                            <li role="none" className="menu-heading" onClick={handleToggle}><Link role="menuitem" href='/'>Overskrift</Link></li>
+                            <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
+                            <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
+                            <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
+                            <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'>Link</Link></li>
+                        </ul>
+                        <ul className="menu-group">
+                            <li role="none" className="menu-heading" onClick={handleToggle}><Link role="menuitem" href='/'>Overskrift</Link></li>
+                            <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
+                            <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
+                            <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
+                            <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'>Link</Link></li>
+                        </ul>
                     </ul>
-                    <ul className="menu-group">
-                        <li role="none" className="menu-heading" onClick={handleToggle}><Link role="menuitem" href='/'>Overskrift</Link></li>
-                        <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
-                        <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
-                        <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
-                        <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'>Link</Link></li>
-                    </ul>
-                    <ul className="menu-group">
-                        <li role="none" className="menu-heading" onClick={handleToggle}><Link role="menuitem" href='/'>Overskrift</Link></li>
-                        <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
-                        <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
-                        <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'><a>Link</a></Link></li>
-                        <li role="none" onClick={handleToggle}><Link role="menuitem" href='/'>Link</Link></li>
-                    </ul>
-                </ul>
+                </div>
             </FocusLock>
         </nav>
     )

@@ -12,9 +12,9 @@ export default function Home() {
                 <title>NBf | Støtt oss</title>
             </Head>
 
-            <div className="content-index">
+            <div className='content-index'>
                 <MasterForm />
-                <div className="two">
+                <div className='card-container'>
                     <Card
                         heading='minnegaver'
                         txt='Å gi en minnegave til Norges Blindeforbund er en fin og respektfull måte å hedre et kjært familiemedlem, en nær venn eller et medmenneske på. Det ligger også en trøst i å vite at gaven din vil utløse glede og omsorg i lang tid fremover.'
@@ -24,7 +24,7 @@ export default function Home() {
                     <Card
                         heading='Nettbutikk'
                         txt='32 millioner mennesker er unødvendig blinde i verden i dag. iCare er Norges Blindeforbunds initiativ for å gi synet tilbake til mennesker som er unødvendig blinde.'
-                        link='/'
+                        link='https://butikk.blindeforbundet.no/'
                         value='gå til nettbutikk'
                     />
                     <Card
@@ -35,8 +35,8 @@ export default function Home() {
                     />
 
                 </div>
-                <div className="three">
-                    <div className="sub">
+                <div className='tile-container'>
+                    <div className='sub'>
                         <Tile
                             heading='endre støtteavtale'
                             link='endre-stotteavtalen-din'
@@ -58,7 +58,7 @@ export default function Home() {
                             txt='Betaler du din faste avtale med Vipps trekkes det beløpet du har valgt en gang i måneden via Vipps faste betalinger.'
                         />
                     </div>
-                    <div className="sub">
+                    <div className='sub'>
                         <Tile
                             heading='du kan stole på oss'
                             link='du-kan-stole-pa-oss'
@@ -81,17 +81,15 @@ export default function Home() {
                         />
                     </div>
                 </div>
-                <div className="four">
-                    <Campaign
-                        img='https://images.unsplash.com/photo-1579208570378-8c970854bc23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1222&q=80" alt="to hender som holder hver sin enda av et papir hjerte'
-                        heading='Kjøp valpekalender'
-                        txt='Valpekalenderen til Norges Blindeforbund er en av Norges mest populære kalendere. Når du bestiller kalenderen er du med på å gi selvstendigheten tilbake til mange svaksynte og blinde.'
-                        btnValue='kjøp kalender'
-                        ArrowValue='lær mer'
-                        btnLink='/'
-                        ArrowLink='/'
-                    />
-                </div>
+                <Campaign
+                    img='https://images.unsplash.com/photo-1579208570378-8c970854bc23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1222&q=80' alt='to hender som holder hver sin enda av et papir hjerte'
+                    heading='Kjøp valpekalender'
+                    txt='Valpekalenderen til Norges Blindeforbund er en av Norges mest populære kalendere. Når du bestiller kalenderen er du med på å gi selvstendigheten tilbake til mange svaksynte og blinde.'
+                    btnValue='kjøp kalender'
+                    ArrowValue='lær mer'
+                    btnLink='https://www.blindeforbundet.no/kalender/#vil-du-bestille-kalenderen-for-2019'
+                    ArrowLink='https://www.blindeforbundet.no/kalender'
+                />
             </div>
         </>
     )

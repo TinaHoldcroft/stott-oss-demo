@@ -4,7 +4,7 @@
     button {
         @include flex(row nowrap, center, center, center, center, 0);
         border-radius: 50%;
-        border: $light-grey 2px solid;
+        border: $light-grey 3px solid;
         background-color: $white;
         width: 3rem;
         height: 3rem;
@@ -13,7 +13,7 @@
             outline: none;
             box-shadow: 1.0px 1.0px 2.0px hsl(0deg 0% 0% / 0.38);
             background-color: $yellow;
-            border: $yellow 2px solid;
+            border: $yellow 3px solid;
         }
     }
     .line {
@@ -30,6 +30,6 @@
 }
 .line4 {  display: none; }
 .breadcrum1 .page1, .breadcrum2 .line1, .breadcrum2 .page2, .breadcrum3 .line1, .breadcrum3 .line2, 
-.breadcrum3 .page3, .breadcrum4 .line, .breadcrum4 .page4 { background-color: $yellow; }
+.breadcrum3 .page3, .breadcrum4 .line, .breadcrum4 .page4, .breadcrum5 .page3, .breadcrum5 .line1, .breadcrum5 .line2  { background-color: $yellow; }
 .breadcrum1 .page1, .breadcrum2 .page1, .breadcrum2 .page1, .breadcrum3  .page1, .breadcrum3 .page2,
-.breadcrum3 .page3, .breadcrum4 button, .breadcrum4 .page4 { border-color: $yellow; }
+.breadcrum3 .page3, .breadcrum4 button, .breadcrum4 .page4, .breadcrum5 .page1 , .breadcrum5 .page2, .breadcrum5 .page3 { border-color: $yellow; }

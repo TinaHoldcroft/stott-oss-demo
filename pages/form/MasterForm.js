@@ -7,6 +7,8 @@ import Step3 from './Step3';
 import Txt3 from './Txt3';
 import Step4 from './Step4';
 import Txt4 from './Txt4';
+import StepVipps from './StepVipps';
+import TxtVipps from './TxtVipps';
 import BreadcrumBnt from './Breadcrum';
 import FlatBtn from './FlatBtn';
 import PaymentBtn from './PaymentBtn';
@@ -39,8 +41,8 @@ class MasterForm extends React.Component {
     if (currentStep === 2) {
       return (
         <div className="payment">
-          <PaymentBtn value="vipps" click={this._next}/>
-          <PaymentBtn value="avtale-giro" click={this._next}/>
+          <PaymentBtn value="vipps" click={this._GoToVipps} />
+          <PaymentBtn value="avtale-giro" click={this._next} />
         </div>
       )
     }
@@ -50,6 +52,19 @@ class MasterForm extends React.Component {
           <FlatBtn value='tilbake' direction='left' click={this._prev} />
           <button form='masterform' className="flat-btn float-right">Send inn</button>
         </>
+      )
+    }
+    if (currentStep === 5) {
+      return (
+        <button
+          className='vipps-approve'
+          type='button'
+          onClick={this._GoToFour}
+          value='Neste'
+          form='masterform'
+        >
+          Neste
+        </button>
       )
     }
     return null;
@@ -80,6 +95,11 @@ class MasterForm extends React.Component {
     currentStep = 3
     this.setState({ currentStep: currentStep })
   }
+  _GoToVipps = () => {
+    let currentStep = this.state.currentStep
+    currentStep = 5
+    this.setState({ currentStep: currentStep })
+  }
   _GoToFour = () => {
     let currentStep = this.state.currentStep
     currentStep = 4
@@ -93,7 +113,8 @@ class MasterForm extends React.Component {
           <Txt1 currentStep={this.state.currentStep} />
           <Txt2 currentStep={this.state.currentStep} />
           <Txt3 currentStep={this.state.currentStep} />
-          <Txt4 currentStep={this.state.currentStep} navn={this.state.navn} adresse={this.state.adresse} telefon={this.state.telefon} epost={this.state.epost} frekvens={this.state.frekvens} beløp={this.state.beløp} fradrag={this.state.fradrag} fødselsnummer={this.state.fødselsnummer}/>
+          <Txt4 currentStep={this.state.currentStep} navn={this.state.navn} adresse={this.state.adresse} telefon={this.state.telefon} epost={this.state.epost} frekvens={this.state.frekvens} beløp={this.state.beløp} fradrag={this.state.fradrag} fødselsnummer={this.state.fødselsnummer} />
+          <TxtVipps currentStep={this.state.currentStep} />
         </div>
 
         <form id="masterform" className={'masterform active' + this.state.currentStep} onSubmit={this.handleSubmit}>
@@ -101,12 +122,13 @@ class MasterForm extends React.Component {
             <BreadcrumBnt nr="1" click={this._GoToOne} value="gå direkte til valg av frekvens og beløp" icon="fas fa-hand-holding-usd" />
             <BreadcrumBnt nr="2" click={this._GoToTwo} value="gå direkte til betalingsvalg" icon="fas fa-credit-card" />
             <BreadcrumBnt nr="3" click={this._GoToThree} value="gå direkte til personalia" icon="fas fa-user" />
-            <BreadcrumBnt nr="4" click={this._GoToFour} value="gå direkte til personalia" icon="fas fa-receipt" />
+            <BreadcrumBnt nr="4" click={this._GoToFour} value="gå direkte til oppsummering" icon="fas fa-receipt" />
           </div>
           <Step1 currentStep={this.state.currentStep} handleChange={this.handleChange} frekvens={this.state.frekvens} beløp={this.state.beløp} />
           <Step2 currentStep={this.state.currentStep} handleChange={this.handleChange} fradrag={this.state.fradrag} fødselsnummer={this.state.fødselsnummer} />
           <Step3 currentStep={this.state.currentStep} handleChange={this.handleChange} navn={this.state.navn} telefon={this.state.telefon} adresse={this.state.adresse} epost={this.state.epost} />
           <Step4 currentStep={this.state.currentStep} />
+          <StepVipps currentStep={this.state.currentStep} belop={this.state.beløp} handleChange={this.handleChange} telefon={this.state.telefon} />
           {this.Buttons()}
         </form>
       </div>

@@ -5,7 +5,7 @@
     margin: auto;
     width: 0;
     height: 100px;
-    z-index: 9;
+    z-index: 0;
     input {
         position: absolute;
         margin: auto;
@@ -60,6 +60,13 @@
             @media screen and (max-width: 1300px) { opacity: 1; }
         }
     }
+}
+.--open .search-container input {
+    border-radius: 0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 3px solid $black;
 }
 .search-icon {
     position: absolute;

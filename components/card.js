@@ -6,7 +6,7 @@ function Card(props) {
         <div className="card">
             <h2>{props.heading}</h2>
             <p>{props.txt}</p>
-            <BTN link='/' value={props.value}/>
+            <BTN link={props.link} value={props.value}/>
         </div>
     );
 }
