@@ -1,9 +1,22 @@
 export default function PaymentBtn(props) {
 
     return (
-        <button form="masterform" className={props.value} type="button" onClick={props.click}>
-            <span>fortsett med</span>
-            <img id={props.value}  src={'/' + props.value + '.svg'} alt={props.value}  />
-        </button>
+        <div>
+            <input
+                onChange={props.handleChange}
+                type="radio"
+                id={props.value}
+                name='paymentType'
+                value={props.value}
+                checked={props.payment === props.value}
+            />
+            <label
+                className= {props.value + ' btn'}
+                htmlFor={props.value}
+            >
+                fortsett med
+                <img src={'/' + props.value + '.svg'} alt={props.value} />
+            </label>
+        </div>
     );
 }

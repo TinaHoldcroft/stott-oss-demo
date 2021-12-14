@@ -136,6 +136,16 @@ html, body {
   display: none;
 }
 
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 body {
   font-family: open-sans, sans-serif;
   font-weight: 400;
@@ -1425,7 +1435,7 @@ fieldset {
   height: 3rem;
   transition: 2s;
 }
-.breadcrum button:focus, .breadcrum button:hover {
+.breadcrum button:focus, .breadcrum button:hover, .breadcrum button:active {
   outline: none;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.38);
   background-color: #FFD500;
@@ -1453,7 +1463,7 @@ fieldset {
   background-color: #FFD500;
 }
 
-.breadcrum1 .page1, .breadcrum2 .page1, .breadcrum2 .page1, .breadcrum3 .page1, .breadcrum3 .page2,
+.breadcrum1 .page1, .breadcrum2 .page1, .breadcrum2 .page2, .breadcrum3 .page1, .breadcrum3 .page2,
 .breadcrum3 .page3, .breadcrum4 button, .breadcrum4 .page4, .breadcrum5 .page1, .breadcrum5 .page2, .breadcrum5 .page3 {
   border-color: #FFD500;
 }
@@ -1501,13 +1511,7 @@ fieldset {
   align-content: center;
   gap: 0.75rem;
 }
-.payment span {
-  text-transform: uppercase;
-  font-size: 0.7em;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-}
-.payment button {
+.payment .btn {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1519,25 +1523,18 @@ fieldset {
   align-self: center;
   align-content: center;
   gap: 0.5em;
-  width: 50%;
+  flex: 1 1 auto;
   min-height: 3.5rem;
   padding: 1vmax 0 1vmax 3vmin;
   border-radius: 6px;
   border: none;
   color: #ffffff;
 }
-.payment button:focus {
-  outline: solid 4px #FFD500;
-}
-.payment button:hover, .payment button:focus {
-  opacity: 0.85;
-  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.48);
+.payment div {
+  flex: 1 1 auto;
 }
 .payment .vipps {
   background-color: #FF5B24;
-}
-.payment .vipps span {
-  margin: 0 0 0.25em 0;
 }
 .payment .vipps img {
   width: 60%;
@@ -1545,11 +1542,27 @@ fieldset {
 .payment .avtale-giro {
   background-color: #030504;
 }
-.payment .avtale-giro span {
-  margin: 0 0 0.25em 0;
-}
 .payment .avtale-giro img {
   width: 80%;
+}
+.payment .kort {
+  background-color: #ebebeb;
+  color: #242424;
+}
+.payment .kort img {
+  width: 42%;
+}
+.payment #vipps:checked ~ label, .payment #vipps:focus ~ label, .payment #vipps:focus + label {
+  background-color: #FF5B24;
+}
+.payment #kort:checked ~ label, .payment #kort:focus ~ label, .payment #kort:focus + label {
+  background-color: #ebebeb;
+}
+.payment #avtale-giro:checked ~ label, .payment #avtale-giro:focus ~ label, .payment #avtale-giro:focus + label {
+  background-color: #030504;
+}
+.payment input:checked ~ label, .payment input:focus ~ label, .payment input:focus + label {
+  outline: 4px solid #FFD500;
 }
 
 .vipps-approve {

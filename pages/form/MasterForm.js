@@ -7,8 +7,6 @@ import Step3 from './Step3';
 import Txt3 from './Txt3';
 import Step4 from './Step4';
 import Txt4 from './Txt4';
-import StepVipps from './StepVipps';
-import TxtVipps from './TxtVipps';
 import BreadcrumBnt from './Breadcrum';
 import FlatBtn from './FlatBtn';
 import PaymentBtn from './PaymentBtn';
@@ -17,7 +15,18 @@ class MasterForm extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = { currentStep: 1, frekvens: 'månedlig', beløp: '300', fradrag: 'nei', fødselsnummer: '', telefon: '', navn: '', adresse: '', epost: '' }
+    this.state = {
+      currentStep: 1,
+      frekvens: 'månedlig',
+      beløp: '300',
+      fradrag: 'nei',
+      fødselsnummer: '',
+      paymentType: 'vipps',
+      telefon: '',
+      navn: '',
+      adresse: '',
+      epost: ''
+    }
     console.log(this.state)
   }
 
@@ -37,37 +46,48 @@ class MasterForm extends React.Component {
 
   Buttons() {
     let currentStep = this.state.currentStep;
-    if (currentStep === 1) { return <FlatBtn value='neste' direction='right' click={this._next} /> }
+    let frekvens = this.state.frekvens;
+    let paymentType = this.state.paymentType;
+
+    if (currentStep === 1) { return <FlatBtn type='button' value='neste' direction='right' click={this._next} /> }
     if (currentStep === 2) {
-      return (
-        <div className="payment">
-          <PaymentBtn value="vipps" click={this._GoToVipps} />
-          <PaymentBtn value="avtale-giro" click={this._next} />
-        </div>
-      )
+      if (frekvens === 'en gang') {
+        return (
+          <>
+            <fieldset className="payment">
+              <legend className="sr-only">Velg Betalingsform</legend>
+              <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value="vipps" />
+              <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value="kort" />
+            </fieldset>
+            <FlatBtn type='submit' value='neste' direction='right'/>
+          </>
+        )
+      }
+      if (frekvens === 'månedlig') {
+        return (
+          <>
+            <fieldset className="payment">
+              <legend className="sr-only">Velg Betalingsform</legend>
+              <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value="vipps"/>
+              <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value="avtale-giro" />
+            </fieldset>
+            <FlatBtn type='submit' value='neste' direction='right'/>
+          </>
+        )
+      }
     }
+
     if (currentStep === 3) {
+      if (paymentType === 'vipps') {
+        return <button form='masterform' className='vipps-approve' type='submit' value='Neste'>Neste</button>
+      }
       return (
         <>
-          <FlatBtn value='tilbake' direction='left' click={this._prev} />
-          <button form='masterform' className="flat-btn float-right">Send inn</button>
+          <FlatBtn type='button' value='tilbake' direction='left' click={this._prev} />
+          <button form='masterform' type='submit' className="flat-btn float-right">Send inn</button>
         </>
       )
     }
-    if (currentStep === 5) {
-      return (
-        <button
-          className='vipps-approve'
-          type='button'
-          onClick={this._GoToFour}
-          value='Neste'
-          form='masterform'
-        >
-          Neste
-        </button>
-      )
-    }
-    return null;
   }
 
   _next = () => {
@@ -95,11 +115,6 @@ class MasterForm extends React.Component {
     currentStep = 3
     this.setState({ currentStep: currentStep })
   }
-  _GoToVipps = () => {
-    let currentStep = this.state.currentStep
-    currentStep = 5
-    this.setState({ currentStep: currentStep })
-  }
   _GoToFour = () => {
     let currentStep = this.state.currentStep
     currentStep = 4
@@ -112,9 +127,8 @@ class MasterForm extends React.Component {
         <div className="txt-panel">
           <Txt1 currentStep={this.state.currentStep} />
           <Txt2 currentStep={this.state.currentStep} />
-          <Txt3 currentStep={this.state.currentStep} />
+          <Txt3 currentStep={this.state.currentStep} paymentType={this.state.paymentType} />
           <Txt4 currentStep={this.state.currentStep} navn={this.state.navn} adresse={this.state.adresse} telefon={this.state.telefon} epost={this.state.epost} frekvens={this.state.frekvens} beløp={this.state.beløp} fradrag={this.state.fradrag} fødselsnummer={this.state.fødselsnummer} />
-          <TxtVipps currentStep={this.state.currentStep} />
         </div>
 
         <form id="masterform" className={'masterform active' + this.state.currentStep} onSubmit={this.handleSubmit}>
@@ -126,9 +140,8 @@ class MasterForm extends React.Component {
           </div>
           <Step1 currentStep={this.state.currentStep} handleChange={this.handleChange} frekvens={this.state.frekvens} beløp={this.state.beløp} />
           <Step2 currentStep={this.state.currentStep} handleChange={this.handleChange} fradrag={this.state.fradrag} fødselsnummer={this.state.fødselsnummer} />
-          <Step3 currentStep={this.state.currentStep} handleChange={this.handleChange} navn={this.state.navn} telefon={this.state.telefon} adresse={this.state.adresse} epost={this.state.epost} />
+          <Step3 currentStep={this.state.currentStep} handleChange={this.handleChange} paymentType={this.state.paymentType} navn={this.state.navn} telefon={this.state.telefon} adresse={this.state.adresse} epost={this.state.epost} />
           <Step4 currentStep={this.state.currentStep} />
-          <StepVipps currentStep={this.state.currentStep} belop={this.state.beløp} handleChange={this.handleChange} telefon={this.state.telefon} />
           {this.Buttons()}
         </form>
       </div>

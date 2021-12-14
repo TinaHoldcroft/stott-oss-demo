@@ -14,3 +14,12 @@ html, body { scroll-behavior: smooth; }
 .float-left { float: left; }
 .arrow-link { a { @include arrow-link; } }
 .--close { display: none; }
+.sr-only:not(:focus):not(:active) { // only for screen readers
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}

@@ -31,7 +31,7 @@ export default function Step1(props) {
                 </div>
                 <div>
                     <input onChange={props.handleChange} type="radio" id="1000" name="beløp" value="1000" checked={props.beløp === '1000'} />
-                    <label className="checkBtn  float-right" htmlFor="1000">1000</label>
+                    <label className="checkBtn float-right" htmlFor="1000">1000</label>
                 </div>
                 <div className="txt-input-wrapper">
                     <label htmlFor="custom">Eller skriv inn ønsket beløp</label>

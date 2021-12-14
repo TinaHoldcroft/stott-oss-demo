@@ -3,7 +3,7 @@ export default function FormBnt(props) {
     return (
         <button 
             className={'flat-btn float-' + props.direction}
-            type='button' 
+            type={props.type}
             onClick={props.click}
             value={props.value}
             disabled={props.disabled}
