@@ -22,10 +22,6 @@ footer {
         font-weight: 600;
         margin: 0 0 0.5em 0;
     }
-    a:hover, a:focus { 
-        border-bottom: 3px dotted $black; 
-        transition: 0.3s;
-    }
     p, a {
         font-size: 0.9em;
         letter-spacing: 0.1em;
@@ -45,8 +41,15 @@ footer {
             margin: 0;
             padding: 0 1rem;
         }
-        div {
+
+        div, section {
             @include flex(column nowrap, space-between, flex-start, auto, center, 0.5em);
+        }
+        section {
+            a:hover, a:focus { 
+                border-bottom: 3px dotted $black; 
+                transition: 0.3s;
+            }
         }
         .SoMe {
             @include flex(row nowrap, center, flex-start, auto, center, 1.5rem);

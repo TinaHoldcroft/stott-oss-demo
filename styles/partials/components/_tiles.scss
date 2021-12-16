@@ -9,9 +9,7 @@
     }
     p { padding: 0 0.5rem; }
     ::first-letter { text-transform: uppercase; }
-    ::selection {
-        background: lighten($yellow, 30%);
-    }
+    ::selection { background: lighten($yellow, 30%); }
     h3 {
         border-bottom: 3px solid lighten($yellow, 20%);
         margin-bottom: 2px;

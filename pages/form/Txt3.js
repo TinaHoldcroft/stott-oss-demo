@@ -2,6 +2,7 @@ import BTN from '../../components/btn';
 import Link from 'next/link';
 
 export default function Txt3(props) {
+    
     if (props.currentStep !== 3) { return null }
 
     if (props.paymentType === 'vipps') {

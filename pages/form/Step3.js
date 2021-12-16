@@ -1,4 +1,5 @@
 export default function Step3(props) {
+    
     if (props.currentStep !== 3) { return null }
 
     if (props.paymentType === 'vipps') {
@@ -14,7 +15,7 @@ export default function Step3(props) {
             </div>
         );
     }
-    
+
     return (
         <div className="form-group">
             <div className="txt-input-wrapper">

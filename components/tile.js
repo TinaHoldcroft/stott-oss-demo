@@ -1,19 +1,19 @@
 import Link from 'next/link';
 
 function Tile(props) {
-    
+
     return (
-        <Link 
-            passHref 
-            href={'https://www.blindeforbundet.no/stott-blindeforbundet/' + props.link} 
+        <Link
+            passHref
+            href={'https://www.blindeforbundet.no/stott-blindeforbundet/' + props.link}
             target={props.target}
         >
             <a className="tile">
                 <h3>
-                    <span>{props.heading}</span> 
+                    <span>{props.heading}</span>
                     <i>&rarr;</i>
                 </h3>
-                
+
                 <p>{props.txt}</p>
             </a>
         </Link>

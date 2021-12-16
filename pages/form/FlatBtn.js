@@ -1,4 +1,4 @@
-export default function FormBnt(props) {
+export default function FlatBnt(props) {
 
     return (
         <button 

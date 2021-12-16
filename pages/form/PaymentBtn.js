@@ -11,7 +11,7 @@ export default function PaymentBtn(props) {
                 checked={props.payment === props.value}
             />
             <label
-                className= {props.value + ' btn'}
+                className={props.value + ' btn'}
                 htmlFor={props.value}
             >
                 fortsett med

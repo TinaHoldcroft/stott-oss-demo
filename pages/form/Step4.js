@@ -2,7 +2,6 @@ export default function Step4(props) {
     if (props.currentStep !== 4) { return null }
 
     return (
-
         <div className="complete">
             <h2>Takk</h2>
             <p>Din donasjon er registrert og du vil i løpet av kort tid motta kvitteringen via mail</p>

@@ -2,15 +2,15 @@ import Nav from "./nav";
 import Footer from "./footer";
 
 const Layout = ({ children }) => {
-    
+
     return (
-       <>
-            <Nav/>
+        <>
+            <Nav />
             <main>
-                { children }
+                {children}
             </main>
-            <Footer/>
-       </>
+            <Footer />
+        </>
     );
 }
 export default Layout;

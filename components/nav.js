@@ -3,6 +3,7 @@ import FocusLock from 'react-focus-lock';
 import Link from 'next/link';
 import useScrollListener from "./ScrollListener";
 import SearchBtn from './SearchBtn';
+import Logo from './logo';
 
 const Nav = () => {
     const handleToggle = () => { setActive(!isActive); };
@@ -32,15 +33,7 @@ const Nav = () => {
 
     return (
         <nav className={isActive ? navClassList.join(" ") : "--fixed"} id="navbar">
-            <Link passHref href='/'>
-                <a className="logo-wrapper">
-                    <img className="logo" src="/favicon.svg" alt="" />
-                    <span className="logo-txt">
-                        <span>Norges Blindeforbund</span>
-                        <span>Synshemmedes organisasjon</span>
-                    </span>
-                </a>
-            </Link>
+            <Logo/>
             <div onClick={closeDrop} className="nav-highlights">
                 <Link href='https://www.blindeforbundet.no/medlemskap'>Bli medlem</Link>
                 <Link href='https://www.blindeforbundet.no/om-blindeforbundet'>Om oss</Link>

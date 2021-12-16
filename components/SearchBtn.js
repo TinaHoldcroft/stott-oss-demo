@@ -1,4 +1,5 @@
 const SeachBtn = () => {
+    
     return (
         <div className="search-container">
             <label htmlFor="searchInput">Søk</label>
@@ -6,7 +7,6 @@ const SeachBtn = () => {
             <div className="search-icon"></div>
         </div>
     )
-
 }
 
 export default SeachBtn;

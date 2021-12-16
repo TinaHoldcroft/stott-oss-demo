@@ -33,7 +33,6 @@ export default function Home() {
                         link='https://www.blindeforbundet.no/stott-blindeforbundet/testamentariske-gaver'
                         value='gi gave'
                     />
-
                 </div>
                 <div className='tile-container'>
                     <div className='sub'>

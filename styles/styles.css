@@ -458,10 +458,6 @@ footer h6 {
   font-weight: 600;
   margin: 0 0 0.5em 0;
 }
-footer a:hover, footer a:focus {
-  border-bottom: 3px dotted #242424;
-  transition: 0.3s;
-}
 footer p, footer a {
   font-size: 0.9em;
   letter-spacing: 0.1em;
@@ -506,7 +502,7 @@ footer .col-1 {
     padding: 0 1rem;
   }
 }
-footer .col-1 div {
+footer .col-1 div, footer .col-1 section {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -518,6 +514,10 @@ footer .col-1 div {
   align-self: auto;
   align-content: center;
   gap: 0.5em;
+}
+footer .col-1 section a:hover, footer .col-1 section a:focus {
+  border-bottom: 3px dotted #242424;
+  transition: 0.3s;
 }
 footer .col-1 .SoMe {
   display: -webkit-box;

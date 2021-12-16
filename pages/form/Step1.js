@@ -1,4 +1,5 @@
 export default function Step1(props) {
+    
     if (props.currentStep !== 1) { return null }
 
     return (

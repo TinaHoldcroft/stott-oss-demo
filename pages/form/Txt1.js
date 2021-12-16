@@ -1,6 +1,7 @@
 import ArrowLink from '../../components/ArrowLink';
 
 export default function Txt1(props) {
+    
     if (props.currentStep !== 1) { return null }
 
     return (
