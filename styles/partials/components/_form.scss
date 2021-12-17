@@ -16,18 +16,14 @@
     background-color: $white;
     background-color: $yellow;
     box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38), -2px -2px 8px hsl(0deg 0% 0% / 0.1);
-    ::selection {
-        background: $white;
-    }
+    ::selection { background: $white; }
     @media only screen and (max-width: 1160px) { display: none; }
     @media only screen and (max-height: 800px) {
         top: 8rem;
         margin-top: 0;
     }
     .action-group {
-        .btn {
-            @include BTN($white, 13rem, 2.4rem, 0.8em, #ffffff49);
-        }
+        .btn { @include BTN($white, 13rem, 2.4rem, 0.8em, #ffffff49); }
     }
 }
 .masterform {
@@ -42,9 +38,7 @@
     background-color: $white;
     box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38), -2px -2px 8px hsl(0deg 0% 0% / 0.1);
     padding: 8vmin 10vmin 10vmin 10vmin;
-    @media only screen and (max-width: 1160px) { 
-        margin-left: -17rem;
-    }
+    @media only screen and (max-width: 1160px) { margin-left: -17rem; }
     @media only screen and (max-height: 750px) { 
         top: 5rem;
         margin-top: 0;
@@ -67,6 +61,10 @@
     }
     label { margin: 0.5rem 0; }
     .flat-btn { margin-top: 1rem; }
+    input { //changes iOS default 
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
 }
 input[type=radio] {
     position: absolute;
@@ -101,11 +99,6 @@ input[type=radio] {
 fieldset {
     border: none;
     margin: 2rem 0 0 0;
-}
-.payment {
-    width: 100%;
-    padding-top: 1.2rem;
-    margin: 0;
 }
 #fødselsnummer {
     -moz-appearance: textfield;

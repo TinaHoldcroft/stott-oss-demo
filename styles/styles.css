@@ -746,6 +746,10 @@ footer .col-2 .partners {
 .masterform .flat-btn {
   margin-top: 1rem;
 }
+.masterform input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
 
 input[type=radio] {
   position: absolute;
@@ -780,12 +784,6 @@ input[type=radio]:checked ~ label, input[type=radio]:focus ~ label, input[type=r
 fieldset {
   border: none;
   margin: 2rem 0 0 0;
-}
-
-.payment {
-  width: 100%;
-  padding-top: 1.2rem;
-  margin: 0;
 }
 
 #fødselsnummer {
@@ -1429,17 +1427,17 @@ fieldset {
   align-content: center;
   gap: 0;
   border-radius: 50%;
-  border: #ebebeb 3px solid;
+  border: #ebebeb 2.5px solid;
   background-color: #ffffff;
   width: 3rem;
   height: 3rem;
-  transition: 2s;
+  transition: 1s;
 }
 .breadcrum button:focus, .breadcrum button:hover, .breadcrum button:active {
   outline: none;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.38);
   background-color: #FFD500;
-  border: #FFD500 3px solid;
+  border: #FFD500 2.5px solid;
 }
 .breadcrum button .svg {
   display: none;
@@ -1459,16 +1457,6 @@ fieldset {
 
 .line4 {
   display: none;
-}
-
-.breadcrum1 .page1, .breadcrum2 .line1, .breadcrum2 .page2, .breadcrum3 .line1, .breadcrum3 .line2,
-.breadcrum3 .page3, .breadcrum4 .line, .breadcrum4 .page4, .breadcrum5 .page3, .breadcrum5 .line1, .breadcrum5 .line2 {
-  background-color: #FFD500;
-}
-
-.breadcrum1 .page1, .breadcrum2 .page1, .breadcrum2 .page2, .breadcrum3 .page1, .breadcrum3 .page2,
-.breadcrum3 .page3, .breadcrum4 button, .breadcrum4 .page4, .breadcrum5 .page1, .breadcrum5 .page2, .breadcrum5 .page3 {
-  border-color: #FFD500;
 }
 
 .activePage__1 .button1 {
@@ -1587,6 +1575,9 @@ fieldset {
   align-self: center;
   align-content: center;
   gap: 0.75rem;
+  width: 100%;
+  padding-top: 1.2rem;
+  margin: 0;
 }
 .payment .btn {
   display: -webkit-box;
@@ -1601,6 +1592,7 @@ fieldset {
   align-content: center;
   gap: 0.5em;
   flex: 1 1 auto;
+  min-width: 47%;
   min-height: 3.5rem;
   padding: 1vmax 0 1vmax 3vmin;
   border-radius: 6px;
@@ -1628,18 +1620,6 @@ fieldset {
 }
 .payment .kort img {
   width: 42%;
-}
-.payment #vipps:checked ~ label, .payment #vipps:focus ~ label, .payment #vipps:focus + label {
-  background-color: #FF5B24;
-}
-.payment #kort:checked ~ label, .payment #kort:focus ~ label, .payment #kort:focus + label {
-  background-color: #ebebeb;
-}
-.payment #avtale-giro:checked ~ label, .payment #avtale-giro:focus ~ label, .payment #avtale-giro:focus + label {
-  background-color: #030504;
-}
-.payment input:checked ~ label, .payment input:focus ~ label, .payment input:focus + label {
-  outline: 4px solid #FFD500;
 }
 
 .vipps-approve {
