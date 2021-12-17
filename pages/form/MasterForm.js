@@ -57,6 +57,7 @@ class MasterForm extends React.Component {
                             <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value="vipps" />
                             <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value="kort" />
                         </fieldset>
+                        <FlatBtn type='button' value='tilbake' direction='left' click={this._prev} />
                         <FlatBtn type='submit' value='neste' direction='right' />
                     </>
                 )
@@ -69,6 +70,7 @@ class MasterForm extends React.Component {
                             <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value="vipps" />
                             <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value="avtale-giro" />
                         </fieldset>
+                        <FlatBtn type='button' value='tilbake' direction='left' click={this._prev} />
                         <FlatBtn type='submit' value='neste' direction='right' />
                     </>
                 )

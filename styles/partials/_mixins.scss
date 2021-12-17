@@ -99,7 +99,6 @@
     }
     &:active { opacity: 0.5; }
 }
-
 @mixin BTN(
     $color: $yellow,
     $width: 6.2rem,
@@ -130,9 +129,7 @@
         border-radius: 0;
         font-size: $font-size;
         letter-spacing: 0.1em;
-        &::first-letter {
-            text-transform: uppercase;
-        }
+        &::first-letter { text-transform: uppercase; }
         &:focus {
             border: 1.5px solid $color;
             background-color: lighten($color, 30%);

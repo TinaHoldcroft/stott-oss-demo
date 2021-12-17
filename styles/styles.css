@@ -1576,7 +1576,7 @@ fieldset {
   align-content: center;
   gap: 0.75rem;
   width: 100%;
-  padding-top: 1.2rem;
+  padding-top: 1rem;
   margin: 0;
 }
 .payment .btn {
@@ -1591,7 +1591,6 @@ fieldset {
   align-self: center;
   align-content: center;
   gap: 0.5em;
-  flex: 1 1 auto;
   min-width: 47%;
   min-height: 3.5rem;
   padding: 1vmax 0 1vmax 3vmin;
@@ -1600,6 +1599,7 @@ fieldset {
   color: #ffffff;
 }
 .payment div {
+  min-width: 49%;
   flex: 1 1 auto;
 }
 .payment .vipps {

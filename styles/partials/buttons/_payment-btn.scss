@@ -1,11 +1,10 @@
 .payment {
     @include flex(row nowrap, center, center, center, center, 0.75rem);
     width: 100%;
-    padding-top: 1.2rem;
+    padding-top: 1rem;
     margin: 0;
     .btn {
         @include flex(column nowrap, center, flex-start, center, center, 0.5em);
-        flex: 1 1 auto;
         min-width: 47%;
         min-height: 3.5rem;
         padding: 1vmax 0 1vmax 3vmin;
@@ -13,7 +12,10 @@
         border: none;
         color: $white;
     }
-    div  { flex: 1 1 auto; }
+    div  { 
+        min-width: 49%;
+        flex: 1 1 auto; 
+    }
     .vipps {
         background-color: #FF5B24;
         img { width: 60%; }
