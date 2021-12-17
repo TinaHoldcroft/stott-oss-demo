@@ -1441,6 +1441,9 @@ fieldset {
   background-color: #FFD500;
   border: #FFD500 3px solid;
 }
+.breadcrum button .svg {
+  display: none;
+}
 .breadcrum .line {
   height: 2px;
   width: 1rem;
@@ -1465,6 +1468,80 @@ fieldset {
 
 .breadcrum1 .page1, .breadcrum2 .page1, .breadcrum2 .page2, .breadcrum3 .page1, .breadcrum3 .page2,
 .breadcrum3 .page3, .breadcrum4 button, .breadcrum4 .page4, .breadcrum5 .page1, .breadcrum5 .page2, .breadcrum5 .page3 {
+  border-color: #FFD500;
+}
+
+.activePage__1 .button1 {
+  background-color: #FFD500;
+  border-color: #FFD500;
+}
+
+.activePage__2 .button1 .icon {
+  display: none;
+}
+.activePage__2 .button1 .svg {
+  display: block;
+}
+.activePage__2 .button1 {
+  border-color: #FFD500;
+}
+.activePage__2 .line1 {
+  background-color: #FFD500;
+}
+.activePage__2 .button2 {
+  background-color: #FFD500;
+  border-color: #FFD500;
+}
+
+.activePage__3 .button1 .icon {
+  display: none;
+}
+.activePage__3 .button1 .svg {
+  display: block;
+}
+.activePage__3 .button2 .icon {
+  display: none;
+}
+.activePage__3 .button2 .svg {
+  display: block;
+}
+.activePage__3 .button1, .activePage__3 .button2 {
+  border-color: #FFD500;
+}
+.activePage__3 .line1, .activePage__3 .line2 {
+  background-color: #FFD500;
+}
+.activePage__3 .button3 {
+  background-color: #FFD500;
+  border-color: #FFD500;
+}
+
+.activePage__4 .button1 .icon {
+  display: none;
+}
+.activePage__4 .button1 .svg {
+  display: block;
+}
+.activePage__4 .button2 .icon {
+  display: none;
+}
+.activePage__4 .button2 .svg {
+  display: block;
+}
+.activePage__4 .button3 .icon {
+  display: none;
+}
+.activePage__4 .button3 .svg {
+  display: block;
+}
+.activePage__4 .button1, .activePage__4 .button2, .activePage__4 .button3 {
+  border-color: #FFD500;
+}
+.activePage__4 .line1, .activePage__4 .line2, .activePage__4 .line3 {
+  background-color: #FFD500;
+}
+.activePage__4 .button4 {
+  background-color: #FFD500;
   border-color: #FFD500;
 }
 

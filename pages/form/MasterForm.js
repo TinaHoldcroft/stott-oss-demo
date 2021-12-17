@@ -39,9 +39,7 @@ class MasterForm extends React.Component {
         event.preventDefault()
         let currentStep = this.state.currentStep
         currentStep = currentStep >= 3 ? 4 : currentStep + 1
-        this.setState({
-            currentStep: currentStep
-        })
+        this.setState({  currentStep: currentStep })
     }
 
     Buttons() {
@@ -132,11 +130,11 @@ class MasterForm extends React.Component {
                 </div>
 
                 <form id="masterform" className={'masterform active' + this.state.currentStep} onSubmit={this.handleSubmit}>
-                    <div className={'breadcrum breadcrum' + this.state.currentStep}>
-                        <BreadcrumBnt nr="1" click={this._GoToOne} value="gå direkte til valg av frekvens og beløp" icon="fas fa-hand-holding-usd" />
-                        <BreadcrumBnt nr="2" click={this._GoToTwo} value="gå direkte til betalingsvalg" icon="fas fa-credit-card" />
-                        <BreadcrumBnt nr="3" click={this._GoToThree} value="gå direkte til personalia" icon="fas fa-user" />
-                        <BreadcrumBnt nr="4" click={this._GoToFour} value="gå direkte til oppsummering" icon="fas fa-receipt" />
+                    <div className={'breadcrum activePage__' + this.state.currentStep}>
+                        <BreadcrumBnt currentStep={this.state.currentStep} nr="1" click={this._GoToOne} value="gå direkte til valg av frekvens og beløp" icon="fas fa-hand-holding-usd" />
+                        <BreadcrumBnt currentStep={this.state.currentStep} nr="2" click={this._GoToTwo} value="gå direkte til betalingsvalg" icon="fas fa-credit-card" />
+                        <BreadcrumBnt currentStep={this.state.currentStep} nr="3" click={this._GoToThree} value="gå direkte til personalia" icon="fas fa-user" />
+                        <BreadcrumBnt currentStep={this.state.currentStep} nr="4" click={this._GoToFour} value="gå direkte til oppsummering" icon="fas fa-receipt" />
                     </div>
                     <Step1 currentStep={this.state.currentStep} handleChange={this.handleChange} frekvens={this.state.frekvens} beløp={this.state.beløp} />
                     <Step2 currentStep={this.state.currentStep} handleChange={this.handleChange} fradrag={this.state.fradrag} fødselsnummer={this.state.fødselsnummer} />

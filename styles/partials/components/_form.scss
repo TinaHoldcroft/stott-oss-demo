@@ -127,7 +127,7 @@ fieldset {
     a { @include hover-underline(1.5px, $medium-grey); }
 }
 .checkmark-wrapper { margin: 2rem 0; }
-.checkmark{
+.checkmark {
     stroke-width: 2px;
     stroke: $yellow;
     fill: none;
