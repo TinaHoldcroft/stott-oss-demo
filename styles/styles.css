@@ -881,7 +881,7 @@ fieldset {
   stroke: #ffffff;
 }
 .checkmark-circle path {
-  animation: checkmark 2.2s ease-in-out 1.25s backwards;
+  animation: checkmark 2s ease-in-out 0.7s;
 }
 
 .vipps-txt {
