@@ -4,13 +4,13 @@ function BTN(props) {
 
     return (
         <div className="btn">
-            <Link passHref href={props.link}>
-                <a target={props.target}>
-                    <button type="button" value={props.value} onClick={props.onClick}>
+            <button type="button" value={props.value} onClick={props.onClick}>
+                <Link passHref href={props.link}>
+                    <a target={props.target}>
                         {props.value}
-                    </button>
-                </a>
-            </Link>
+                    </a>
+                </Link>
+            </button>
         </div>
     );
 }
