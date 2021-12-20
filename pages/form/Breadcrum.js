@@ -6,6 +6,8 @@ export default function BreadcrumBnt(props) {
                 className={'button' + props.nr}
                 type='button'
                 value={props.value}
+                name={props.value}
+                title={props.value}
                 onClick={props.click}>
                 <i className={'icon ' + props.icon}></i>
                 <svg className='svg' xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="-263.5 236.5 26 26">

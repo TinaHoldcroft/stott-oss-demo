@@ -3,6 +3,7 @@ import Link from 'next/link';
 export default function Step4({ currentStep, navn, adresse, telefon, epost, frekvens, beløp, fradrag, fødselsnummer }) {
     
     if (currentStep !== 4) { return null }
+    
     return (
         <div className='summary'>
             <h1>Oppsummering</h1>

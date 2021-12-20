@@ -34,7 +34,18 @@
 }
 @keyframes checkmark-circle {
   0% {
-    stroke-dashoffset: 76px;
+    background-color: #ffffff;
+    border: 10px solid #ebebeb;
+    border-top-color: #FFD500;
+  }
+  80% {
+    background-color: #ffffff;
+    border: 10px solid #ebebeb;
+    border-top-color: #FFD500;
+  }
+  100% {
+    transform: rotate(720deg);
+    background-color: #FFD500;
   }
 }
 @keyframes scaleUpOdd {
@@ -814,9 +825,9 @@ fieldset {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: stretch;
-  align-self: auto;
-  align-content: flex-start;
+  align-items: center;
+  align-self: center;
+  align-content: center;
   gap: 1em;
   text-align: center;
   padding: 2rem 0 0 0;
@@ -846,10 +857,6 @@ fieldset {
   background: #383838;
 }
 
-.checkmark-wrapper {
-  margin: 2rem 0;
-}
-
 .checkmark {
   stroke-width: 2px;
   stroke: #FFD500;
@@ -860,10 +867,21 @@ fieldset {
   stroke-dashoffset: 0px;
   animation: checkmark 0.25s ease-in-out 0.7s backwards;
 }
-.checkmark circle {
-  stroke-dasharray: 76px, 76px;
-  stroke-dashoffset: 0px;
-  animation: checkmark-circle 0.6s ease-in-out forwards;
+
+.checkmark-circle {
+  height: 12rem;
+  width: 12rem;
+  margin: 3rem 0;
+  border-radius: 50%;
+  animation: checkmark-circle 2s ease-in-out forwards;
+  border: 5px solid #FFD500;
+}
+.checkmark-circle .checkmark {
+  stroke-width: 2px;
+  stroke: #ffffff;
+}
+.checkmark-circle path {
+  animation: checkmark 2.2s ease-in-out 1.25s backwards;
 }
 
 .vipps-txt {

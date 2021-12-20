@@ -27,7 +27,7 @@ class MasterForm extends React.Component {
             adresse: '',
             epost: ''
         }
-        console.log(this.state)
+        //console.log(this.state)
     }
 
     handleChange = event => {
@@ -39,7 +39,23 @@ class MasterForm extends React.Component {
         event.preventDefault()
         let currentStep = this.state.currentStep
         currentStep = currentStep >= 3 ? 4 : currentStep + 1
-        this.setState({  currentStep: currentStep })
+        this.setState({ currentStep: currentStep })
+    }
+
+    Inputs() {
+        let currentStep = this.state.currentStep;
+        let fradrag = this.state.fradrag;
+
+        if (currentStep === 2) {
+            if (fradrag === 'ja') {
+                return (
+                    <div className="txt-input-wrapper">
+                        <label htmlFor="fødselsnummer">Fødselsnummer</label>
+                        <input id="fødselsnummer" name="fødselsnummer" type="number" placeholder={this.state.fødselsnummer} onChange={this.handleChange} pattern="[0-9]{11,}" required />
+                    </div>
+                )
+            }
+        }
     }
 
     Buttons() {
@@ -142,6 +158,7 @@ class MasterForm extends React.Component {
                     <Step2 currentStep={this.state.currentStep} handleChange={this.handleChange} fradrag={this.state.fradrag} fødselsnummer={this.state.fødselsnummer} />
                     <Step3 currentStep={this.state.currentStep} handleChange={this.handleChange} paymentType={this.state.paymentType} navn={this.state.navn} telefon={this.state.telefon} adresse={this.state.adresse} epost={this.state.epost} />
                     <Step4 currentStep={this.state.currentStep} />
+                    {this.Inputs()}
                     {this.Buttons()}
                 </form>
             </div>

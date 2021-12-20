@@ -24,7 +24,22 @@
 }
 
 @keyframes checkmark { 0% { stroke-dashoffset: 17px; } } 
-@keyframes checkmark-circle { 0% { stroke-dashoffset: 76px; } } 
+@keyframes checkmark-circle { 
+    0% { 
+        background-color: $white;
+        border: 10px solid $light-grey;
+        border-top-color: $yellow;
+    }
+    80% { 
+        background-color: $white;
+        border: 10px solid $light-grey;
+        border-top-color: $yellow;
+    }
+    100% { 
+        transform: rotate(720deg); 
+        background-color: $yellow;
+    }
+} 
 
 @keyframes scaleUpOdd {
     0% { 

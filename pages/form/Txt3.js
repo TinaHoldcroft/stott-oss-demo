@@ -14,6 +14,7 @@ export default function Txt3(props) {
             </div>
         );
     }
+    
     return (
         <>
             <h1>Du kan stole på oss</h1>
