@@ -1,0 +1,39 @@
+.SoMe {
+    a  {
+        @include flex(row nowrap, center, center, center, center, 0);
+        height: 2.5rem;
+        width: 2.5rem;
+        background-color: $light-grey;
+        border-radius: 50%;
+        border: 1px solid $light-grey;
+        font-size: 1.2em;
+        &:hover, &:focus {
+            background-color: $white;
+            border: 1px solid #ccc;
+        }
+    }
+    i {
+        @include flex(row nowrap, center, center, center, center, 0);
+        padding: 0.3em 0 0 0.1em;
+    }
+}
+.fa-youtube {
+    &:hover, &:focus {
+        color: $youtube;
+    }
+}
+.fa-twitter {
+    &:hover, &:focus {
+        color: $twitter;
+    }
+}
+.fa-facebook {
+    &:hover, &:focus {
+        color: $facebook;
+    }
+}
+.fa-envelope-open-text {
+    &:hover, &:focus {
+        color: $yellow;
+    }
+}

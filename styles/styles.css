@@ -537,13 +537,11 @@ footer .col-1 .SoMe {
   display: -webkit-flex;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   align-self: auto;
   align-content: center;
   gap: 1.5rem;
-  margin: 1rem 0 0 0;
-  font-size: 1.2em;
 }
 footer .col-2 {
   display: -webkit-box;
@@ -1797,6 +1795,60 @@ fieldset {
   border-radius: 50%;
   border: 2px solid #242424;
   transition: all 0.5s;
+}
+
+.SoMe a {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  gap: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: #ebebeb;
+  border-radius: 50%;
+  border: 1px solid #ebebeb;
+  font-size: 1.2em;
+}
+.SoMe a:hover, .SoMe a:focus {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+}
+.SoMe i {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  gap: 0;
+  padding: 0.3em 0 0 0.1em;
+}
+
+.fa-youtube:hover, .fa-youtube:focus {
+  color: #e60019;
+}
+
+.fa-twitter:hover, .fa-twitter:focus {
+  color: #009bdb;
+}
+
+.fa-facebook:hover, .fa-facebook:focus {
+  color: #2269b2;
+}
+
+.fa-envelope-open-text:hover, .fa-envelope-open-text:focus {
+  color: #FFD500;
 }
 
 main {
