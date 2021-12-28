@@ -11,7 +11,7 @@ function Tile(props) {
             <a className="tile">
                 <h3>
                     <span>{props.heading}</span>
-                    <i>&rarr;</i>
+    
                 </h3>
 
                 <p>{props.txt}</p>

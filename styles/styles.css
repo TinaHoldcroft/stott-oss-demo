@@ -276,12 +276,12 @@ nav .--open {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   align-self: auto;
   align-content: flex-start;
-  gap: 10vw;
+  gap: 0vw;
   position: fixed;
   top: 0;
   right: 0;
@@ -305,42 +305,18 @@ nav .--open {
   background-color: #FFD500;
 }
 
-.menu-group {
-  list-style: none;
+.menuitem {
+  counter-increment: toc;
 }
-.menu-group li {
-  animation: navContentOpen 2s 1;
+.menuitem a::before {
+  content: "0" counter(toc);
 }
-.menu-group li a {
-  line-height: 1.4em;
-  margin: 0.35rem 0 0.35rem 0;
-  outline: none;
-  position: relative;
-  display: inline-block;
-}
-.menu-group li a::after {
-  position: absolute;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 2px;
-  bottom: -4px;
-  transform: scale(0, 1);
-  transition: transform 0.4s;
-}
-.menu-group li a:hover::after, .menu-group li a:focus::after, .menu-group li a:active::after {
-  transform: scale(1, 1);
-}
-.menu-group li a:after, .menu-group li a:after {
-  background: #383838;
+.menuitem a::after {
+  content: "→";
 }
 
-.menu-heading a {
-  border-bottom: 2px solid transparent;
-  font-weight: 400;
-  font-size: clamp(2em, 2.5vw, 3rem);
-  letter-spacing: -0.01em;
-  color: #383838 !important;
+ol {
+  list-style: none;
 }
 
 .nav-highlights {
@@ -1018,7 +994,8 @@ fieldset {
   align-content: center;
   gap: 0;
 }
-.tile i {
+.tile h3::after {
+  content: "→";
   position: relative;
   margin-right: 1rem;
 }
@@ -1026,7 +1003,7 @@ fieldset {
   border-bottom: 5px dotted #FFD500;
   margin: 0;
 }
-.tile:hover i, .tile:focus i {
+.tile:hover h3::after, .tile:focus h3::after {
   animation: bounce 1s 2 forwards ease-in-out;
 }
 

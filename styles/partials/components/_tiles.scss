@@ -18,16 +18,19 @@
         padding: 0.6rem 0.5rem;
         min-width: 100%;
         @include flex(row nowrap, space-between, stretch, auto, center, 0);
-    }
-    i {
-        position: relative;
-        margin-right: 1rem;  
+        &::after {
+            content: '→'; 
+            position: relative;
+            margin-right: 1rem;  
+        }
     }
     &:hover, &:focus {
         h3 {
             border-bottom: 5px dotted $yellow;
             margin: 0;
+            &::after {
+                animation: bounce 1s 2 forwards ease-in-out; 
+            }
         }
-        i { animation: bounce 1s 2 forwards ease-in-out; }
     }
 }

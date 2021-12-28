@@ -18,7 +18,7 @@ nav {
     font-weight: 500;
     transition: top 1s;
     .--open { 
-        @include flex(row nowrap, center, center, auto, flex-start, 10vw);
+        @include flex(column nowrap, center, center, auto, flex-start, 0vw);
         position: fixed; 
         top: 0;
         right: 0;
@@ -40,24 +40,19 @@ nav {
     animation: navOverlayOpen 2s 1;
     background-color: $yellow;
 }
-.menu-group {
-    list-style: none;
-    li {
-        animation: navContentOpen 2s 1;
-        a {
-            line-height: 1.4em;
-            margin: 0.35rem 0 0.35rem 0;
-            outline: none;
-            @include hover-underline(2px, $medium-grey);
+.menuitem {
+    counter-increment: toc;
+    a {
+        &::before {
+            content: "0" counter(toc);
         }
+        &::after {
+            content: '→'; 
+        }        
     }
 }
-.menu-heading a {
-    border-bottom: 2px solid transparent;
-    font-weight: 400;
-    font-size: clamp(2em, 2.5vw, 3rem);
-    letter-spacing: -0.01em;
-    color: $medium-grey!important;
+ol {
+    list-style: none;
 }
 .nav-highlights {
     display: flex;
