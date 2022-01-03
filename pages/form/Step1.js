@@ -8,11 +8,11 @@ export default function Step1(props) {
                 <legend>Velg Frekvens</legend>
                 <div>
                     <input onChange={props.handleChange} type="radio" id="enGang" name="frekvens" value='en gang' checked={props.frekvens === 'en gang'} />
-                    <label className="checkBtn float-left" htmlFor="enGang">en gang</label>
+                    <label className="checkBtn float-left" htmlFor="enGang"><span className="sr-only">velg frekvens </span>en gang</label>
                 </div>
                 <div>
                     <input onChange={props.handleChange} type="radio" id="månedlig" name="frekvens" value="månedlig" checked={props.frekvens === 'månedlig'} />
-                    <label className="checkBtn  float-right" htmlFor="månedlig">månedlig</label>
+                    <label className="checkBtn  float-right" htmlFor="månedlig"><span className="sr-only">velg frekvens </span>månedlig</label>
                 </div>
             </fieldset>
 
@@ -20,19 +20,19 @@ export default function Step1(props) {
                 <legend>Velg beløp</legend>
                 <div>
                     <input onChange={props.handleChange} type="radio" id="300" name="beløp" value="300" checked={props.beløp === '300'} />
-                    <label className="checkBtn float-left" htmlFor="300">300</label>
+                    <label className="checkBtn float-left" htmlFor="300"><span className="sr-only">velg beløp </span>300</label>
                 </div>
                 <div>
                     <input onChange={props.handleChange} type="radio" id="500" name="beløp" value="500" checked={props.beløp === '500'} />
-                    <label className="checkBtn float-right" htmlFor="500">500</label>
+                    <label className="checkBtn float-right" htmlFor="500"><span className="sr-only">velg beløp </span>500</label>
                 </div>
                 <div>
                     <input onChange={props.handleChange} type="radio" id="750" name="beløp" value="750" checked={props.beløp === '750'} />
-                    <label className="checkBtn float-left" htmlFor="750">750</label>
+                    <label className="checkBtn float-left" htmlFor="750"><span className="sr-only">velg beløp </span>750</label>
                 </div>
                 <div>
                     <input onChange={props.handleChange} type="radio" id="1000" name="beløp" value="1000" checked={props.beløp === '1000'} />
-                    <label className="checkBtn float-right" htmlFor="1000">1000</label>
+                    <label className="checkBtn float-right" htmlFor="1000"><span className="sr-only">velg beløp </span>1000</label>
                 </div>
                 <div className="txt-input-wrapper">
                     <label htmlFor="custom">Eller skriv inn ønsket beløp</label>

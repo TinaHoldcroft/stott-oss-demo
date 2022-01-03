@@ -44,7 +44,7 @@ const Nav = () => {
             <FocusLock className="focus" disabled={isActive ? true : false}>
                 <div className="nav-btn-wrapper">
                     <SearchBtn />
-                    <button className={isActive ? "btn-dropdown" : "btn-dropdown is-menu-open"} accessKey="m" title={isActive ? "Open menu" : "Close menu"} type="button" value={isActive ? "Open menu" : "Close menu"} onClick={handleToggle}>
+                    <button className={isActive ? "btn-dropdown" : "btn-dropdown is-menu-open"} accessKey="m" title={isActive ? "Åpne meny" : "Lukk meny"} type="button" value={isActive ? "Åpne meny" : "Lukk meny"} onClick={handleToggle}>
                         <p className="bars">
                             <span></span>
                             <span></span>
