@@ -42,10 +42,11 @@ const Footer = () => {
                     <p>NO 971038179 MVA</p>
                 </div>
                 <div className="partners">
-                    <img src="/innsamlingskontrollen.png" alt="innsamlingskontrollen" />
+                    <img src="/CAF.svg" alt="CAF international" />
                     <img src="/specsavers.png" alt="specsavers" />
                     <img src="/anicura.png" alt="anicura" />
                     <img src="/royal-canin.png" alt="royal canin" />
+                    <img src="/innsamlingskontrollen.png" alt="godkjent av innsamlingskontrollen" />
                 </div>
             </div>
         </footer>

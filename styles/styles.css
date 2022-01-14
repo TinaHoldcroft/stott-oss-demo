@@ -748,6 +748,10 @@ input[type=radio]:checked ~ label, input[type=radio]:focus ~ label, input[type=r
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.38);
 }
 
+.txt-input-wrapper p {
+  display: inline-block;
+  padding: 1em 0;
+}
 .txt-input-wrapper input {
   background-color: #ebebeb;
   border: none;
@@ -771,16 +775,16 @@ fieldset {
   margin: 2rem 0 0 0;
 }
 
-#fødselsnummer {
+#fødselsdato {
   -moz-appearance: textfield;
 }
-#fødselsnummer::-webkit-outer-spin-button, #fødselsnummer::-webkit-inner-spin-button {
+#fødselsdato::-webkit-outer-spin-button, #fødselsdato::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
 .form-group p {
-  margin: 1.6em 0;
+  margin: 0.3em 0;
 }
 
 .active1, .active3, .active5 {
@@ -1448,7 +1452,7 @@ fieldset {
   font-size: 1.2em;
 }
 
-.line4 {
+.line3 {
   display: none;
 }
 

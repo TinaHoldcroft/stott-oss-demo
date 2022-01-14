@@ -7,7 +7,7 @@ export default function Step3(props) {
             <div className="vipps-page">
                 <img id="vipps-orange" src={'/vipps-orange.svg'} alt='vipps logo' />
                 <h2>Betal med Vipps</h2>
-                <h3 htmlFor="telefon">{props.belop} kr til Norges Blindeforbund</h3>
+                <h3 htmlFor="telefon">{props.beløp} kr til Norges Blindeforbund</h3>
                 <div className="input-group">
                     <label htmlFor="telefon">+47</label>
                     <input className="form-control" id="telefon" name="telefon" type="tel" value={props.telefon} onChange={props.handleChange} pattern="[0-9]{8,}" required />
@@ -21,10 +21,11 @@ export default function Step3(props) {
             <div className="txt-input-wrapper">
                 <label htmlFor="telefon">telefon</label>
                 <input className="form-control" id="telefon" name="telefon" type="tel" value={props.telefon} onChange={props.handleChange} pattern="[0-9]{8,}" required />
+                
             </div>
             <div className="txt-input-wrapper">
                 <label htmlFor="navn">fullt navn</label>
-                <input className="form-control" id="navn" name="navn" type="text" value={props.navn} onChange={props.handleChange} pattern="[A-Za-z ]{4,}" required />
+                <input className="form-control" id="navn" name="navn" type="text" value={props.navn} onChange={props.handleChange} pattern="{4,}" required />
             </div>
             <div className="txt-input-wrapper">
                 <label htmlFor="adresse">adresse</label>

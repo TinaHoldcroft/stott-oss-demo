@@ -4,7 +4,7 @@ export default function Step4(props) {
     return (
         <div className="complete">
             <h2>Takk</h2>
-            <p>Din donasjon er registrert og du vil i løpet av kort tid motta kvitteringen via mail</p>
+            <p>Din gave er registrert og du vil i løpet av kort tid motta kvitteringen via mail</p>
             <div className="checkmark-circle">
                 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="-263.5 236.5 26 26">
                     <g className="checkmark">

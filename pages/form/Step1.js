@@ -1,5 +1,13 @@
+import React, { useState, useEffect } from 'react';
+
 export default function Step1(props) {
-    
+    const handleToggle = () => { setActive(!isActive); };
+    const [isActive, setActive] = useState("false");
+
+    const closeFeild = () => { //close custom field if open
+        if (isActive === false) { setActive(!isActive); }
+    }
+
     if (props.currentStep !== 1) { return null }
 
     return (
@@ -19,25 +27,27 @@ export default function Step1(props) {
             <fieldset className="fieldset-btn-group">
                 <legend>Velg beløp</legend>
                 <div>
-                    <input onChange={props.handleChange} type="radio" id="300" name="beløp" value="300" checked={props.beløp === '300'} />
-                    <label className="checkBtn float-left" htmlFor="300"><span className="sr-only">velg beløp </span>300</label>
+                    <input onClick={closeFeild} onChange={props.handleChange} type="radio" id="175" name="beløp" value="175" checked={props.beløp === '175'} />
+                    <label className="checkBtn float-left" htmlFor="175"><span className="sr-only">velg beløp </span>175</label>
                 </div>
                 <div>
-                    <input onChange={props.handleChange} type="radio" id="500" name="beløp" value="500" checked={props.beløp === '500'} />
-                    <label className="checkBtn float-right" htmlFor="500"><span className="sr-only">velg beløp </span>500</label>
+                    <input onClick={closeFeild} onChange={props.handleChange} type="radio" id="300" name="beløp" value="300" checked={props.beløp === '300'} />
+                    <label className="checkBtn float-right" htmlFor="300"><span className="sr-only">velg beløp </span>300</label>
                 </div>
                 <div>
-                    <input onChange={props.handleChange} type="radio" id="750" name="beløp" value="750" checked={props.beløp === '750'} />
-                    <label className="checkBtn float-left" htmlFor="750"><span className="sr-only">velg beløp </span>750</label>
+                    <input onClick={closeFeild} onChange={props.handleChange} type="radio" id="500" name="beløp" value="500" checked={props.beløp === '500'} />
+                    <label className="checkBtn float-left" htmlFor="500"><span className="sr-only">velg beløp </span>500</label>
                 </div>
                 <div>
-                    <input onChange={props.handleChange} type="radio" id="1000" name="beløp" value="1000" checked={props.beløp === '1000'} />
-                    <label className="checkBtn float-right" htmlFor="1000"><span className="sr-only">velg beløp </span>1000</label>
+                    <input onChange={handleToggle} type="radio" id="annet" name="beløp" value="Annet"/>
+                    <label className="checkBtn float-right" htmlFor="annet"><span className="sr-only">velg beløp </span>annet</label>
                 </div>
+                {isActive ? '' :
                 <div className="txt-input-wrapper">
-                    <label htmlFor="custom">Eller skriv inn ønsket beløp</label>
+                    <label htmlFor="custom">Skriv inn ønsket beløp</label>
                     <input id="custom" name="beløp" type="number" placeholder={props.beløp} onChange={props.handleChange} />
                 </div>
+                }
             </fieldset>
         </div>
     );

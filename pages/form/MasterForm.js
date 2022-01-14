@@ -17,10 +17,10 @@ class MasterForm extends React.Component {
         super(props)
         this.state = {
             currentStep: 1,
-            frekvens: 'månedlig',
+            frekvens: 'en gang',
             beløp: '300',
             fradrag: 'nei',
-            fødselsnummer: '',
+            fødselsdato: '',
             paymentType: 'vipps',
             telefon: '',
             navn: '',
@@ -50,8 +50,9 @@ class MasterForm extends React.Component {
             if (fradrag === 'ja') {
                 return (
                     <div className="txt-input-wrapper">
-                        <label htmlFor="fødselsnummer">Fødselsnummer</label>
-                        <input id="fødselsnummer" name="fødselsnummer" type="number" placeholder={this.state.fødselsnummer} onChange={this.handleChange} pattern="[0-9]{11,}" required />
+                        <p>For å gi deg skattefradrag trenger vi fødselsdatoen din</p>
+                        <label htmlFor="fødselsdato">Fødselsdato</label>
+                        <input id="fødselsdato" name="fødselsdato" type="number" placeholder={this.state.fødselsdato} onChange={this.handleChange} pattern="[0-9]{6,}" required />
                     </div>
                 )
             }
@@ -144,19 +145,17 @@ class MasterForm extends React.Component {
                     <Txt1 currentStep={this.state.currentStep} />
                     <Txt2 currentStep={this.state.currentStep} />
                     <Txt3 currentStep={this.state.currentStep} paymentType={this.state.paymentType} />
-                    <Txt4 currentStep={this.state.currentStep} navn={this.state.navn} adresse={this.state.adresse} telefon={this.state.telefon} epost={this.state.epost} frekvens={this.state.frekvens} beløp={this.state.beløp} fradrag={this.state.fradrag} fødselsnummer={this.state.fødselsnummer} />
+                    <Txt4 currentStep={this.state.currentStep} navn={this.state.navn} adresse={this.state.adresse} telefon={this.state.telefon} epost={this.state.epost} frekvens={this.state.frekvens} beløp={this.state.beløp} fradrag={this.state.fradrag} fødselsdato={this.state.fødselsdato} />
                 </div>
-
                 <form id="masterform" className={'masterform active' + this.state.currentStep} onSubmit={this.handleSubmit}>
                     <div className={'breadcrum activePage__' + this.state.currentStep}>
                         <BreadcrumBnt currentStep={this.state.currentStep} nr="1" click={this._GoToOne} value="gå direkte til valg av frekvens og beløp" icon="fas fa-hand-holding-usd" />
                         <BreadcrumBnt currentStep={this.state.currentStep} nr="2" click={this._GoToTwo} value="gå direkte til betalingsvalg" icon="fas fa-credit-card" />
                         <BreadcrumBnt currentStep={this.state.currentStep} nr="3" click={this._GoToThree} value="gå direkte til personalia" icon="fas fa-user" />
-                        <BreadcrumBnt currentStep={this.state.currentStep} nr="4" click={this._GoToFour} value="gå direkte til oppsummering" icon="fas fa-receipt" />
                     </div>
                     <Step1 currentStep={this.state.currentStep} handleChange={this.handleChange} frekvens={this.state.frekvens} beløp={this.state.beløp} />
-                    <Step2 currentStep={this.state.currentStep} handleChange={this.handleChange} fradrag={this.state.fradrag} fødselsnummer={this.state.fødselsnummer} />
-                    <Step3 currentStep={this.state.currentStep} handleChange={this.handleChange} paymentType={this.state.paymentType} navn={this.state.navn} telefon={this.state.telefon} adresse={this.state.adresse} epost={this.state.epost} />
+                    <Step2 currentStep={this.state.currentStep} handleChange={this.handleChange} fradrag={this.state.fradrag} fødselsdato={this.state.fødselsdato} />
+                    <Step3 currentStep={this.state.currentStep} handleChange={this.handleChange} paymentType={this.state.paymentType} navn={this.state.navn} telefon={this.state.telefon} adresse={this.state.adresse} epost={this.state.epost} beløp={this.state.beløp} />
                     <Step4 currentStep={this.state.currentStep} />
                     {this.Inputs()}
                     {this.Buttons()}

@@ -31,7 +31,7 @@ export default function Home() {
                         heading='testamentariske gaver'
                         txt='Du kan gjøre en forskjell også etter at du er borte. En gave i ditt testament skaper håp og gir blinde og svaksynte en bedre fremtid.'
                         link='https://www.blindeforbundet.no/stott-blindeforbundet/testamentariske-gaver'
-                        value='gi gave'
+                        value='lær mer'
                     />
                 </div>
                 <div className='tile-container'>
@@ -82,9 +82,9 @@ export default function Home() {
                 </div>
                 <Campaign
                     img='https://images.unsplash.com/photo-1579208570378-8c970854bc23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1222&q=80' alt='to hender som holder hver sin enda av et papir hjerte'
-                    heading='Kjøp valpekalender'
+                    heading='Bestill valpekalender'
                     txt='Valpekalenderen til Norges Blindeforbund er en av Norges mest populære kalendere. Når du bestiller kalenderen er du med på å gi selvstendigheten tilbake til mange svaksynte og blinde.'
-                    btnValue='kjøp kalender'
+                    btnValue='bestill kalender'
                     ArrowValue='lær mer'
                     btnLink='https://www.blindeforbundet.no/kalender/#vil-du-bestille-kalenderen-for-2019'
                     ArrowLink='https://www.blindeforbundet.no/kalender'

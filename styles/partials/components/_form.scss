@@ -22,9 +22,7 @@
         top: 8rem;
         margin-top: 0;
     }
-    .action-group {
-        .btn { @include BTN($white, 13rem, 2.4rem, 0.8em, #ffffff49); }
-    }
+    .action-group .btn{ @include BTN($white, 13rem, 2.4rem, 0.8em, #ffffff49); }
 }
 .masterform {
     position: absolute;
@@ -78,6 +76,10 @@ input[type=radio] {
     }
 }
 .txt-input-wrapper {
+    p {
+        display: inline-block;
+        padding: 1em 0;
+    }
     input {
         background-color: $light-grey;
         border: none;
@@ -100,14 +102,14 @@ fieldset {
     border: none;
     margin: 2rem 0 0 0;
 }
-#fødselsnummer {
+#fødselsdato {
     -moz-appearance: textfield;
     &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
 }
-.form-group p { margin: 1.6em 0; }
+.form-group p { margin: 0.3em 0; }
 .active1, .active3, .active5 { animation: scaleUpOdd 1s 1 ease-in-out; }
 .active2, .active4 { animation: scaleUpEven 1s 1 ease-in-out; }
 .complete {
