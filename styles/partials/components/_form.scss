@@ -142,9 +142,7 @@ fieldset {
         stroke-width: 2px;
         stroke: $white;
     }
-    path {
-        animation: checkmark 2s ease-in-out 0.7s;
-    }
+    path { animation: checkmark 2s ease-in-out 0.7s; }
 }
 .vipps-txt {
     @include flex(column nowrap, center, stretch, auto, flex-start, 1em);
@@ -152,9 +150,7 @@ fieldset {
     a {
         font-size: 1em;
         border-bottom: 3px dotted transparent; 
-        &:hover, &:focus {
-            border-bottom: 3px dotted $black; 
-        }
+        &:hover, &:focus { border-bottom: 3px dotted $black; }
     }
 }
 .vipps-page {
@@ -185,9 +181,7 @@ fieldset {
         height: 3.2rem;
         padding: 0.6rem 0 0 1rem;
     }
-    .input-group {
-        @include flex(row nowrap, center, center, center, center, 0);
-    }
+    .input-group { @include flex(row nowrap, center, center, center, center, 0); }
     input {
         background-color: #56148817;
         border: none;

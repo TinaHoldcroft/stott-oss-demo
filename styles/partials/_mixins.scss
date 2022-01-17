@@ -74,9 +74,7 @@
         line-height: 1.5em;
         border-bottom: dotted 3px transparent;
         color: $color; 
-        &::first-letter {
-            text-transform: uppercase;
-        }
+        &::first-letter { text-transform: uppercase; }
     }
     i {
         font-size: 1.1em;

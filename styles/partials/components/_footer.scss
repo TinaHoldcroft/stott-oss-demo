@@ -28,9 +28,7 @@ footer {
         padding: 0 0 0.35em 0;
         border-bottom: 3px dotted transparent;
         transition: 0.3s;
-        @media only screen and (max-width: 1000px) { 
-            margin: 0;
-        }
+        @media only screen and (max-width: 1000px) { margin: 0; }
     }
     .col-1 {
         width: 100%;
@@ -42,18 +40,12 @@ footer {
             padding: 0 1rem;
         }
 
-        div, section {
-            @include flex(column nowrap, space-between, flex-start, auto, center, 0.5em);
+        div, section { @include flex(column nowrap, space-between, flex-start, auto, center, 0.5em); }
+        section a:hover, section a:focus { 
+            border-bottom: 3px dotted $black; 
+            transition: 0.3s;
         }
-        section {
-            a:hover, a:focus { 
-                border-bottom: 3px dotted $black; 
-                transition: 0.3s;
-            }
-        }
-        .SoMe {
-            @include flex(row nowrap, flex-start, flex-start, auto, center, 1.5rem);
-        }
+        .SoMe { @include flex(row nowrap, flex-start, flex-start, auto, center, 1.5rem); }
     }
     .col-2 {
         @include flex(row nowrap, space-between, center, center, center, 0);
@@ -75,12 +67,11 @@ footer {
         }
         .partners {
             @include flex(row nowrap, center, flex-start, auto, center, 3rem);
+            margin: 1rem 0 0 0;
             @media only screen and (max-width: 1000px) { 
                 @include flex(column nowrap, space-between, flex-start, auto, center, 1rem);
                 margin: 0;
             }
-            margin: 1rem 0 0 0;
         }
     }
-
 }

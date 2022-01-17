@@ -17,23 +17,7 @@
         padding: 0.3em 0 0 0.1em;
     }
 }
-.fa-youtube {
-    &:hover, &:focus {
-        color: $youtube;
-    }
-}
-.fa-twitter {
-    &:hover, &:focus {
-        color: $twitter;
-    }
-}
-.fa-facebook {
-    &:hover, &:focus {
-        color: $facebook;
-    }
-}
-.fa-envelope-open-text {
-    &:hover, &:focus {
-        color: $yellow;
-    }
-}
+.fa-youtube:hover, .fa-youtube:focus { color: $youtube; }
+.fa-twitter:hover, .fa-twitter:focus { color: $twitter; }
+.fa-facebook:hover, .fa-facebook:focus { color: $facebook; }
+.fa-envelope-open-text:hover, .fa-envelope-open-text:focus { color: $yellow; }

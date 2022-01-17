@@ -8,9 +8,7 @@
         padding: 10vw;
         max-width: 90%;
     }
-    ::first-letter {
-        text-transform: uppercase;
-    }
+    ::first-letter { text-transform: uppercase; }
     .btn {
         @include BTN($yellow, 12rem, 3rem);
         margin: 1.5rem 0 0 0;

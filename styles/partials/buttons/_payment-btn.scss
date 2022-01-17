@@ -17,7 +17,7 @@
         flex: 1 1 auto; 
     }
     .vipps {
-        background-color: #FF5B24;
+        background-color: $vipps;
         img { width: 60%; }
     }
     .avtale-giro {
@@ -31,18 +31,18 @@
     }
 }
 .vipps-approve {
-    background-color: #FF5B24;
+    background-color: $vipps;
     color: $white;
     font-size: 1.1em;
     font-weight: 600;
     padding: 0.8rem;
     margin: 1rem 0 0 34%;
     border-radius: 50px;
-    border: solid 3px #FF5B24;
+    border: solid 3px $vipps;
     float: center;
     width: 30%;
     &:focus, &:hover {
         background-color: $white;
-        color: #FF5B24;
+        color: $vipps;
     }
 }

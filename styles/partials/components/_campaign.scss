@@ -20,9 +20,7 @@
         @media only screen and (max-width: 1000px) { padding: 2rem; }
         .btn { 
             @include BTN($white, 12rem, 3rem, 1em, #ffffff49); 
-            @media only screen and (max-width: 1000px) { 
-                @include BTN($white, 8.5rem, 3rem, 0.85em, #ffffff49); 
-            }
+            @media only screen and (max-width: 1000px) {  @include BTN($white, 8.5rem, 3rem, 0.85em, #ffffff49); }
         }
         h5 {
             font-size: 2em;

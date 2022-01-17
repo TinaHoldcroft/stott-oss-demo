@@ -58,63 +58,80 @@ const Nav = () => {
                         <li className="menuitem" role="none" onClick={handleToggle}>
                             <Link role="menuitem" href='/'>
                                 <a>
-                                    Link
+                                    <span>Øyehelse og synshemninger</span>
+                                    <i className="fas fa-arrow-right"></i>
                                 </a>
                             </Link>
                         </li>
                         <li className="menuitem" role="none" onClick={handleToggle}>
                             <Link role="menuitem" href='/'>
                                 <a>
-                                    Link
+                                    <span>Råd, tips og rettigheter</span>
+                                    <i className="fas fa-arrow-right"></i>
                                 </a>
                             </Link>
                         </li>
                         <li className="menuitem" role="none" onClick={handleToggle}>
                             <Link role="menuitem" href='/'>
                                 <a>
-                                    Link
+                                    <span>Hjelpemidler og produkter</span>
+                                    <i className="fas fa-arrow-right"></i>
                                 </a>
                             </Link>
                         </li>
                         <li className="menuitem" role="none" onClick={handleToggle}>
                             <Link role="menuitem" href='/'>
                                 <a>
-                                    Link
+                                    <span>Tilbud, kurs og arrangementer</span>
+                                    <i className="fas fa-arrow-right"></i>
                                 </a>
                             </Link>
                         </li>
                         <li className="menuitem" role="none" onClick={handleToggle}>
                             <Link role="menuitem" href='/'>
                                 <a>
-                                    Link
+                                    <span>Universell utforming</span>
+                                    <i className="fas fa-arrow-right"></i>
                                 </a>
                             </Link>
                         </li>
                         <li className="menuitem" role="none" onClick={handleToggle}>
                             <Link role="menuitem" href='/'>
                                 <a>
-                                    Link
+                                    <span>Medlemskap</span>
+                                    <i className="fas fa-arrow-right"></i>
                                 </a>
                             </Link>
                         </li>
                         <li className="menuitem" role="none" onClick={handleToggle}>
                             <Link role="menuitem" href='/'>
                                 <a>
-                                    Link
+                                    <span>Om Blindeforbundet</span>
+                                    <i className="fas fa-arrow-right"></i>
                                 </a>
                             </Link>
                         </li>
                         <li className="menuitem" role="none" onClick={handleToggle}>
                             <Link role="menuitem" href='/'>
                                 <a>
-                                    Link
+                                    <span>Fylkeslag</span>
+                                    <i className="fas fa-arrow-right"></i>
                                 </a>
                             </Link>
                         </li>
                         <li className="menuitem" role="none" onClick={handleToggle}>
                             <Link role="menuitem" href='/'>
                                 <a>
-                                    Link
+                                    <span>Støtt Blindeforbundet</span>
+                                    <i className="fas fa-arrow-right"></i>
+                                </a>
+                            </Link>
+                        </li>
+                        <li className="menuitem" role="none" onClick={handleToggle}>
+                            <Link role="menuitem" href='/'>
+                                <a>
+                                    <span>For bedrifter</span>
+                                    <i className="fas fa-arrow-right"></i>
                                 </a>
                             </Link>
                         </li>
