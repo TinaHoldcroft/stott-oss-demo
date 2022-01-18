@@ -6,7 +6,7 @@ function Campaign(props) {
     return (
         <section className='campaign'>
             <div>
-                <img src={props.img} alt=""/>
+                <img src={props.img} alt={props.alt}/>
             </div>
             <div className='txt'>
                 <h5>{props.heading}</h5>

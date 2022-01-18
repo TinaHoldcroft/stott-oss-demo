@@ -1,5 +1,4 @@
 import BTN from '../../components/btn';
-import Link from 'next/link';
 
 export default function Txt3(props) {
     
@@ -8,9 +7,9 @@ export default function Txt3(props) {
     if (props.paymentType === 'vipps') {
         return (
             <div className="vipps-txt">
-                <h1>Vipps faste betalinger</h1>
-                <p>Betaler du din faste avtale med Vipps trekkes det beløpet du har valgt en gang i måneden via Vipps faste betalinger.</p>
-                <p>Det er ingen bindingstid, så du kan når som helst si opp avtalen din ved å kontakte Giverservice på telefon: <Link href='tel:+4723000600'>23 00 06 00</Link>, eller på e-post: <Link href='mailto:giver@blindeforbundet.no'>giver@blindeforbundet.no</Link>.</p>
+                <h1>Faste betalinger med Vipps</h1>
+                <p>Nå kan du betale dine faste avtaler med Vipps. Da får du god oversikt over betalingene dine og hvert trekk blir varslet.  </p>
+                <p>Det er ingen bindingstid</p>
             </div>
         );
     }

@@ -9,26 +9,26 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>NBf | Støtt oss</title>
+                <title>Støtt oss | Blindeforbundet</title>
             </Head>
 
             <div className='content-index'>
                 <MasterForm />
                 <div className='card-container'>
                     <Card
-                        heading='minnegaver'
-                        txt='Å gi en minnegave til Norges Blindeforbund er en fin og respektfull måte å hedre et kjært familiemedlem, en nær venn eller et medmenneske på. Det ligger også en trøst i å vite at gaven din vil utløse glede og omsorg i lang tid fremover.'
-                        link='https://www.blindeforbundet.no/stott-blindeforbundet/minnegaver'
-                        value='gi minnegave'
+                        heading='Du kan stole på oss'
+                        txt='Du og andre frivillige givere er gullet vårt! Dere gjør at vi kan gi den opplæringen og støtten som trengs etter et synstap. Her kan du lese mer om våre garantier til deg som giver.'
+                        link='https://www.blindeforbundet.no/stott-blindeforbundet/du-kan-stole-pa-oss'
+                        value='lær mer'
                     />
                     <Card
-                        heading='Nettbutikk'
-                        txt='32 millioner mennesker er unødvendig blinde i verden i dag. iCare er Norges Blindeforbunds initiativ for å gi synet tilbake til mennesker som er unødvendig blinde.'
-                        link='https://butikk.blindeforbundet.no/'
-                        value='gå til nettbutikk'
+                        heading='Du kan endre avtalen din når du vil'
+                        txt='Vil du bli fastgiver hos oss? Eller er du allerede fastgiver og ønsker å endre avtalen din? Vi hjelper deg med begge deler. '
+                        link='https://www.blindeforbundet.no/stott-blindeforbundet/endre-stotteavtalen-din'
+                        value='lær mer'
                     />
                     <Card
-                        heading='testamentariske gaver'
+                        heading='en gave i ditt testamente'
                         txt='Du kan gjøre en forskjell også etter at du er borte. En gave i ditt testament skaper håp og gir blinde og svaksynte en bedre fremtid.'
                         link='https://www.blindeforbundet.no/stott-blindeforbundet/testamentariske-gaver'
                         value='lær mer'
@@ -37,51 +37,29 @@ export default function Home() {
                 <div className='tile-container'>
                     <div className='sub'>
                         <Tile
-                            heading='endre støtteavtale'
-                            link='endre-stotteavtalen-din'
-                            txt='Ønsker du å opprette en støtteavtale med Norges Blindeforbund? Eller ønsker du å endre den avtalen du allerede har? Her får du informasjon om hvordan dette gjøres.'
-                        />
-                        <Tile
                             heading='Skattefradrag'
                             link='skattefradrag'
-                            txt='Ved å støtte vårt arbeid kan du få skattefradrag. Skattefradrag oppnås hvis du gir minst 500 kroner til Norges Blindeforbund i løpet av et kalenderår.'
+                            txt='Vil du ha skattefradrag? Gir du mer enn 500 kroner i året har du rett på skattefradrag. Beløpet skal stå oppført i skattemeldingen, men hvis du ser at det mangler, setter vi pris på at du kontakter oss. Vi ordner det på et blunk.'
                         />
                         <Tile
                             heading='dør-til-dør ververe'
                             link='vare-ververe'
-                            txt='Norges Blindeforbunds ververe har på seg sorte jakker med logoen til Norges Blindeforbund. De har et identitetskort rundt halsen, der bilde, navn og vervenummer står på.'
+                            txt='Har du hatt besøk av oss på døren? Klikk her for å sjekke at det var en av våre ansatte. Våre ververe på seg sorte jakker med logoen til Norges Blindeforbund på og identitetskort med bilde, navn og ververnummer. '
                         />
                         <Tile
-                            heading='Vipps faste betalinger'
-                            link='vipps-faste-betalinger'
-                            txt='Betaler du din faste avtale med Vipps trekkes det beløpet du har valgt en gang i måneden via Vipps faste betalinger.'
-                        />
-                    </div>
-                    <div className='sub'>
-                        <Tile
-                            heading='du kan stole på oss'
-                            link='du-kan-stole-pa-oss'
-                            txt='Hver eneste person som støtter Blindeforbundet er like viktig for at blinde og svaksynte i Norge kan få livsnødvendig omsorg, praktisk hjelp og mestringskurs. Vi ønsker derfor å behandle deg og dine gavebidrag med ydmykhet og respekt.'
-                        />
-                        <Tile
-                            heading='Hva går pengene til?'
-                            link='hva-gar-pengene-til'
-                            txt='Lurer du på hva pengene dine går til når du støtter Norges Blindeforbund? Her får du litt mer informasjon om dette.'
-                        />
-                        <Tile
-                            heading='Respekt'
+                            heading='Du bestemmer'
                             link='respekt'
                             txt='Vi vil ikke trenge oss på. Du bestemmer selv hvor mye og i hvilke kanaler du vil høre fra oss.'
                         />
                         <Tile
-                            heading='Diabetes og redusert syn'
-                            link='forskning'
-                            txt='Vet du at diabetes er den vanligste årsaken til redusert syn og blindhet hos relativt unge mennesker? Og at den kan utvikle seg lenge før pasienten merker at noe er galt?'
+                            heading='minnegaver'
+                            txt='Å gi en minnegave til Norges Blindeforbund er en fin og respektfull måte å hedre et kjært familiemedlem, en nær venn eller et medmenneske på. Det ligger også en trøst i å vite at gaven din vil utløse glede og omsorg i lang tid fremover.'
+                            link='minnegaver'
                         />
                     </div>
                 </div>
                 <Campaign
-                    img='https://images.unsplash.com/photo-1579208570378-8c970854bc23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1222&q=80' alt='to hender som holder hver sin enda av et papir hjerte'
+                    img='/hund.jpg' alt='Labrador valp'
                     heading='Bestill valpekalender'
                     txt='Valpekalenderen til Norges Blindeforbund er en av Norges mest populære kalendere. Når du bestiller kalenderen er du med på å gi selvstendigheten tilbake til mange svaksynte og blinde.'
                     btnValue='bestill kalender'

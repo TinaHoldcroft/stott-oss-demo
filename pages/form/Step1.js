@@ -35,18 +35,18 @@ export default function Step1(props) {
                     <label className="checkBtn float-right" htmlFor="300"><span className="sr-only">velg beløp </span>300</label>
                 </div>
                 <div>
-                    <input onClick={closeFeild} onChange={props.handleChange} type="radio" id="500" name="beløp" value="500" checked={props.beløp === '500'} />
-                    <label className="checkBtn float-left" htmlFor="500"><span className="sr-only">velg beløp </span>500</label>
+                    <input onClick={closeFeild} onChange={props.handleChange} type="radio" id="425" name="beløp" value="425" checked={props.beløp === '425'} />
+                    <label className="checkBtn float-left" htmlFor="425"><span className="sr-only">velg beløp </span>425</label>
                 </div>
                 <div>
                     <input onChange={handleToggle} type="radio" id="annet" name="beløp" value="Annet"/>
                     <label className="checkBtn float-right" htmlFor="annet"><span className="sr-only">velg beløp </span>annet</label>
                 </div>
                 {isActive ? '' :
-                <div className="txt-input-wrapper">
-                    <label htmlFor="custom">Skriv inn ønsket beløp</label>
-                    <input id="custom" name="beløp" type="number" placeholder={props.beløp} onChange={props.handleChange} />
-                </div>
+                    <div className="txt-input-wrapper">
+                        <label htmlFor="custom">Skriv inn ønsket beløp</label>
+                        <input id="custom" name="beløp" type="number" placeholder={props.beløp} onChange={props.handleChange} />
+                    </div>
                 }
             </fieldset>
         </div>

@@ -6,8 +6,8 @@ export default function Txt2(props) {
 
     return (
         <>
-            <h1>Slik får du fradraget</h1>
-            <p>Din gave skal stå ferdig påført i skattemeldingen din. Hvis forhåndsutfylling mangler, skal du ikke føre beløpet selv, men ta kontakt og be oss rapportere gavebeløpet på ditt fødselsnummer.</p>
+            <h1>Gaver på minst 500 kroner gir skattefradrag</h1>
+            <p>Gir du minst 500 kroner i året har du rett på skattefradrag. Beløpet vil stå oppført i skattemeldingen din, men hvis det mangler, setter vi pris på at du kontakter oss. Vi ordner det på et blunk.</p>
             <ArrowLink target='_blank' txt='Lær mer her' link='https://www.blindeforbundet.no/stott-blindeforbundet/skattefradrag' />
         </>
     );

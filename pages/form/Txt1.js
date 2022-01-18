@@ -6,10 +6,9 @@ export default function Txt1(props) {
 
     return (
         <>
-            <h1>Støtt Blindeforbundet</h1>
-            <p>Gi et menneske som har mistet synet hjelp til å reise seg etter livskrisen og få opplæring i å leve et selvstendig liv igjen.</p>
-            <p>300 kr fra deg vil hjelpe et menneske som mister synet i ditt nærmiljø</p>
-            <ArrowLink target='_blank' txt='Lær mer her' link='https://www.blindeforbundet.no/stott-blindeforbundet' />
+            <h1>Gi en gave </h1>
+            <p>Å miste synet er en livskrise der det meste må læres på nytt.</p>
+            <p>En gave fra deg gjør oss i stand til å hjelpe et menneske til å ta det første skrittet tilbake til hverdagen etter et synstap. Blir du fastgiver er du med på hele reisen. </p>
         </>
     );
 }
