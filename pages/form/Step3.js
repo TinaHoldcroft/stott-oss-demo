@@ -10,7 +10,7 @@ export default function Step3(props) {
                 <h3>{props.amount} kr til Norges Blindeforbund</h3>
                 <div className="input-group">
                     <label htmlFor="telephone">+47</label>
-                    <input autocomplete="on" className="form-control" id="telephone" name="telephone" type="tel" value={props.telephone} onChange={props.handleChange} pattern="[0-9]{8,}" required />
+                    <input className="form-control" id="telephone" name="telephone" type="tel" value={props.telephone} onChange={props.handleChange} pattern="[0-9]{8,}" required />
                 </div>
             </div>
         );
@@ -38,9 +38,11 @@ export default function Step3(props) {
             </div>
             <div className="row">
                 <div className="txt-input-wrapper">
+                    <label htmlFor="zip">postnummer</label>
                     <input id="zip" name="zip" type="number" value={props.zip} onChange={props.handleChange} required />
                 </div>
                 <div className="txt-input-wrapper">
+                    <label htmlFor="city">poststed</label>
                     <input id="city" name="city" type="text" value={props.city} onChange={props.handleChange} required />
                 </div>
             </div>

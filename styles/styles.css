@@ -715,7 +715,7 @@ footer .col-2 .partners {
   z-index: 0;
   background-color: #ffffff;
   box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38), -2px -2px 8px rgba(0, 0, 0, 0.1);
-  padding: 8vmin 10vmin 10vmin 10vmin;
+  padding: 4rem;
 }
 @media only screen and (max-width: 1160px) {
   .masterform {
