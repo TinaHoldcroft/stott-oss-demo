@@ -799,10 +799,10 @@ fieldset {
   margin: 2rem 0 0 0;
 }
 
-#fødselsdato {
+#date {
   -moz-appearance: textfield;
 }
-#fødselsdato::-webkit-outer-spin-button, #fødselsdato::-webkit-inner-spin-button {
+#date::-webkit-outer-spin-button, #date::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -989,6 +989,23 @@ fieldset {
   padding: 0.5rem;
   outline: none;
   font-size: 1.4em;
+}
+
+.active3 .txt-input-wrapper {
+  width: 100%;
+}
+.active3 .row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  gap: 1rem;
 }
 
 .tile {

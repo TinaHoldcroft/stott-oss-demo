@@ -102,7 +102,7 @@ fieldset {
     border: none;
     margin: 2rem 0 0 0;
 }
-#fødselsdato {
+#date {
     -moz-appearance: textfield;
     &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
         -webkit-appearance: none;
@@ -194,5 +194,11 @@ fieldset {
         padding: 0.5rem;
         outline: none;
         font-size: 1.4em;
+    }
+}
+.active3 {
+    .txt-input-wrapper { width: 100%;}
+    .row {
+        @include flex(row nowrap, space-between, center, center, center, 1rem);
     }
 }

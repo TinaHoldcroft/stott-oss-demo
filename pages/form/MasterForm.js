@@ -17,19 +17,24 @@ class MasterForm extends React.Component {
         super(props)
         this.state = {
             currentStep: 1,
-            frekvens: 'en gang',
-            beløp: '300',
-            fradrag: 'nei',
-            fødselsdato: '',
+            frequency: 'en gang',
+            amount: '300',
+            deduction: 'nei',
+            birthdate: '',
             paymentType: 'vipps',
-            telefon: '',
-            navn: '',
-            adresse: '',
-            epost: ''
+            telephone: '',
+            name: '',
+            address: '',
+            zip: '',
+            city: '',
+            email: ''
         }
-        //console.log(this.state)
     }
 
+    handleChange = event => {
+        const { name, value } = event.target
+        this.setState({ [name]: value })
+    }
     handleChange = event => {
         const { name, value } = event.target
         this.setState({ [name]: value })
@@ -44,15 +49,15 @@ class MasterForm extends React.Component {
 
     Inputs() {
         let currentStep = this.state.currentStep;
-        let fradrag = this.state.fradrag;
+        let deduction = this.state.deduction;
 
         if (currentStep === 2) {
-            if (fradrag === 'ja') {
+            if (deduction === 'ja') {
                 return (
                     <div className="txt-input-wrapper">
                         <p>For å gi deg skattefradrag trenger vi fødselsdatoen din</p>
-                        <label htmlFor="fødselsdato">Fødselsdato</label>
-                        <input id="fødselsdato" name="fødselsdato" type="number" placeholder={this.state.fødselsdato} onChange={this.handleChange} pattern="[0-9]{6,}" required />
+                        <label htmlFor="birthdate">Fødselsdato</label>
+                        <input id="birthdate" name="birthdate" type="date" value={this.state.birthdate} onChange={this.handleChange} min="1900-01-01" max="2005-12-31" required />
                     </div>
                 )
             }
@@ -61,12 +66,12 @@ class MasterForm extends React.Component {
 
     Buttons() {
         let currentStep = this.state.currentStep;
-        let frekvens = this.state.frekvens;
+        let frequency = this.state.frequency;
         let paymentType = this.state.paymentType;
 
         if (currentStep === 1) { return <FlatBtn type='button' value='neste' direction='right' click={this._next} /> }
         if (currentStep === 2) {
-            if (frekvens === 'en gang') {
+            if (frequency === 'en gang') {
                 return (
                     <>
                         <fieldset className="payment">
@@ -79,7 +84,7 @@ class MasterForm extends React.Component {
                     </>
                 )
             }
-            if (frekvens === 'månedlig') {
+            if (frequency === 'månedlig') {
                 return (
                     <>
                         <fieldset className="payment">
@@ -145,7 +150,7 @@ class MasterForm extends React.Component {
                     <Txt1 currentStep={this.state.currentStep} />
                     <Txt2 currentStep={this.state.currentStep} />
                     <Txt3 currentStep={this.state.currentStep} paymentType={this.state.paymentType} />
-                    <Txt4 currentStep={this.state.currentStep} navn={this.state.navn} adresse={this.state.adresse} telefon={this.state.telefon} epost={this.state.epost} frekvens={this.state.frekvens} beløp={this.state.beløp} fradrag={this.state.fradrag} fødselsdato={this.state.fødselsdato} />
+                    <Txt4 currentStep={this.state.currentStep} name={this.state.name} address={this.state.address} zip={this.state.zip} city={this.state.city} telephone={this.state.telephone} email={this.state.email} frequency={this.state.frequency} amount={this.state.amount} deduction={this.state.deduction} />
                 </div>
                 <form id="masterform" className={'masterform active' + this.state.currentStep} onSubmit={this.handleSubmit}>
                     <div className={'breadcrum activePage__' + this.state.currentStep}>
@@ -153,9 +158,9 @@ class MasterForm extends React.Component {
                         <BreadcrumBnt currentStep={this.state.currentStep} nr="2" click={this._GoToTwo} value="gå direkte til betalingsvalg" icon="fas fa-credit-card" />
                         <BreadcrumBnt currentStep={this.state.currentStep} nr="3" click={this._GoToThree} value="gå direkte til personalia" icon="fas fa-user" />
                     </div>
-                    <Step1 currentStep={this.state.currentStep} handleChange={this.handleChange} frekvens={this.state.frekvens} beløp={this.state.beløp} />
-                    <Step2 currentStep={this.state.currentStep} handleChange={this.handleChange} fradrag={this.state.fradrag} fødselsdato={this.state.fødselsdato} />
-                    <Step3 currentStep={this.state.currentStep} handleChange={this.handleChange} paymentType={this.state.paymentType} navn={this.state.navn} telefon={this.state.telefon} adresse={this.state.adresse} epost={this.state.epost} beløp={this.state.beløp} />
+                    <Step1 currentStep={this.state.currentStep} handleChange={this.handleChange} frequency={this.state.frequency} amount={this.state.amount} />
+                    <Step2 currentStep={this.state.currentStep} handleChange={this.handleChange} deduction={this.state.deduction} birthdate={this.state.birthdate} />
+                    <Step3 currentStep={this.state.currentStep} handleChange={this.handleChange} paymentType={this.state.paymentType} name={this.state.name} telephone={this.state.telephone} address={this.state.address} zip={this.state.zip} city={this.state.city} email={this.state.email} amount={this.state.amount} />
                     <Step4 currentStep={this.state.currentStep} />
                     {this.Inputs()}
                     {this.Buttons()}

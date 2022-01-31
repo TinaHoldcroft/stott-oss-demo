@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function Step4({ currentStep, navn, adresse, telefon, epost, frekvens, beløp, fradrag, fødselsnummer }) {
+export default function Step4({ currentStep, name, address, zip, city, telephone, email, frequency, amount, deduction }) {
     
     if (currentStep !== 4) { return null }
     
@@ -8,11 +8,12 @@ export default function Step4({ currentStep, navn, adresse, telefon, epost, frek
         <div className='summary'>
             <h1>Oppsummering</h1>
             <div>
-                <p>{navn} <i>&#60;{epost}&#62;</i></p>
-                <p>{beløp} {frekvens}</p>
-                <p>{telefon}, {adresse} </p>
-                <p>Fradrag: {fradrag}</p>
-                <p>{fødselsnummer}</p>
+                <p>{name} <i>&#60;{email}&#62;</i></p>
+                <p>{amount} kr {frequency}</p>
+                <p>{telephone}</p>
+                <p>{address} </p>
+                <p>{zip} {city}</p>
+                <p>Fradrag: {deduction}</p>
             </div>
             <h2>Lurer du på noe?</h2>
             <p>Kontakt giverservice på <Link href='tel:+4723000600'>23 00 06 00</Link> eller send mail til <Link href='mailto:giver@blindeforbundet.no'>giver@blindeforbundet.no</Link></p>
