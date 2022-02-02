@@ -15,7 +15,7 @@ export default function giverInformasjon() {
             <div className='giver-informasjon'>
                 <section>
                     <h2>Informasjon om SMS fra Blindeforbundet</h2>
-                    <p>Av og til vil du få en SMS fra Blindeforbundet der avsendernummeret vil se annerledes ut enn et vanlig telefonnummer. Dette fordi det er langt billigere å bruke, enn å "kjøpe" et unikt kortnummer. Nummeret vårt består av 14 siffer, som starter med 203020 og 8 siffer som er ulike ut ifra hvilken SMS du får fra oss.</p>
+                    <p>Av og til vil du få en SMS fra Blindeforbundet der avsendernummeret vil se annerledes ut enn et vanlig telefonnummer. Dette fordi det er langt billigere å bruke, enn å kjøpe et unikt kortnummer. Nummeret vårt består av 14 siffer, som starter med 203020 og 8 siffer som er ulike ut ifra hvilken SMS du får fra oss.</p>
                 </section>
                 <section>
                     <h2>Vipps faste betalinger</h2>
