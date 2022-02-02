@@ -1,0 +1,34 @@
+.giver-informasjon {
+    @include flex(column nowrap, center, stretch, auto, flex-start, 3rem 0);
+    width: 100%;
+    margin: 6rem 0 0 0;
+    max-width: 1000px;
+    section {
+        @media only screen and (max-width: 1000px) { padding: 0 1rem;}
+    }
+    h2 {
+        margin-bottom: 0.5em;
+    }
+    a {
+        @include hover-highlight(lighten($yellow, 20%), 1em, 0, 1em);
+    }
+    .campaign {
+        margin: 6rem 0;
+        p,
+        a {
+            font-size: 20px;
+            font-size: clamp(0.8em, 4vw, 1.25rem);
+            line-height: 1.4em;
+        }
+    }
+}
+.contact-tile {
+    @include flex(row nowrap, flex-start, center, auto, flex-start, 0rem 2em);
+    margin: 0.5em 0 1.5em 0;
+    i {
+        font-size: clamp(1.8em, 4vw, 2.8rem);
+    }
+    a {
+        @include hover-highlight($white, 1em, 0);
+    }
+}

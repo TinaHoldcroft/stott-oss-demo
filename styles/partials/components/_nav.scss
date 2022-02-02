@@ -72,7 +72,8 @@ ol {
     margin: 0 0 0 2rem;
     @media only screen and (max-width: 1000px) { display: none; }
     a {
-        @include hover-highlight;
+        @include hover-highlight( lighten($yellow, 20%), 1em, 0 1em, 2em);
+        z-index: 0;
     }
 }
 .search {

@@ -26,7 +26,7 @@ const Nav = () => {
     global.onkeydown = function (close) {
         if (close.keyCode == '27') {
             if (isActive === false) {
-                setActive(!isActive);
+                closeDrop();
             }
         }
     }
@@ -37,8 +37,8 @@ const Nav = () => {
             <div onClick={closeDrop} className="nav-highlights">
                 <Link href='https://www.blindeforbundet.no/medlemskap'>Bli medlem</Link>
                 <Link href='https://www.blindeforbundet.no/om-blindeforbundet'>Om oss</Link>
-                <Link href='https://www.blindeforbundet.no/hjelpemidler-og-produkter'>Hjelpemidler</Link>
-                <Link href='https://www.blindeforbundet.no/rad-tips-og-rettigheter'>Råd og tips</Link>
+                <Link href='/giverInformasjon'>Giver informasjon</Link>
+                <Link href='/#calendar'>Bestill valpekalender</Link>
             </div>
 
             <FocusLock className="focus" disabled={isActive ? true : false}>
@@ -46,10 +46,8 @@ const Nav = () => {
                     <SearchBtn />
                     <button className={isActive ? "btn-dropdown" : "btn-dropdown is-menu-open"} accessKey="m" title={isActive ? "Åpne meny" : "Lukk meny"} type="button" value={isActive ? "Åpne meny" : "Lukk meny"} onClick={handleToggle}>
                         <p className="bars">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <i className="other-bar"></i>
+                            <span /><span /><span />
+                            <i className="other-bar" />
                         </p>
                     </button>
                 </div>
@@ -59,7 +57,7 @@ const Nav = () => {
                             <Link role="menuitem" href='https://www.blindeforbundet.no/oyehelse-og-synshemninger'>
                                 <a>
                                     <span>Øyehelse og synshemninger</span>
-                                    <i className="fas fa-arrow-right"></i>
+                                    <i className="fas fa-arrow-right" />
                                 </a>
                             </Link>
                         </li>
@@ -67,7 +65,7 @@ const Nav = () => {
                             <Link role="menuitem" href='https://www.blindeforbundet.no/rad-tips-og-rettigheter'>
                                 <a>
                                     <span>Råd, tips og rettigheter</span>
-                                    <i className="fas fa-arrow-right"></i>
+                                    <i className="fas fa-arrow-right" />
                                 </a>
                             </Link>
                         </li>
@@ -75,7 +73,7 @@ const Nav = () => {
                             <Link role="menuitem" href='https://www.blindeforbundet.no/hjelpemidler-og-produkter'>
                                 <a>
                                     <span>Hjelpemidler og produkter</span>
-                                    <i className="fas fa-arrow-right"></i>
+                                    <i className="fas fa-arrow-right" />
                                 </a>
                             </Link>
                         </li>
@@ -83,7 +81,7 @@ const Nav = () => {
                             <Link role="menuitem" href='https://www.blindeforbundet.no/tilbud-kurs-og-arrangementer'>
                                 <a>
                                     <span>Tilbud, kurs og arrangementer</span>
-                                    <i className="fas fa-arrow-right"></i>
+                                    <i className="fas fa-arrow-right" />
                                 </a>
                             </Link>
                         </li>
@@ -91,7 +89,7 @@ const Nav = () => {
                             <Link role="menuitem" href='https://www.blindeforbundet.no/universell-utforming'>
                                 <a>
                                     <span>Universell utforming</span>
-                                    <i className="fas fa-arrow-right"></i>
+                                    <i className="fas fa-arrow-right" />
                                 </a>
                             </Link>
                         </li>
@@ -99,7 +97,7 @@ const Nav = () => {
                             <Link role="menuitem" href='https://www.blindeforbundet.no/medlemskap'>
                                 <a>
                                     <span>Medlemskap</span>
-                                    <i className="fas fa-arrow-right"></i>
+                                    <i className="fas fa-arrow-right" />
                                 </a>
                             </Link>
                         </li>
@@ -107,7 +105,7 @@ const Nav = () => {
                             <Link role="menuitem" href='https://www.blindeforbundet.no/om-blindeforbundet'>
                                 <a>
                                     <span>Om Blindeforbundet</span>
-                                    <i className="fas fa-arrow-right"></i>
+                                    <i className="fas fa-arrow-right" />
                                 </a>
                             </Link>
                         </li>
@@ -115,7 +113,7 @@ const Nav = () => {
                             <Link role="menuitem" href='https://www.blindeforbundet.no/fylkeslag'>
                                 <a>
                                     <span>Fylkeslag</span>
-                                    <i className="fas fa-arrow-right"></i>
+                                    <i className="fas fa-arrow-right" />
                                 </a>
                             </Link>
                         </li>
@@ -123,7 +121,7 @@ const Nav = () => {
                             <Link role="menuitem" href='/'>
                                 <a>
                                     <span>Støtt Blindeforbundet</span>
-                                    <i className="fas fa-arrow-right"></i>
+                                    <i className="fas fa-arrow-right" />
                                 </a>
                             </Link>
                         </li>
@@ -131,7 +129,7 @@ const Nav = () => {
                             <Link role="menuitem" href='https://www.blindeforbundet.no/for-bedrifter'>
                                 <a>
                                     <span>For bedrifter</span>
-                                    <i className="fas fa-arrow-right"></i>
+                                    <i className="fas fa-arrow-right" />
                                 </a>
                             </Link>
                         </li>

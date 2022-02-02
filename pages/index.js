@@ -58,15 +58,17 @@ export default function Home() {
                         />
                     </div>
                 </div>
-                <Campaign
-                    img='/hund.jpg' alt='Labrador valp'
-                    heading='Bestill valpekalender'
-                    txt='Valpekalenderen til Norges Blindeforbund er en av Norges mest populære kalendere. Når du bestiller kalenderen er du med på å gi selvstendigheten tilbake til mange svaksynte og blinde.'
-                    btnValue='bestill kalender'
-                    ArrowValue='lær mer'
-                    btnLink='https://www.blindeforbundet.no/kalender/#vil-du-bestille-kalenderen-for-2019'
-                    ArrowLink='https://www.blindeforbundet.no/kalender'
-                />
+                <div id='calendar'>
+                    <Campaign
+                        img='/hund.jpg' alt='Labrador valp'
+                        heading='Bestill valpekalender'
+                        txt='Valpekalenderen til Norges Blindeforbund er en av Norges mest populære kalendere. Når du bestiller kalenderen er du med på å gi selvstendigheten tilbake til mange svaksynte og blinde.'
+                        btnValue='bestill kalender'
+                        ArrowValue='lær mer'
+                        btnLink='https://www.blindeforbundet.no/kalender/#vil-du-bestille-kalenderen-for-2019'
+                        ArrowLink='https://www.blindeforbundet.no/kalender'
+                    />
+                </div>
             </div>
         </>
     )

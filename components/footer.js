@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Logo from './logo';
+import { giverPhone, giverPhoneLink, giverEmail, giverEmailLink } from './ContactInformation'
 
 const Footer = () => {
 
@@ -26,9 +27,9 @@ const Footer = () => {
                 <section>
                     <h6>Giver informasjon</h6>
                     <p>Vipps til 05030</p>
-                    <p>1644 08 26974</p>
-                    <Link passHref href='tel:+4723000600'>+47 23 00 06 00</Link>
-                    <Link passHref href='mailto:giver@blindeforbundet.no'>giver@blindeforbundet.no</Link>
+                    <p>1644 08 26974 <Link href='/giverInformasjon'>mer informasjon</Link></p>
+                    <Link passHref href={giverPhoneLink}>{giverPhone}</Link>
+                    <Link passHref href={giverEmailLink}>{giverEmail}</Link>
                 </section>
                 <section>
                     <h6>Annet</h6>

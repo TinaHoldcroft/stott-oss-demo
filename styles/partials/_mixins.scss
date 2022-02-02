@@ -39,15 +39,18 @@
 }
 @mixin hover-highlight(
     $color: lighten($yellow, 20%),
-    $font-size: 1em
+    $font-size: 1em,
+    $padding: 0 1em,
+    $line-height: 2em
 ){
     position: relative;
     font-size: $font-size;
-    line-height: 2em;
-    font-weight: 400;
+    line-height: $line-height;
+    font-weight: inherit;
     cursor: pointer;
     outline: none;
-    padding: 0 1em;
+    padding: $padding;
+    z-index: 1;
     &:hover::before, &:focus::before, &:active::before, &:focus {
         transform: scaleX(1);
         transform-origin: bottom left;

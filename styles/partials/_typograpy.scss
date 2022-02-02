@@ -7,12 +7,12 @@ body {
     font-style: normal;
     color: $black;
     font-size: 1em;
-    ::selection {  background: lighten($yellow, 30%); }
+    ::selection { background: lighten($yellow, 30%); }
 }
 a {
     text-decoration: none;
     font-weight: 400;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 a:focus, a:active {
     outline: none;
