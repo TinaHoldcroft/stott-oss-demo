@@ -54,10 +54,10 @@ class MasterForm extends React.Component {
         if (currentStep === 2) {
             if (deduction === 'ja') {
                 return (
-                    <div className="txt-input-wrapper">
+                    <div className='txt-input-wrapper'>
                         <p>For å gi deg skattefradrag trenger vi fødselsdatoen din</p>
-                        <label htmlFor="birthdate">Fødselsdato</label>
-                        <input id="birthdate" name="birthdate" type="date" value={this.state.birthdate} onChange={this.handleChange} min="1900-01-01" max="2005-12-31" required />
+                        <label htmlFor='birthdate'>Fødselsdato</label>
+                        <input id='birthdate' name='birthdate' type='date' value={this.state.birthdate} onChange={this.handleChange} min='1900-01-01' max='2005-12-31' required />
                     </div>
                 )
             }
@@ -74,10 +74,10 @@ class MasterForm extends React.Component {
             if (frequency === 'en gang') {
                 return (
                     <>
-                        <fieldset className="payment">
-                            <legend className="sr-only">Velg Betalingsform</legend>
-                            <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value="vipps" />
-                            <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value="kort" />
+                        <fieldset className='payment'>
+                            <legend className='sr-only'>Velg Betalingsform</legend>
+                            <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value='vipps' />
+                            <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value='kort' />
                         </fieldset>
                         <FlatBtn type='button' value='tilbake' direction='left' click={this._prev} />
                         <FlatBtn type='submit' value='neste' direction='right' />
@@ -87,10 +87,10 @@ class MasterForm extends React.Component {
             if (frequency === 'månedlig') {
                 return (
                     <>
-                        <fieldset className="payment">
-                            <legend className="sr-only">Velg Betalingsform</legend>
-                            <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value="vipps" />
-                            <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value="avtale-giro" />
+                        <fieldset className='payment'>
+                            <legend className='sr-only'>Velg Betalingsform</legend>
+                            <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value='vipps' />
+                            <PaymentBtn handleChange={this.handleChange} paymentType={this.state.paymentType} value='avtale-giro' />
                         </fieldset>
                         <FlatBtn type='button' value='tilbake' direction='left' click={this._prev} />
                         <FlatBtn type='submit' value='neste' direction='right' />
@@ -106,7 +106,7 @@ class MasterForm extends React.Component {
             return (
                 <>
                     <FlatBtn type='button' value='tilbake' direction='left' click={this._prev} />
-                    <button form='masterform' type='submit' className="flat-btn float-right">Send inn</button>
+                    <button form='masterform' type='submit' className='flat-btn float-right'>Send inn</button>
                 </>
             )
         }
@@ -145,18 +145,18 @@ class MasterForm extends React.Component {
 
     render() {
         return (
-            <div className="masterform-wrapper">
-                <div className="txt-panel">
+            <div className='masterform-wrapper'>
+                <div className='txt-panel'>
                     <Txt1 currentStep={this.state.currentStep} />
                     <Txt2 currentStep={this.state.currentStep} />
                     <Txt3 currentStep={this.state.currentStep} paymentType={this.state.paymentType} />
                     <Txt4 currentStep={this.state.currentStep} name={this.state.name} address={this.state.address} zip={this.state.zip} city={this.state.city} telephone={this.state.telephone} email={this.state.email} frequency={this.state.frequency} amount={this.state.amount} deduction={this.state.deduction} />
                 </div>
-                <form id="masterform" className={'masterform active' + this.state.currentStep} onSubmit={this.handleSubmit}>
+                <form id='masterform' className={'masterform active' + this.state.currentStep} onSubmit={this.handleSubmit}>
                     <div className={'breadcrum activePage__' + this.state.currentStep}>
-                        <BreadcrumBnt currentStep={this.state.currentStep} nr="1" click={this._GoToOne} value="gå direkte til valg av frekvens og beløp" icon="fas fa-hand-holding-usd" />
-                        <BreadcrumBnt currentStep={this.state.currentStep} nr="2" click={this._GoToTwo} value="gå direkte til betalingsvalg" icon="fas fa-credit-card" />
-                        <BreadcrumBnt currentStep={this.state.currentStep} nr="3" click={this._GoToThree} value="gå direkte til personalia" icon="fas fa-user" />
+                        <BreadcrumBnt currentStep={this.state.currentStep} nr='1' click={this._GoToOne} value='gå direkte til valg av frekvens og beløp' icon='fas fa-hand-holding-usd' />
+                        <BreadcrumBnt currentStep={this.state.currentStep} nr='2' click={this._GoToTwo} value='gå direkte til betalingsvalg' icon='fas fa-credit-card' />
+                        <BreadcrumBnt currentStep={this.state.currentStep} nr='3' click={this._GoToThree} value='gå direkte til personalia' icon='fas fa-user' />
                     </div>
                     <Step1 currentStep={this.state.currentStep} handleChange={this.handleChange} frequency={this.state.frequency} amount={this.state.amount} />
                     <Step2 currentStep={this.state.currentStep} handleChange={this.handleChange} deduction={this.state.deduction} birthdate={this.state.birthdate} />

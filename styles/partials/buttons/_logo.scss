@@ -3,6 +3,7 @@
     cursor: pointer;
     transition: 0.3s;
     margin: 0 0 0 0.5rem;
+    border-radius: 25px;
     &:focus, &:hover {
         transform: scale(0.97);
         transition: 0.3s;

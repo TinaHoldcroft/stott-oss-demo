@@ -51,7 +51,7 @@ const Table = () => {
     );
 
     return (
-        <div className="table-wrapper">
+        <div className='table-wrapper'>
             <table className='table-giver'>
                 <thead>
                     <tr className='table-giver__heading'>

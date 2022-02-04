@@ -27,14 +27,14 @@ export default function giverInformasjon() {
                     heading='Kontakt Giverservice'
                     txt={<>
                         <div className='contact-tile'>
-                            <i className="fas fa-envelope" />
+                            <i className='fas fa-envelope' />
                             <div>
                                 <p>E-post:</p>
                                 <Link passHref href={giverEmailLink}>{giverEmail}</Link>
                             </div>
                         </div>
                         <div className='contact-tile'>
-                            <i className="fas fa-phone" />
+                            <i className='fas fa-phone' />
                             <div>
                                 <p>Telefon:</p>
                                 <Link passHref href={giverPhoneLink}>+47 23 00 06 00</Link>

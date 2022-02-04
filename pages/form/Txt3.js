@@ -6,7 +6,7 @@ export default function Txt3(props) {
 
     if (props.paymentType === 'vipps') {
         return (
-            <div className="vipps-txt">
+            <div className='vipps-txt'>
                 <h1>Faste betalinger med Vipps</h1>
                 <p>Nå kan du betale dine faste avtaler med Vipps. Da får du god oversikt over betalingene dine og hvert trekk blir varslet.</p>
                 <p>Det er ingen bindingstid</p>

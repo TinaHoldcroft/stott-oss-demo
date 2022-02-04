@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { giverPhone, giverPhoneLink, giverEmail, giverEmailLink } from '../../components/ContactInformation'
 
 export default function Step4({ currentStep, name, address, zip, city, telephone, email, frequency, amount, deduction }) {
     
@@ -16,7 +17,7 @@ export default function Step4({ currentStep, name, address, zip, city, telephone
                 <p>Fradrag: {deduction}</p>
             </div>
             <h2>Lurer du på noe?</h2>
-            <p>Kontakt giverservice på <Link href='tel:+4723000600'>23 00 06 00</Link> eller send mail til <Link href='mailto:giver@blindeforbundet.no'>giver@blindeforbundet.no</Link></p>
+            <p>Kontakt giverservice på <Link passHref href={giverPhoneLink}>{giverPhone}</Link> eller send mail til <Link passHref href={giverEmailLink}>{giverEmail}</Link></p>
         </div>
     )
 }

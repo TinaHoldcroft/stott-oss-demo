@@ -128,6 +128,11 @@ body {
   color: #242424;
   transition: margin 0.3s ease-in-out;
 }
+@media only screen and (max-width: 400px) {
+  .arrow-link a i {
+    display: none;
+  }
+}
 .arrow-link a:hover, .arrow-link a:focus, .arrow-link a:active {
   outline: none;
 }
@@ -175,6 +180,25 @@ main {
   width: 100vw;
 }
 
+::-webkit-scrollbar-thumb {
+  background: #a3a3a3;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFD500;
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: #a3a3a3 #ffffff;
+  scrollbar-width: thin;
+}
+
 body {
   font-family: open-sans, sans-serif;
   font-weight: 400;
@@ -192,16 +216,19 @@ a {
   font-size: 1em;
 }
 
-a:focus, a:active {
+a:focus,
+a:active {
   outline: none;
 }
 
-button, a {
+button,
+a {
   font-family: open-sans, sans-serif;
   color: #242424;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 500;
   font-size: clamp(1.5em, 2.5vw, 2rem);
   line-height: 1em;
@@ -1485,6 +1512,7 @@ tbody .table-giver__row:nth-child(even) {
   cursor: pointer;
   transition: 0.3s;
   margin: 0 0 0 0.5rem;
+  border-radius: 25px;
 }
 .logo-wrapper:focus, .logo-wrapper:hover {
   transform: scale(0.97);
@@ -1935,8 +1963,6 @@ tbody .table-giver__row:nth-child(even) {
   align-self: center;
   align-content: center;
   gap: 0;
-  height: 2.5rem;
-  width: 2.5rem;
   background-color: #ebebeb;
   border-radius: 50%;
   border: 1px solid #ebebeb;
@@ -1946,19 +1972,13 @@ tbody .table-giver__row:nth-child(even) {
   background-color: #ffffff;
   border: 1px solid #ccc;
 }
-.SoMe i {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  align-content: center;
-  gap: 0;
-  padding: 0.3em 0 0 0.1em;
+
+.fa-facebook, .fa-twitter, .fa-envelope-open-text {
+  padding: 0.5em;
+}
+
+.fa-youtube {
+  padding: 0.6em 0.5em;
 }
 
 .fa-youtube:hover, .fa-youtube:focus {
@@ -1974,17 +1994,7 @@ tbody .table-giver__row:nth-child(even) {
 }
 
 .fa-envelope-open-text:hover, .fa-envelope-open-text:focus {
-  color: #FFD500;
-}
-
-.article-link {
-  width: 100%;
-  border-bottom: solid 3px #242424;
-  padding: 0.75rem 0;
-  font-size: 1.2em;
-}
-.article-link i {
-  margin-right: 1rem;
+  color: #383838;
 }
 
 .content-index {

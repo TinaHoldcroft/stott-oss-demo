@@ -4,7 +4,7 @@ export default function PaymentBtn(props) {
         <div>
             <input
                 onChange={props.handleChange}
-                type="radio"
+                type='radio'
                 id={props.value}
                 name='paymentType'
                 value={props.value}

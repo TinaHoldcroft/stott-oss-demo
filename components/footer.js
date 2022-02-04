@@ -1,28 +1,32 @@
 import Link from 'next/link';
 import Logo from './logo';
-import { giverPhone, giverPhoneLink, giverEmail, giverEmailLink } from './ContactInformation'
+import {
+    phone, phoneLink, email, emailLink, address, PObox,
+    giverPhone, giverPhoneLink, giverEmail, giverEmailLink,
+    newsletter, youtube, twitter, facebook
+} from './ContactInformation'
 
 const Footer = () => {
 
     return (
         <footer>
-            <div className="col-1">
+            <div className='col-1'>
                 <div>
                     <Logo />
-                    <p className="tagline">Norges Blindeforbund, synshemmedes organisasjon, er blinde og svaksyntes interesse- og serviceorganisasjon i Norge</p>
-                    <div className="SoMe">
-                        <Link passHref href='https://www.blindeforbundet.no/nyhetsbrev'><a><i className="fas fa-envelope-open-text"></i></a></Link>
-                        <Link passHref href='https://www.youtube.com/user/NorgesBlindeforbund'><a><i className="fab fa-youtube"></i></a></Link>
-                        <Link passHref href='https://twitter.com/Blindeforbundet'><a><i className="fab fa-twitter"></i></a></Link>
-                        <Link passHref href='https://www.facebook.com/blindeforbundet'><a><i className="fab fa-facebook"></i></a></Link>
+                    <p className='tagline'>Norges Blindeforbund, synshemmedes organisasjon, er blinde og svaksyntes interesse- og serviceorganisasjon i Norge</p>
+                    <div className='SoMe'>
+                        <a href={newsletter} className='fas fa-envelope-open-text' title='Meld deg på vårt nyhetsbrev' target='_blank' />
+                        <a href={youtube} className='fab fa-youtube' title='Gå til Blindeforbundets YouTube kanal' target='_blank' />
+                        <a href={twitter} className='fab fa-twitter' title='Besøk Blindeforbundet på Twitter' target='_blank' />
+                        <a href={facebook} className='fab fa-facebook' title='Besøk Blindeforbundet på Facebook' target='_blank' />
                     </div>
                 </div>
                 <section>
                     <h6>Kontakt informasjon</h6>
-                    <Link passHref href='mailto:info@blindeforbundet.no'>info@blindeforbundet.no</Link>
-                    <Link passHref href='tel:+4723215000'>+47 23 21 50 00</Link>
-                    <p>Sporveisgaten 10, 0354 OSLO</p>
-                    <p>PB: 5900 Majorstuen, 0308 OSLO</p>
+                    <Link passHref href={emailLink}>{email}</Link>
+                    <Link passHref href={phoneLink}>{phone}</Link>
+                    <p>{address}</p>
+                    <p>{PObox}</p>
                 </section>
                 <section>
                     <h6>Giver informasjon</h6>
@@ -38,16 +42,26 @@ const Footer = () => {
                     <Link passHref href='https://www.blindeforbundet.no/personvernerklaering'>Personvernerklæring</Link>
                 </section>
             </div>
-            <div className="col-2">
+            <div className='col-2'>
                 <div>
                     <p>NO 971038179 MVA</p>
                 </div>
-                <div className="partners">
-                    <img src="/CAF.svg" alt="CAF international" />
-                    <img src="/specsavers.png" alt="specsavers" />
-                    <img src="/anicura.png" alt="anicura" />
-                    <img src="/royal-canin.png" alt="royal canin" />
-                    <img src="/innsamlingskontrollen.png" alt="godkjent av innsamlingskontrollen" />
+                <div className='partners'>
+                    <a href='https://validation.cafamerica.org/'>
+                        <img src='/CAF.svg' alt='CAF international' />
+                    </a>
+                    <a href='https://www.specsavers.no/?gclid=CjwKCAiAl-6PBhBCEiwAc2GOVGROTZt6gw7eKdzhtnegf86TviTkcDZfubO2rgOKcWLrbsHMSiOL7BoCGJQQAvD_BwE&gclsrc=aw.ds'>
+                        <img src='/specsavers.png' alt='specsavers' />
+                    </a>
+                    <a href='https://www.anicura.no'>
+                        <img src='/anicura.png' alt='anicura' />
+                    </a>
+                    <a href='www.royalcanin.no'>
+                        <img src='/royal-canin.png' alt='royal canin' />
+                    </a>
+                    <a href='https://www.innsamlingskontrollen.no/'>
+                        <img src='/innsamlingskontrollen.png' alt='godkjent av innsamlingskontrollen' />
+                    </a>
                 </div>
             </div>
         </footer>
