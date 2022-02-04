@@ -15,10 +15,10 @@ const Footer = () => {
                     <Logo />
                     <p className='tagline'>Norges Blindeforbund, synshemmedes organisasjon, er blinde og svaksyntes interesse- og serviceorganisasjon i Norge</p>
                     <div className='SoMe'>
-                        <a href={newsletter} className='fas fa-envelope-open-text' title='Meld deg på vårt nyhetsbrev' target='_blank' />
-                        <a href={youtube} className='fab fa-youtube' title='Gå til Blindeforbundets YouTube kanal' target='_blank' />
-                        <a href={twitter} className='fab fa-twitter' title='Besøk Blindeforbundet på Twitter' target='_blank' />
-                        <a href={facebook} className='fab fa-facebook' title='Besøk Blindeforbundet på Facebook' target='_blank' />
+                        <a href={newsletter} className='fas fa-envelope-open-text' title='Meld deg på vårt nyhetsbrev' target='_blank' rel="noreferrer"/>
+                        <a href={youtube} className='fab fa-youtube' title='Gå til Blindeforbundets YouTube kanal' target='_blank' rel="noreferrer"/>
+                        <a href={twitter} className='fab fa-twitter' title='Besøk Blindeforbundet på Twitter' target='_blank' rel="noreferrer"/>
+                        <a href={facebook} className='fab fa-facebook' title='Besøk Blindeforbundet på Facebook' target='_blank' rel="noreferrer"/>
                     </div>
                 </div>
                 <section>
