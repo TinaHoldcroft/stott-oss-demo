@@ -35,10 +35,6 @@ class MasterForm extends React.Component {
         const { name, value } = event.target
         this.setState({ [name]: value })
     }
-    handleChange = event => {
-        const { name, value } = event.target
-        this.setState({ [name]: value })
-    }
 
     handleSubmit = event => {
         event.preventDefault()
@@ -122,26 +118,6 @@ class MasterForm extends React.Component {
         currentStep = currentStep <= 1 ? 1 : currentStep - 1
         this.setState({ currentStep: currentStep })
     }
-    _GoToOne = () => {
-        let currentStep = this.state.currentStep
-        currentStep = 1
-        this.setState({ currentStep: currentStep })
-    }
-    _GoToTwo = () => {
-        let currentStep = this.state.currentStep
-        currentStep = 2
-        this.setState({ currentStep: currentStep })
-    }
-    _GoToThree = () => {
-        let currentStep = this.state.currentStep
-        currentStep = 3
-        this.setState({ currentStep: currentStep })
-    }
-    _GoToFour = () => {
-        let currentStep = this.state.currentStep
-        currentStep = 4
-        this.setState({ currentStep: currentStep })
-    }
 
     render() {
         return (
@@ -154,9 +130,9 @@ class MasterForm extends React.Component {
                 </div>
                 <form id='masterform' className={'masterform active' + this.state.currentStep} onSubmit={this.handleSubmit}>
                     <div className={'breadcrum activePage__' + this.state.currentStep}>
-                        <BreadcrumBnt currentStep={this.state.currentStep} nr='1' click={this._GoToOne} value='gå direkte til valg av frekvens og beløp' icon='fas fa-hand-holding-usd' />
-                        <BreadcrumBnt currentStep={this.state.currentStep} nr='2' click={this._GoToTwo} value='gå direkte til betalingsvalg' icon='fas fa-credit-card' />
-                        <BreadcrumBnt currentStep={this.state.currentStep} nr='3' click={this._GoToThree} value='gå direkte til personalia' icon='fas fa-user' />
+                        <BreadcrumBnt currentStep={this.state.currentStep} nr='1' click={() => this.setState({ currentStep: 1 })} value='gå direkte til valg av frekvens og beløp' icon='fas fa-hand-holding-usd' />
+                        <BreadcrumBnt currentStep={this.state.currentStep} nr='2' click={() => this.setState({ currentStep: 2 })} value='gå direkte til betalingsvalg' icon='fas fa-credit-card' />
+                        <BreadcrumBnt currentStep={this.state.currentStep} nr='3' click={() => this.setState({ currentStep: 3 })} value='gå direkte til personalia' icon='fas fa-user' />
                     </div>
                     <Step1 currentStep={this.state.currentStep} handleChange={this.handleChange} frequency={this.state.frequency} amount={this.state.amount} />
                     <Step2 currentStep={this.state.currentStep} handleChange={this.handleChange} deduction={this.state.deduction} birthdate={this.state.birthdate} />
